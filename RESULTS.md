@@ -44,8 +44,9 @@ Code alone shows (7 and 6). caveman's engine packs the 44-failure run tightly en
 against 7.
 
 Getting the dropped text back works differently behind the cut. rtk's recall line and caveman's retrieve line
-fetch the full output the command printed. headroom's retrieve gives back what headroom received, which Claude Code
-had already cut. Claude Code alone offers no way back; the agent has to run the command again.
+fetch the full output the command printed, but caveman prints its line last, and on the two longest runs Claude
+Code's read-back drops it. headroom's retrieve gives back what headroom received, which Claude Code had already cut.
+Claude Code alone offers no way back; the agent has to run the command again.
 
 ## Each tool on the full output
 
