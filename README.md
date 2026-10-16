@@ -57,9 +57,9 @@ fail, how many things failed, which ones, and which file to open first. 510 answ
 - **rtk can leave nothing to act on.** On the run with 18 errors, all six answers say it failed, and none gives a
   count, a test or a file. On the run with 14 failures and 18 errors, rtk's header says "14 failed"; both models
   reported 14 in every trial and lost the file with the bug, which every other view led them to.
-- **A total the cut removed is counted or left blank.** Through Claude Code alone, Gemini rebuilt the totals of
-  the two longest pytest runs from pytest's progress bar; Luna mostly said it could not tell, and once answered 83,
-  a number that is not in the text.
+- **A total the cut removed is rebuilt or left blank.** Through Claude Code alone, Gemini gave the totals of the
+  two longest pytest runs right in every trial, though only pytest's progress bar still showed them; Luna mostly
+  said it could not tell, and once answered 83, a number that is not in the text.
 
 My predictions: 3 held, 4 wrong.
 

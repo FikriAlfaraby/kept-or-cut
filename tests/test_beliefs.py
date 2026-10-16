@@ -286,3 +286,9 @@ def test_the_site_export_quotes_part_2():
     assert [json.dumps(parse(r)) for rs in quoted.values() for r in rs] == [
         '{"run_failed": true, "failing_count": null, "failing": [], "first_look": {"file": null, "line": null}}'
     ] * 6
+
+
+def test_the_cut_totals_are_nowhere_else_in_the_text():
+    renamed = views(BY_ID["pytest-renamed"], RUNS)["cc-raw"]
+    assert not re.search(r"(?<!\d)32(?!\d)", renamed) and "14 failed" not in renamed
+    assert not re.search(r"^(FAILED|ERROR) ", renamed, re.MULTILINE)

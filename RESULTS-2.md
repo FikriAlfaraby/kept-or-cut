@@ -11,9 +11,9 @@ was what they could act on, and it followed part 1 closely: each model listed ab
 text still held, and no more. Through rtk, the run with 18 setup errors became "it failed, nothing says what": no
 count, no test, no file, in all six answers. On the run with 14 failures and 18 errors, rtk's header says "14
 failed"; both models reported 14 in every trial and lost the file with the bug, which every other view led them
-to. Where Claude Code's cut removed the totals of the two longest pytest runs, Gemini counted the marks in
-pytest's progress bar and got both right; Luna mostly said it could not tell, and once answered 83, a number that
-appears nowhere in the text.
+to. Where Claude Code's cut removed the totals of the two longest pytest runs, Gemini still gave both right in
+every trial, totals that only the marks in pytest's progress bar still showed; Luna mostly said it could not tell,
+and once answered 83, a number that appears nowhere in the text.
 
 ## Setup
 
@@ -86,8 +86,8 @@ the top survives.
 | pytest, 14 failures and 18 errors (32) | none, none, 33 | 32, 32, 32 |
 | tsc, 43 errors | none, none, none | none, none, none |
 
-The first run's progress bar holds exactly 44 F marks; the second's, 14 F and 18 E. "83" appears nowhere in the
-text Luna read. On the tsc run, 31 of the 43 error lines remain, and neither model passed 31 off as the total.
+The first run's progress bar holds exactly 44 F marks; the second's, 14 F and 18 E. Neither total appears anywhere
+else in the text, and neither does "83". On the tsc run, 31 of the 43 error lines remain, and neither model passed 31 off as the total.
 
 ## Where the model would look first
 
