@@ -2,6 +2,8 @@
 
 **Does the error line a coding agent needs survive token compression?**
 
+Replay what the model reads, run by run and tool by tool: [fikrialfaraby.com/compress](https://fikrialfaraby.com/compress/).
+
 Token-compression tools shrink what a coding agent reads from the shell. rtk (83k GitHub stars) "reduces LLM
 token consumption by 60-90% on common dev commands". headroom (75k) promises "20% fewer tokens for coding agents"
 and "same answers". caveman (113k) reports 18 of 18 answers right. Those are averages. An agent fixing a failing
