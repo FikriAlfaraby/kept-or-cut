@@ -51,6 +51,17 @@ def failed_command(exit_code: int, output: str) -> str:
     return cut("\n".join(part for part in (f"Exit code {exit_code}", read_back(output)) if part).strip())
 
 
+def window(exit_code: int, output: str) -> dict[str, int]:
+    """Where failed_command's text sits in the command's output, in characters of the output: the model reads
+    [0, head) and [tail, read) and nothing else; head == tail when nothing is cut. For drawing the cut."""
+    prefix = len(f"Exit code {exit_code}") + 1 if output else 0
+    read = len(read_back(output).rstrip())
+    if prefix + read <= LIMIT + GRACE:
+        return {"chars": len(output), "read": read, "head": read, "tail": read}
+    head = LIMIT // 2 - prefix
+    return {"chars": len(output), "read": read, "head": head, "tail": read - (LIMIT - LIMIT // 2)}
+
+
 def rebuilt(case_dir: Path, runs: dict) -> dict[str, str]:
     """cc-raw and cc-rtk as the binary's rules make them from raw.txt and rtk.txt."""
     raw = (case_dir / "raw.txt").read_text(encoding="utf-8")

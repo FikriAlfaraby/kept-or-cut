@@ -330,3 +330,26 @@ def test_the_site_export_quotes_the_same_numbers(results):
             assert sum(entry["views"][view]["kept"]) == results["cases"][case.id]["configs"][view]["kept"], (
                 case.id
             )
+
+
+def test_the_window_matches_the_cut():
+    from kept_or_cut.claude_code import failed_command, window
+    from kept_or_cut.export import case_entry
+
+    for case in CASES:
+        raw = (CORPUS / case.id / "raw.txt").read_text(encoding="utf-8")
+        exit_code = json.loads((CORPUS / case.id / "raw.json").read_text(encoding="utf-8"))["exit_code"]
+        w, text = window(exit_code, raw), failed_command(exit_code, raw)
+        if w["head"] == w["tail"]:
+            assert text.endswith(raw[: w["read"]][-200:])
+        else:
+            assert text.startswith(f"Exit code {exit_code}\n" + raw[: w["head"]])
+            assert text.endswith(raw[w["tail"] : w["read"]]) and len(raw[w["tail"] : w["read"]]) == 5000
+    entry = case_entry(next(c for c in CASES if c.id == "pytest-many"), RUNS, False)
+    assert entry["window"] == {
+        "chars": 75017,
+        "read": entry["window"]["read"],
+        "head": 4988,
+        "tail": entry["window"]["read"] - 5000,
+    }
+    assert len(entry["at"]) == 44 and all(0 < at < 75017 for at in entry["at"].values())

@@ -19,7 +19,7 @@ from .beliefs_score import VIEWS as READ_VIEWS
 from .beliefs_score import summary as beliefs_summary
 from .beliefs_score import views as read_views
 from .cases import CASES, EXPLORATORY
-from .claude_code import VIEWS, views
+from .claude_code import VIEWS, views, window
 from .needed import needed, survives
 from .predictions import verdicts
 from .predictions2 import MODELS
@@ -42,6 +42,10 @@ def case_entry(case, runs: dict, exploratory: bool) -> dict:
         "raw_chars": len(raw),
         "raw_tokens": tokens(raw),
         "facts": [{"item": f.item, "field": f.field, "text": f.text, "line": f.line} for f in facts],
+        # where each failing item's name first appears in the output, and what Claude Code keeps of it: the page
+        # draws the cut from these
+        "at": {f.text: raw.find(f.text) for f in facts if f.field == "name"},
+        "window": window(json.loads((case_dir / "raw.json").read_text(encoding="utf-8"))["exit_code"], raw),
         "views": {
             view: {
                 "text": seen[view],
