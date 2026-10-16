@@ -45,7 +45,7 @@ lines of each tool's source that explain what it did. My predictions: 6 held, 2 
 wrong at first, and two reviews by separate AI agents caught what I had missed of Claude Code's own cut; RESULTS.md
 says what changed after the results.
 
-## Does the model still find the bug?
+## What the model believes after reading it
 
 Part 2 asked two models, GPT-6 Luna and Gemini 3.8 Flash, what they believe after reading each view: did the run
 fail, how many things failed, which ones, and which file to open first. 510 answers, predictions tagged first
