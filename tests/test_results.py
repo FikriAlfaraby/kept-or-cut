@@ -291,4 +291,6 @@ def test_the_site_export_quotes_the_same_numbers(results):
     for case in CASES:
         entry = case_entry(case, RUNS, False)
         for view in SHOWN:
-            assert sum(entry["views"][view]["kept"]) == results["cases"][case.id]["configs"][view]["kept"], case.id
+            assert sum(entry["views"][view]["kept"]) == results["cases"][case.id]["configs"][view]["kept"], (
+                case.id
+            )
