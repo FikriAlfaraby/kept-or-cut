@@ -3,7 +3,8 @@
     uv run python -m kept_or_cut.export > compress.json
 
 For every case: what it is, its needed facts, and, for each Claude Code view, the text the model reads and which
-facts survive in it. The totals are analyze.py's, so the page and RESULTS.md quote the same numbers.
+facts survive in it. The totals are analyze.py's, so the page and RESULTS.md quote the same numbers. Part 2's block
+("beliefs") is beliefs_score.py's, so the page and RESULTS-2.md do too.
 """
 
 from __future__ import annotations
@@ -13,10 +14,15 @@ import subprocess
 import sys
 
 from .analyze import CORPUS, ROOT, summary, tokens
+from .beliefs_score import TRIALS, first_file, load, moved
+from .beliefs_score import VIEWS as READ_VIEWS
+from .beliefs_score import summary as beliefs_summary
 from .cases import CASES, EXPLORATORY
 from .claude_code import VIEWS, views
 from .needed import needed, survives
 from .predictions import verdicts
+from .predictions2 import MODELS
+from .predictions2 import verdicts as verdicts2
 
 SHOWN = ("cc-raw", "cc-rtk", "cc-caveman-engine", "cc-headroom-proxy")
 
@@ -46,6 +52,44 @@ def case_entry(case, runs: dict, exploratory: bool) -> dict:
     }
 
 
+def beliefs(text: dict) -> dict:
+    """Part 2: what the two models answered after reading each view, and the answers the page quotes."""
+    results = beliefs_summary()
+    named = [c.id for c in CASES if results["cases"][c.id]["truth"]["names"]]
+    keys = ("answers", "said_failed", "count_right", "counted_runs", "names_found", "names", "first_right")
+
+    def brief(answer: dict) -> dict:
+        return {
+            "run_failed": answer["run_failed"],
+            "failing_count": answer.get("failing_count"),
+            "listed": len(answer.get("failing") or []),
+            "first_look": answer.get("first_look"),
+        }
+
+    return {
+        "models": {"luna": "GPT-6 Luna", "gemini": "Gemini 3.8 Flash"},
+        "trials": TRIALS,
+        "views": list(READ_VIEWS),
+        "totals": {k: {f: t[f] for f in keys} for k, t in results["totals"].items()},
+        "names": sum(len(results["cases"][c]["truth"]["names"]) for c in named),
+        "names_in_text": {
+            v: sum(text["cases"][c]["configs"][v]["by_field"]["name"][0] for c in named)
+            for v in READ_VIEWS[1:]
+        },
+        "counts": {c.id: results["cases"][c.id]["truth"]["count"] for c in CASES + EXPLORATORY},
+        "moved": moved(),
+        "first_files": {
+            c.id: {f"{m}/{v}": first_file(m, c.id, v) for m in MODELS for v in READ_VIEWS}
+            for c in CASES + EXPLORATORY
+        },
+        "answers": {
+            c.id: {f"{m}/{v}": [brief(a) for a in load(m, c.id, v)] for m in MODELS for v in READ_VIEWS}
+            for c in CASES + EXPLORATORY
+        },
+        "predictions": verdicts2(None, text),
+    }
+
+
 def main() -> None:
     runs = json.loads((CORPUS / "runs.json").read_text(encoding="utf-8"))
     results = summary()
@@ -70,6 +114,7 @@ def main() -> None:
         "views": list(VIEWS),
         "caveman_hook_wraps": [c.id for c in CASES if runs[c.id]["caveman-hook"]["wraps"]],
         "predictions": verdicts(results, runs),
+        "beliefs": beliefs(results),
     }
     json.dump(document, sys.stdout, ensure_ascii=False)
 

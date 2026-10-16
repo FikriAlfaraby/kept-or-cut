@@ -266,3 +266,15 @@ def test_the_readme_quotes_these_numbers():
     assert f"{raw[0]}% and {raw[1]}% through Claude Code alone, where 35% of the names are left" in readme
     assert f"{caveman[0]}% and {caveman[1]}% through caveman's engine, where 68% are" in readme
     assert "all 480 answers on the 16 runs" in readme and "My predictions: 3 held, 4 wrong." in readme
+
+
+def test_the_site_export_quotes_part_2():
+    from kept_or_cut.export import beliefs
+
+    block = beliefs(part1())
+    assert block["totals"] == {
+        k: {f: t[f] for f in block["totals"][k]} for k, t in summary()["totals"].items()
+    }
+    assert block["names"] == 96 and block["names_in_text"]["cc-raw"] == 34
+    assert [p["verdict"] for p in block["predictions"]] == [v["verdict"] for v in verdicts()]
+    assert {a["failing_count"] for a in block["answers"]["pytest-renamed"]["gemini/cc-rtk"]} == {14}
