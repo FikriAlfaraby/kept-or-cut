@@ -68,6 +68,7 @@ def main() -> None:
         + [case_entry(c, runs, True) for c in EXPLORATORY],
         "totals": {config: {k: t[k] for k in keys} for config, t in results["totals"].items()},
         "views": list(VIEWS),
+        "caveman_hook_wraps": [c.id for c in CASES if runs[c.id]["caveman-hook"]["wraps"]],
         "predictions": verdicts(results, runs),
     }
     json.dump(document, sys.stdout, ensure_ascii=False)
