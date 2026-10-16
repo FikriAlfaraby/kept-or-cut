@@ -283,6 +283,6 @@ def test_the_site_export_quotes_part_2():
         ("gemini", "cc-caveman-engine"),
     ]
     quoted = block["replies"]["pytest-setup-errors/cc-rtk"]
-    assert {" ".join(r.split()) for rs in quoted.values() for r in rs} == {
+    assert [json.dumps(parse(r)) for rs in quoted.values() for r in rs] == [
         '{"run_failed": true, "failing_count": null, "failing": [], "first_look": {"file": null, "line": null}}'
-    }
+    ] * 6
