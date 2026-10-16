@@ -1,0 +1,53 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "vitest-many",
+ "view": "cc-raw",
+ "trial": 2,
+ "seconds": 5.2,
+ "reply": "{\"run_failed\":true,\"failing_count\":7,\"failing\":[{\"name\":\"parseMoneyToIDR > parses '800jt' as 800 million\",\"file\":\"test/deterministic.test.ts\",\"line\":14},{\"name\":\"parseMoneyToIDR > parses 'Rp 900 juta' as 900 million\",\"file\":\"test/deterministic.test.ts\",\"line\":35},{\"name\":\"runPipeline > deterministic wins over a conflicting LLM value for budget/intent/urgency\",\"file\":\"test/pipeline.test.ts\",\"line\":42},{\"name\":\"recording 2026-10-14-eval.json > re-scores to the published results\",\"file\":\"test/recordings.test.ts\",\"line\":41},{\"name\":\"the hand review of the eval > covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right\",\"file\":\"test/recordings.test.ts\",\"line\":130},{\"name\":\"the hand review of the eval > leaves one really wrong fact under the word rule, the rest translations, extra places or debatable labels\",\"file\":\"test/recordings.test.ts\",\"line\":157},{\"name\":\"verifyDraft > passes a clean draft that only references facts in the profile\",\"file\":\"test/writer-guardrail.test.ts\",\"line\":34}],\"first_look\":{\"file\":\"src/deterministic.ts\",\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 7,
+  "failing": [
+   {
+    "name": "parseMoneyToIDR > parses '800jt' as 800 million",
+    "file": "test/deterministic.test.ts",
+    "line": 14
+   },
+   {
+    "name": "parseMoneyToIDR > parses 'Rp 900 juta' as 900 million",
+    "file": "test/deterministic.test.ts",
+    "line": 35
+   },
+   {
+    "name": "runPipeline > deterministic wins over a conflicting LLM value for budget/intent/urgency",
+    "file": "test/pipeline.test.ts",
+    "line": 42
+   },
+   {
+    "name": "recording 2026-10-14-eval.json > re-scores to the published results",
+    "file": "test/recordings.test.ts",
+    "line": 41
+   },
+   {
+    "name": "the hand review of the eval > covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right",
+    "file": "test/recordings.test.ts",
+    "line": 130
+   },
+   {
+    "name": "the hand review of the eval > leaves one really wrong fact under the word rule, the rest translations, extra places or debatable labels",
+    "file": "test/recordings.test.ts",
+    "line": 157
+   },
+   {
+    "name": "verifyDraft > passes a clean draft that only references facts in the profile",
+    "file": "test/writer-guardrail.test.ts",
+    "line": 34
+   }
+  ],
+  "first_look": {
+   "file": "src/deterministic.ts",
+   "line": null
+  }
+ }
+}

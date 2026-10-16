@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "gotest-panic",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 2.5,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":\"TestZone\",\"file\":null,\"line\":null}],\"first_look\":{\"file\":null,\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "TestZone",
+    "file": null,
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": null,
+   "line": null
+  }
+ }
+}

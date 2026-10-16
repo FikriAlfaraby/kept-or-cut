@@ -1,0 +1,17 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "pytest-setup-errors",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 4.5,
+ "reply": "{\"run_failed\": true, \"failing_count\": null, \"failing\": [], \"first_look\": {\"file\": null, \"line\": null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": null,
+  "failing": [],
+  "first_look": {
+   "file": null,
+   "line": null
+  }
+ }
+}

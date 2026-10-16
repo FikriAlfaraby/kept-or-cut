@@ -45,6 +45,24 @@ lines of each tool's source that explain what it did. My predictions: 6 held, 2 
 wrong at first, and two reviews by separate AI agents caught what I had missed of Claude Code's own cut; RESULTS.md
 says what changed after the results.
 
+## Does the model still find the bug?
+
+Part 2 asked two models, GPT-6 Luna and Gemini 3.8 Flash, what they believe after reading each view: did the run
+fail, how many things failed, which ones, and which file to open first. 510 answers, predictions tagged first
+([PREDICTIONS-2.md](PREDICTIONS-2.md), tag `v0.2-prereg`), results in [RESULTS-2.md](RESULTS-2.md).
+
+- **The model knows what reaches it.** Both models said the run failed in all 480 answers on the 16 runs, and
+  listed about as many failing tests as the text still held: 31% and 33% through Claude Code alone, where 35% of
+  the names are left; 65% and 66% through caveman's engine, where 68% are.
+- **rtk can leave nothing to act on.** On the run with 18 errors, all six answers say it failed, and none gives a
+  count, a test or a file. On the run with 14 failures and 18 errors, rtk's header says "14 failed"; both models
+  reported 14 in every trial and lost the file with the bug, which every other view led them to.
+- **A total the cut removed is counted or left blank.** Through Claude Code alone, Gemini rebuilt the totals of
+  the two longest pytest runs from pytest's progress bar; Luna mostly said it could not tell, and once answered 83,
+  a number that is not in the text.
+
+My predictions: 3 held, 4 wrong.
+
 ## How it works
 
 - `kept_or_cut/cases.py`: the 16 cases (repository, planted edit, command), plus one added after the results.
@@ -54,6 +72,9 @@ says what changed after the results.
   and `scripts/headroom_proxy.py` write what each tool hands over to `corpus/<case>/`.
 - `kept_or_cut/analyze.py` and `kept_or_cut/predictions.py` compute every number; `tests/` pins them to
   RESULTS.md and this page.
+- Part 2: `kept_or_cut/beliefs.py` asks a model through a local gateway, `scripts/beliefs_run.py` asks all 510
+  questions, and `kept_or_cut/beliefs_score.py` and `kept_or_cut/predictions2.py` score the answers kept in
+  `corpus/beliefs/`.
 
 ## Run it
 
@@ -61,9 +82,10 @@ says what changed after the results.
 uv sync
 uv run pytest
 uv run python -m kept_or_cut.predictions
+uv run python -m kept_or_cut.predictions2
 ```
 
-The corpus is committed, so the tests need none of the three tools. Re-capturing it does; see
+The corpus and the models' answers are committed, so the tests need none of the three tools and no model. Re-capturing it does; see
 [RESULTS.md](RESULTS.md#reproduce).
 
 Apache-2.0.

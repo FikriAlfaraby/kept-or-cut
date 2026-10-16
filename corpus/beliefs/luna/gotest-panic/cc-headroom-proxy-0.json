@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "gotest-panic",
+ "view": "cc-headroom-proxy",
+ "trial": 0,
+ "seconds": 2.8,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":\"TestZone\",\"file\":\"shipping_test.go\",\"line\":24}],\"first_look\":{\"file\":\"shipping.go\",\"line\":12}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "TestZone",
+    "file": "shipping_test.go",
+    "line": 24
+   }
+  ],
+  "first_look": {
+   "file": "shipping.go",
+   "line": 12
+  }
+ }
+}

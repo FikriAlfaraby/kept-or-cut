@@ -1,0 +1,68 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "pytest-many",
+ "view": "cc-rtk",
+ "trial": 2,
+ "seconds": 12.6,
+ "reply": "{\"run_failed\": true,\n \"failing_count\": 44,\n \"failing\": [\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[compliant]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[compliant-vip]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[compliant-colleague]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[compliant-chain]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[approval-replay]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[changed-amount]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[budget-overrun]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[expired-approval]\", \"file\": \"tests/test_mutants.py\", \"line\": 67},\n  {\"name\": \"test_inputs_on_disk_are_the_ones_the_code_builds[agent-approves]\", \"file\": \"tests/test_mutants.py\", \"line\": 67}\n ],\n \"first_look\": {\"file\": \"tests/test_mutants.py\", \"line\": 67}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 44,
+  "failing": [
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant-vip]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant-colleague]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant-chain]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[approval-replay]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[changed-amount]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[budget-overrun]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[expired-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[agent-approves]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   }
+  ],
+  "first_look": {
+   "file": "tests/test_mutants.py",
+   "line": 67
+  }
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "eslint-many",
+ "view": "cc-caveman-engine",
+ "trial": 0,
+ "seconds": 6.9,
+ "reply": "{\"run_failed\":true,\"failing_count\":12,\"failing\":[{\"name\":\"'staleLabel' is never reassigned. Use 'const' instead\",\"file\":\"classify.ts\",\"line\":40},{\"name\":\"'staleLabel' is assigned a value but never used\",\"file\":\"classify.ts\",\"line\":40},{\"name\":\"'unusedCutoff' is assigned a value but never used\",\"file\":\"classify.ts\",\"line\":41},{\"name\":\"'retryCount' is never reassigned. Use 'const' instead\",\"file\":\"classify.ts\",\"line\":87},{\"name\":\"'retryCount' is assigned a value but never used\",\"file\":\"classify.ts\",\"line\":87},{\"name\":\"'unusedLimit' is assigned a value but never used\",\"file\":\"classify.ts\",\"line\":88},{\"name\":\"'lastMerge' is never reassigned. Use 'const' instead\",\"file\":null,\"line\":12},{\"name\":\"'lastMerge' is assigned a value but never used\",\"file\":null,\"line\":12},{\"name\":\"'unusedWeight' is assigned a value but never used\",\"file\":null,\"line\":13},{\"name\":\"'draftCount' is never reassigned. Use 'const' instead\",\"file\":null,\"line\":56},{\"name\":\"'draftCount' is assigned a value but never used\",\"file\":null,\"line\":56},{\"name\":\"'unusedTone' is assigned a value but never used\",\"file\":null,\"line\":57}],\"first_look\":{\"file\":\"classify.ts\",\"line\":40}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 12,
+  "failing": [
+   {
+    "name": "'staleLabel' is never reassigned. Use 'const' instead",
+    "file": "classify.ts",
+    "line": 40
+   },
+   {
+    "name": "'staleLabel' is assigned a value but never used",
+    "file": "classify.ts",
+    "line": 40
+   },
+   {
+    "name": "'unusedCutoff' is assigned a value but never used",
+    "file": "classify.ts",
+    "line": 41
+   },
+   {
+    "name": "'retryCount' is never reassigned. Use 'const' instead",
+    "file": "classify.ts",
+    "line": 87
+   },
+   {
+    "name": "'retryCount' is assigned a value but never used",
+    "file": "classify.ts",
+    "line": 87
+   },
+   {
+    "name": "'unusedLimit' is assigned a value but never used",
+    "file": "classify.ts",
+    "line": 88
+   },
+   {
+    "name": "'lastMerge' is never reassigned. Use 'const' instead",
+    "file": null,
+    "line": 12
+   },
+   {
+    "name": "'lastMerge' is assigned a value but never used",
+    "file": null,
+    "line": 12
+   },
+   {
+    "name": "'unusedWeight' is assigned a value but never used",
+    "file": null,
+    "line": 13
+   },
+   {
+    "name": "'draftCount' is never reassigned. Use 'const' instead",
+    "file": null,
+    "line": 56
+   },
+   {
+    "name": "'draftCount' is assigned a value but never used",
+    "file": null,
+    "line": 56
+   },
+   {
+    "name": "'unusedTone' is assigned a value but never used",
+    "file": null,
+    "line": 57
+   }
+  ],
+  "first_look": {
+   "file": "classify.ts",
+   "line": 40
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "gotest-one",
+ "view": "full",
+ "trial": 1,
+ "seconds": 5.5,
+ "reply": "{\"run_failed\":true,\"failing_count\":4,\"failing\":[{\"name\":\"TestCost\",\"file\":\"shipping_test.go\",\"line\":18},{\"name\":\"TestCost\",\"file\":\"shipping_test.go\",\"line\":18},{\"name\":\"TestCost\",\"file\":\"shipping_test.go\",\"line\":18},{\"name\":\"TestCost\",\"file\":\"shipping_test.go\",\"line\":18}],\"first_look\":{\"file\":\"shipping.go\",\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 4,
+  "failing": [
+   {
+    "name": "TestCost",
+    "file": "shipping_test.go",
+    "line": 18
+   },
+   {
+    "name": "TestCost",
+    "file": "shipping_test.go",
+    "line": 18
+   },
+   {
+    "name": "TestCost",
+    "file": "shipping_test.go",
+    "line": 18
+   },
+   {
+    "name": "TestCost",
+    "file": "shipping_test.go",
+    "line": 18
+   }
+  ],
+  "first_look": {
+   "file": "shipping.go",
+   "line": null
+  }
+ }
+}

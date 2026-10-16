@@ -1,0 +1,173 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "tsc-many",
+ "view": "cc-caveman-engine",
+ "trial": 0,
+ "seconds": 23.8,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": null,\n  \"failing\": [\n    {\"name\": null, \"file\": \"eval/score.ts\", \"line\": 157},\n    {\"name\": null, \"file\": \"eval/score.ts\", \"line\": 158},\n    {\"name\": null, \"file\": \"eval/score.ts\", \"line\": 158},\n    {\"name\": null, \"file\": \"eval/score.ts\", \"line\": 161},\n    {\"name\": null, \"file\": \"eval/score.ts\", \"line\": 161},\n    {\"name\": null, \"file\": \"src/guardrail.ts\", \"line\": 117},\n    {\"name\": null, \"file\": \"src/merge.ts\", \"line\": 15},\n    {\"name\": null, \"file\": \"src/merge.ts\", \"line\": 15},\n    {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": 72},\n    {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": 83},\n    {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": 103},\n    {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": 104},\n    {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": 108},\n    {\"name\": null, \"file\": \"src/schema.ts\", \"line\": 82},\n    {\"name\": null, \"file\": \"src/writer-guardrail.ts\", \"line\": 55},\n    {\"name\": null, \"file\": \"src/writer-guardrail.ts\", \"line\": 57},\n    {\"name\": null, \"file\": \"src/writer-guardrail.ts\", \"line\": 58},\n    {\"name\": null, \"file\": \"test/qualify.test.ts\", \"line\": 36},\n    {\"name\": null, \"file\": \"test/qualify.test.ts\", \"line\": 46},\n    {\"name\": null, \"file\": \"test/qualify.test.ts\", \"line\": 55},\n    {\"name\": null, \"file\": \"test/qualify.test.ts\", \"line\": 63},\n    {\"name\": null, \"file\": \"test/qualify.test.ts\", \"line\": 69},\n    {\"name\": null, \"file\": \"test/qualify.test.ts\", \"line\": 76},\n    {\"name\": null, \"file\": \"test/qualify.test.ts\", \"line\": 93},\n    {\"name\": null, \"file\": \"test/recordings.test.ts\", \"line\": 82},\n    {\"name\": null, \"file\": \"test/recordings.test.ts\", \"line\": 94},\n    {\"name\": null, \"file\": \"test/recordings.test.ts\", \"line\": 99},\n    {\"name\": null, \"file\": \"test/recordings.test.ts\", \"line\": 131},\n    {\"name\": null, \"file\": \"test/recordings.test.ts\", \"line\": 154},\n    {\"name\": null, \"file\": \"test/writer-guardrail.test.ts\", \"line\": 21},\n    {\"name\": null, \"file\": \"test/writer-guardrail.test.ts\", \"line\": 90}\n  ],\n  \"first_look\": {\"file\": \"src/schema.ts\", \"line\": 82}\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": null,
+  "failing": [
+   {
+    "name": null,
+    "file": "eval/score.ts",
+    "line": 157
+   },
+   {
+    "name": null,
+    "file": "eval/score.ts",
+    "line": 158
+   },
+   {
+    "name": null,
+    "file": "eval/score.ts",
+    "line": 158
+   },
+   {
+    "name": null,
+    "file": "eval/score.ts",
+    "line": 161
+   },
+   {
+    "name": null,
+    "file": "eval/score.ts",
+    "line": 161
+   },
+   {
+    "name": null,
+    "file": "src/guardrail.ts",
+    "line": 117
+   },
+   {
+    "name": null,
+    "file": "src/merge.ts",
+    "line": 15
+   },
+   {
+    "name": null,
+    "file": "src/merge.ts",
+    "line": 15
+   },
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": 72
+   },
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": 83
+   },
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": 103
+   },
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": 104
+   },
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": 108
+   },
+   {
+    "name": null,
+    "file": "src/schema.ts",
+    "line": 82
+   },
+   {
+    "name": null,
+    "file": "src/writer-guardrail.ts",
+    "line": 55
+   },
+   {
+    "name": null,
+    "file": "src/writer-guardrail.ts",
+    "line": 57
+   },
+   {
+    "name": null,
+    "file": "src/writer-guardrail.ts",
+    "line": 58
+   },
+   {
+    "name": null,
+    "file": "test/qualify.test.ts",
+    "line": 36
+   },
+   {
+    "name": null,
+    "file": "test/qualify.test.ts",
+    "line": 46
+   },
+   {
+    "name": null,
+    "file": "test/qualify.test.ts",
+    "line": 55
+   },
+   {
+    "name": null,
+    "file": "test/qualify.test.ts",
+    "line": 63
+   },
+   {
+    "name": null,
+    "file": "test/qualify.test.ts",
+    "line": 69
+   },
+   {
+    "name": null,
+    "file": "test/qualify.test.ts",
+    "line": 76
+   },
+   {
+    "name": null,
+    "file": "test/qualify.test.ts",
+    "line": 93
+   },
+   {
+    "name": null,
+    "file": "test/recordings.test.ts",
+    "line": 82
+   },
+   {
+    "name": null,
+    "file": "test/recordings.test.ts",
+    "line": 94
+   },
+   {
+    "name": null,
+    "file": "test/recordings.test.ts",
+    "line": 99
+   },
+   {
+    "name": null,
+    "file": "test/recordings.test.ts",
+    "line": 131
+   },
+   {
+    "name": null,
+    "file": "test/recordings.test.ts",
+    "line": 154
+   },
+   {
+    "name": null,
+    "file": "test/writer-guardrail.test.ts",
+    "line": 21
+   },
+   {
+    "name": null,
+    "file": "test/writer-guardrail.test.ts",
+    "line": 90
+   }
+  ],
+  "first_look": {
+   "file": "src/schema.ts",
+   "line": 82
+  }
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "gotest-one",
+ "view": "cc-headroom-proxy",
+ "trial": 2,
+ "seconds": 3.5,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":\"TestCost\",\"file\":\"shipping_test.go\",\"line\":18}],\"first_look\":{\"file\":\"shipping_test.go\",\"line\":18}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "TestCost",
+    "file": "shipping_test.go",
+    "line": 18
+   }
+  ],
+  "first_look": {
+   "file": "shipping_test.go",
+   "line": 18
+  }
+ }
+}

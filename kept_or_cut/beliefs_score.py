@@ -7,9 +7,11 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter
 from pathlib import Path
 
 from .analyze import CORPUS
+from .beliefs import parse
 from .cases import CASES, EXPLORATORY
 from .claude_code import views as cc_views
 from .needed import needed
@@ -84,15 +86,36 @@ def score(t: dict, answer: dict | None) -> dict:
 
 
 def load(model: str, case_id: str, view: str) -> list[dict | None]:
+    """Each trial's answer, parsed again from the reply as received, so a parser fix reaches every stored answer."""
     out = []
     for trial in range(TRIALS):
         path = answer_path(model, case_id, view, trial)
-        out.append(json.loads(path.read_text(encoding="utf-8"))["answer"] if path.exists() else None)
+        out.append(parse(json.loads(path.read_text(encoding="utf-8"))["reply"]) if path.exists() else None)
     return out
 
 
 def majority(flags: list[bool]) -> bool:
     return sum(flags) * 2 > len(flags)
+
+
+def first_file(model: str, case_id: str, view: str) -> str | None:
+    """The file a model would open first, by base name, when 2 of 3 trials agree ("" is no file); else None."""
+    files = [base(((a or {}).get("first_look") or {}).get("file")) for a in load(model, case_id, view)]
+    file, n = Counter(files).most_common(1)[0]
+    return file if n * 2 > len(files) else None
+
+
+def moved(models: tuple[str, ...] = ("luna", "gemini")) -> dict[str, list[str]]:
+    """Exploratory, added after the results: the runs where a view changes the file the model would open first,
+    compared with the full output. The pre-registered score (a planted file) is low for every view, because on
+    several runs both models open the test file first even with the full output."""
+    return {
+        f"{model}/{view}": [
+            c.id for c in CASES if first_file(model, c.id, view) != first_file(model, c.id, "full")
+        ]
+        for model in models
+        for view in VIEWS[1:]
+    }
 
 
 def summary(models: tuple[str, ...] = ("luna", "gemini")) -> dict:
@@ -124,4 +147,4 @@ def summary(models: tuple[str, ...] = ("luna", "gemini")) -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(summary(), indent=1))
+    print(json.dumps({"totals": summary()["totals"], "moved": moved()}, indent=1))

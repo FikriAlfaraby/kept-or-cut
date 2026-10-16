@@ -1,0 +1,53 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "vitest-many",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 4.5,
+ "reply": "{\"run_failed\":true,\"failing_count\":7,\"failing\":[{\"name\":\"parseMoneyToIDR parses '800jt' as 800 million\",\"file\":\"test/deterministic.test.ts\",\"line\":14},{\"name\":\"parseMoneyToIDR parses 'Rp 900 juta' as 900 million\",\"file\":\"test/deterministic.test.ts\",\"line\":35},{\"name\":\"runPipeline deterministic wins over a conflicting LLM value for budget/intent/urgency\",\"file\":\"test/pipeline.test.ts\",\"line\":42},{\"name\":\"recording 2026-10-14-eval.json re-scores to the published results\",\"file\":\"test/recordings.test.ts\",\"line\":41},{\"name\":\"the hand review of the eval covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right\",\"file\":\"test/recordings.test.ts\",\"line\":130},{\"name\":null,\"file\":null,\"line\":null},{\"name\":null,\"file\":null,\"line\":null}],\"first_look\":{\"file\":\"test/deterministic.test.ts\",\"line\":14}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 7,
+  "failing": [
+   {
+    "name": "parseMoneyToIDR parses '800jt' as 800 million",
+    "file": "test/deterministic.test.ts",
+    "line": 14
+   },
+   {
+    "name": "parseMoneyToIDR parses 'Rp 900 juta' as 900 million",
+    "file": "test/deterministic.test.ts",
+    "line": 35
+   },
+   {
+    "name": "runPipeline deterministic wins over a conflicting LLM value for budget/intent/urgency",
+    "file": "test/pipeline.test.ts",
+    "line": 42
+   },
+   {
+    "name": "recording 2026-10-14-eval.json re-scores to the published results",
+    "file": "test/recordings.test.ts",
+    "line": 41
+   },
+   {
+    "name": "the hand review of the eval covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right",
+    "file": "test/recordings.test.ts",
+    "line": 130
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": null
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": "test/deterministic.test.ts",
+   "line": 14
+  }
+ }
+}

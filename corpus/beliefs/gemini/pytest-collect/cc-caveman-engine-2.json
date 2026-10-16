@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "pytest-collect",
+ "view": "cc-caveman-engine",
+ "trial": 2,
+ "seconds": 6.1,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 1,\n  \"failing\": [\n    {\n      \"name\": null,\n      \"file\": \"tests/test_probe.py\",\n      \"line\": 27\n    }\n  ],\n  \"first_look\": {\n    \"file\": \"tests/test_probe.py\",\n    \"line\": 27\n  }\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "tests/test_probe.py",
+    "line": 27
+   }
+  ],
+  "first_look": {
+   "file": "tests/test_probe.py",
+   "line": 27
+  }
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "eslint-many",
+ "view": "cc-caveman-engine",
+ "trial": 2,
+ "seconds": 7.5,
+ "reply": "{\"run_failed\":true,\"failing_count\":12,\"failing\":[{\"name\":null,\"file\":\"classify.ts\",\"line\":40},{\"name\":null,\"file\":\"classify.ts\",\"line\":40},{\"name\":null,\"file\":\"classify.ts\",\"line\":41},{\"name\":null,\"file\":null,\"line\":87},{\"name\":null,\"file\":null,\"line\":87},{\"name\":null,\"file\":null,\"line\":88},{\"name\":null,\"file\":null,\"line\":12},{\"name\":null,\"file\":null,\"line\":12},{\"name\":null,\"file\":null,\"line\":13},{\"name\":null,\"file\":null,\"line\":56},{\"name\":null,\"file\":null,\"line\":56},{\"name\":null,\"file\":null,\"line\":57}],\"first_look\":{\"file\":\"classify.ts\",\"line\":40}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 12,
+  "failing": [
+   {
+    "name": null,
+    "file": "classify.ts",
+    "line": 40
+   },
+   {
+    "name": null,
+    "file": "classify.ts",
+    "line": 40
+   },
+   {
+    "name": null,
+    "file": "classify.ts",
+    "line": 41
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 87
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 87
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 88
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 12
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 12
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 13
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 56
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 56
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": 57
+   }
+  ],
+  "first_look": {
+   "file": "classify.ts",
+   "line": 40
+  }
+ }
+}

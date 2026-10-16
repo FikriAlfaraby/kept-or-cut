@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "tsc-one",
+ "view": "cc-caveman-engine",
+ "trial": 2,
+ "seconds": 5.8,
+ "reply": "{\"run_failed\": true, \"failing_count\": 1, \"failing\": [{\"name\": null, \"file\": \"src/qualify.ts\", \"line\": 36}], \"first_look\": {\"file\": \"src/qualify.ts\", \"line\": 36}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": 36
+   }
+  ],
+  "first_look": {
+   "file": "src/qualify.ts",
+   "line": 36
+  }
+ }
+}

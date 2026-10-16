@@ -1,0 +1,33 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "eslint-few",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 11.7,
+ "reply": "```json\n{\"run_failed\": true,\n \"failing_count\": 3,\n \"failing\": [\n   {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": null},\n   {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": null},\n   {\"name\": null, \"file\": \"src/qualify.ts\", \"line\": null}\n ],\n \"first_look\": {\"file\": \"src/qualify.ts\", \"line\": null}}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 3,
+  "failing": [
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": "src/qualify.ts",
+   "line": null
+  }
+ }
+}

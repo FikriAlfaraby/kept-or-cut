@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-import",
+ "view": "cc-raw",
+ "trial": 0,
+ "seconds": 3.6,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":9}],\"first_look\":{\"file\":\"src/toko_wa/tools.py\",\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": 9
+   }
+  ],
+  "first_look": {
+   "file": "src/toko_wa/tools.py",
+   "line": null
+  }
+ }
+}

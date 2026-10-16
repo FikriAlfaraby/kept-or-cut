@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "gotest-panic",
+ "view": "cc-rtk",
+ "trial": 2,
+ "seconds": 18.0,
+ "reply": "```json\n{\"run_failed\": true,\n \"failing_count\": 1,\n \"failing\": [{\"name\": \"TestZone\", \"file\": null, \"line\": null}],\n \"first_look\": {\"file\": null, \"line\": null}}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "TestZone",
+    "file": null,
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": null,
+   "line": null
+  }
+ }
+}

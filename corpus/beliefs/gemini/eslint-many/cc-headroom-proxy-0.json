@@ -1,0 +1,78 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "eslint-many",
+ "view": "cc-headroom-proxy",
+ "trial": 0,
+ "seconds": 9.5,
+ "reply": "{\n  \"run_failed\": true,\n  \"failing_count\": 12,\n  \"failing\": [\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts\", \"line\": 40},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts\", \"line\": 40},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts\", \"line\": 41},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/guardrail.ts\", \"line\": 87},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/guardrail.ts\", \"line\": 87},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/guardrail.ts\", \"line\": 88},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/merge.ts\", \"line\": 12},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/merge.ts\", \"line\": 12},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/merge.ts\", \"line\": 13},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/writer.ts\", \"line\": 56},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/writer.ts\", \"line\": 56},\n    {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/writer.ts\", \"line\": 57}\n  ],\n  \"first_look\": {\"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts\", \"line\": 40}\n}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 12,
+  "failing": [
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts",
+    "line": 40
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts",
+    "line": 40
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts",
+    "line": 41
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/guardrail.ts",
+    "line": 87
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/guardrail.ts",
+    "line": 87
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/guardrail.ts",
+    "line": 88
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/merge.ts",
+    "line": 12
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/merge.ts",
+    "line": 12
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/merge.ts",
+    "line": 13
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/writer.ts",
+    "line": 56
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/writer.ts",
+    "line": 56
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/writer.ts",
+    "line": 57
+   }
+  ],
+  "first_look": {
+   "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts",
+   "line": 40
+  }
+ }
+}

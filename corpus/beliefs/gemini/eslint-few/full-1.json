@@ -1,0 +1,33 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "eslint-few",
+ "view": "full",
+ "trial": 1,
+ "seconds": 6.4,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 3,\n  \"failing\": [\n    {\n      \"name\": null,\n      \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\",\n      \"line\": 37\n    },\n    {\n      \"name\": null,\n      \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\",\n      \"line\": 38\n    },\n    {\n      \"name\": null,\n      \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\",\n      \"line\": 38\n    }\n  ],\n  \"first_look\": {\n    \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\",\n    \"line\": 37\n  }\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 3,
+  "failing": [
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+    "line": 37
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+    "line": 38
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+    "line": 38
+   }
+  ],
+  "first_look": {
+   "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+   "line": 37
+  }
+ }
+}

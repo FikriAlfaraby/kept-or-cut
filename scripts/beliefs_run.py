@@ -4,6 +4,8 @@
     uv run python scripts/beliefs_run.py luna       # one model
 
 Answers go to corpus/beliefs/<model>/<case>/<view>-<trial>.json with the reply as received and the parsed JSON.
+A reply that holds no complete answer (one was cut off mid-string) is asked again; the earlier reply stays in the
+record under "earlier".
 """
 
 import json
@@ -32,11 +34,18 @@ def main() -> None:
             for view in VIEWS:
                 for trial in range(TRIALS):
                     path = answer_path(model, case.id, view, trial)
-                    if not path.exists():
-                        jobs.append((model, case, view, trial, texts[view], path))
+                    earlier = []
+                    if path.exists():
+                        old = json.loads(path.read_text(encoding="utf-8"))
+                        if parse(old["reply"]) is not None:
+                            continue
+                        earlier = old.get("earlier", []) + [
+                            {"reply": old["reply"], "seconds": old["seconds"]}
+                        ]
+                    jobs.append((model, case, view, trial, texts[view], path, earlier))
 
     def one(job):
-        model, case, view, trial, text, path = job
+        model, case, view, trial, text, path, earlier = job
         started = time.time()
         reply = ask(model, shlex.join(case.raw), text, key)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -49,6 +58,8 @@ def main() -> None:
             "reply": reply,
             "answer": parse(reply),
         }
+        if earlier:
+            record["earlier"] = earlier
         path.write_text(json.dumps(record, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         return f"{model} {case.id} {view} {trial} {record['seconds']}s parsed={record['answer'] is not None}"
 

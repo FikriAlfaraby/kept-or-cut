@@ -1,0 +1,108 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-setup-errors",
+ "view": "full",
+ "trial": 1,
+ "seconds": 6.0,
+ "reply": "{\"run_failed\":true,\"failing_count\":18,\"failing\":[{\"name\":\"test_the_chat_number_finds_the_customer\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_search_matches_every_word\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_ongkir_charges_every_started_kilogram\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_resellers_pay_the_reseller_price_and_cannot_add_a_promo\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_promos_need_a_valid_code_and_the_minimum\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_cod_only_where_the_courier_offers_it_and_up_to_the_limit\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_out_of_stock_and_unknown_items_are_refused\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_payment_needs_the_exact_total_with_the_kode_unik\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_a_paid_transfer_cannot_pay_twice\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_items_change_only_before_payment_and_stock_follows\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_address_changes_before_shipping_and_never_change_a_paid_ongkir\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_returns_need_the_window_the_video_and_a_real_reason\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_tracking_only_for_shipped_orders\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_calculate_takes_arithmetic_only\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_the_seeded_orders_follow_the_rules\",\"file\":\"tests/test_tools.py\",\"line\":14},{\"name\":\"test_a_hand_off_is_recorded_with_its_order_and_reason_only\",\"file\":\"tests/test_tools.py\",\"line\":14}],\"first_look\":{\"file\":\"tests/test_tools.py\",\"line\":14}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 18,
+  "failing": [
+   {
+    "name": "test_the_chat_number_finds_the_customer",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_search_matches_every_word",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_ongkir_charges_every_started_kilogram",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_resellers_pay_the_reseller_price_and_cannot_add_a_promo",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_promos_need_a_valid_code_and_the_minimum",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_cod_only_where_the_courier_offers_it_and_up_to_the_limit",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_out_of_stock_and_unknown_items_are_refused",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_payment_needs_the_exact_total_with_the_kode_unik",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_a_paid_transfer_cannot_pay_twice",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_items_change_only_before_payment_and_stock_follows",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_address_changes_before_shipping_and_never_change_a_paid_ongkir",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_returns_need_the_window_the_video_and_a_real_reason",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_tracking_only_for_shipped_orders",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_calculate_takes_arithmetic_only",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_the_seeded_orders_follow_the_rules",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_a_hand_off_is_recorded_with_its_order_and_reason_only",
+    "file": "tests/test_tools.py",
+    "line": 14
+   }
+  ],
+  "first_look": {
+   "file": "tests/test_tools.py",
+   "line": 14
+  }
+ }
+}

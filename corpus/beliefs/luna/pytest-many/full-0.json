@@ -1,0 +1,238 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-many",
+ "view": "full",
+ "trial": 0,
+ "seconds": 12.6,
+ "reply": "{\"run_failed\":true,\"failing_count\":44,\"failing\":[{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[compliant]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[compliant-vip]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[compliant-colleague]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[compliant-chain]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[approval-replay]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[changed-amount]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[budget-overrun]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[expired-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[agent-approves]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[machine-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[no-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[revoked-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[approval-after-refund]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[expired-delegation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[self-delegation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[unused-self-delegation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[widened-sub-delegation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[no-delegation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[unknown-actor]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[wrong-digest-citation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[no-citation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[cites-an-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[vip-no-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[vip-uppercase-alone]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[vip-uppercase-alongside]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[vip-lookalike-alongside]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[self-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[unused-self-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[replay-time-skew]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[replay-duplicate-parent]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[replay-miscount]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[made-up-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[made-up-delegation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[made-up-source]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope-unknown]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope-failed]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[same-timestamps]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[two-use-approval]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[revoked-after-use]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[two-sources]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[compliant-otlp]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_inputs_on_disk_are_the_ones_the_code_builds[upstream-revocation]\",\"file\":\"tests/test_mutants.py\",\"line\":67},{\"name\":\"test_rows_follow_the_recorder_defaults_and_seal_with_an_end_event\",\"file\":\"tests/test_trace.py\",\"line\":41}],\"first_look\":{\"file\":\"tests/test_trace.py\",\"line\":41}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 44,
+  "failing": [
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant-vip]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant-colleague]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant-chain]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[approval-replay]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[changed-amount]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[budget-overrun]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[expired-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[agent-approves]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[machine-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[no-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[revoked-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[approval-after-refund]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[expired-delegation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[self-delegation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[unused-self-delegation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[widened-sub-delegation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[no-delegation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[unknown-actor]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[wrong-digest-citation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[no-citation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[cites-an-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[vip-no-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[vip-uppercase-alone]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[vip-uppercase-alongside]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[vip-lookalike-alongside]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[self-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[unused-self-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[replay-time-skew]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[replay-duplicate-parent]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[replay-miscount]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[made-up-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[made-up-delegation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[made-up-source]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope-unknown]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope-failed]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[same-timestamps]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[two-use-approval]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[revoked-after-use]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[two-sources]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[compliant-otlp]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_inputs_on_disk_are_the_ones_the_code_builds[upstream-revocation]",
+    "file": "tests/test_mutants.py",
+    "line": 67
+   },
+   {
+    "name": "test_rows_follow_the_recorder_defaults_and_seal_with_an_end_event",
+    "file": "tests/test_trace.py",
+    "line": 41
+   }
+  ],
+  "first_look": {
+   "file": "tests/test_trace.py",
+   "line": 41
+  }
+ }
+}

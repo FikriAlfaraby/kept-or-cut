@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "pytest-import",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 7.5,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 1,\n  \"failing\": [\n    {\n      \"name\": null,\n      \"file\": \"tests/test_tools.py\",\n      \"line\": 9\n    }\n  ],\n  \"first_look\": {\n    \"file\": \"src/toko_wa/tools.py\",\n    \"line\": null\n  }\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": 9
+   }
+  ],
+  "first_look": {
+   "file": "src/toko_wa/tools.py",
+   "line": null
+  }
+ }
+}

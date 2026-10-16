@@ -1,0 +1,83 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "pytest-renamed",
+ "view": "cc-caveman-engine",
+ "trial": 0,
+ "seconds": 40.2,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 32,\n  \"failing\": [\n    {\"name\": \"test_the_chat_number_finds_the_customer\", \"file\": \"tests/test_tools.py\", \"line\": 14},\n    {\"name\": \"test_search_matches_every_word\", \"file\": null, \"line\": null},\n    {\"name\": \"test_ongkir_charges_every_started_kilogram\", \"file\": null, \"line\": null},\n    {\"name\": \"test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock\", \"file\": null, \"line\": null},\n    {\"name\": \"test_resellers_pay_the_reseller_price_and_cannot_add_a_promo\", \"file\": null, \"line\": null},\n    {\"name\": \"test_promos_need_a_valid_code_and_the_minimum\", \"file\": null, \"line\": null},\n    {\"name\": \"test_cod_only_where_the_courier_offers_it_and_up_to_the_limit\", \"file\": null, \"line\": null},\n    {\"name\": \"test_out_of_stock_and_unknown_items_are_refused\", \"file\": null, \"line\": null},\n    {\"name\": null, \"file\": \"tests/test_tasks.py\", \"line\": 58},\n    {\"name\": \"test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges\", \"file\": null, \"line\": null},\n    {\"name\": \"test_reference_actions_run_without_error[smoke-01]\", \"file\": \"tests/test_tasks.py\", \"line\": null},\n    {\"name\": \"test_reference_actions_run_without_error[smoke-02]\", \"file\": \"tests/test_tasks.py\", \"line\": null},\n    {\"name\": \"test_reference_actions_run_without_error[ts-01]\", \"file\": \"tests/test_tasks.py\", \"line\": null}\n  ],\n  \"first_look\": {\"file\": \"src/toko_wa/tools.py\", \"line\": 336}\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 32,
+  "failing": [
+   {
+    "name": "test_the_chat_number_finds_the_customer",
+    "file": "tests/test_tools.py",
+    "line": 14
+   },
+   {
+    "name": "test_search_matches_every_word",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": "test_ongkir_charges_every_started_kilogram",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": "test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": "test_resellers_pay_the_reseller_price_and_cannot_add_a_promo",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": "test_promos_need_a_valid_code_and_the_minimum",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": "test_cod_only_where_the_courier_offers_it_and_up_to_the_limit",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": "test_out_of_stock_and_unknown_items_are_refused",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges",
+    "file": null,
+    "line": null
+   },
+   {
+    "name": "test_reference_actions_run_without_error[smoke-01]",
+    "file": "tests/test_tasks.py",
+    "line": null
+   },
+   {
+    "name": "test_reference_actions_run_without_error[smoke-02]",
+    "file": "tests/test_tasks.py",
+    "line": null
+   },
+   {
+    "name": "test_reference_actions_run_without_error[ts-01]",
+    "file": "tests/test_tasks.py",
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": "src/toko_wa/tools.py",
+   "line": 336
+  }
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "tsc-one",
+ "view": "cc-headroom-proxy",
+ "trial": 2,
+ "seconds": 4.6,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":null,\"file\":\"src/qualify.ts\",\"line\":36}],\"first_look\":{\"file\":\"src/qualify.ts\",\"line\":36}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "src/qualify.ts",
+    "line": 36
+   }
+  ],
+  "first_look": {
+   "file": "src/qualify.ts",
+   "line": 36
+  }
+ }
+}

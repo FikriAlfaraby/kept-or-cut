@@ -1,0 +1,17 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-setup-errors",
+ "view": "cc-rtk",
+ "trial": 2,
+ "seconds": 6.9,
+ "reply": "{\"run_failed\": true, \"failing_count\": null, \"failing\": [], \"first_look\": {\"file\": null, \"line\": null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": null,
+  "failing": [],
+  "first_look": {
+   "file": null,
+   "line": null
+  }
+ }
+}

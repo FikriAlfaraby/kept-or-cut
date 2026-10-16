@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "traceback-deep",
+ "view": "cc-caveman-engine",
+ "trial": 0,
+ "seconds": 5.4,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":null,\"file\":\"orders.py\",\"line\":7}],\"first_look\":{\"file\":\"orders.py\",\"line\":7}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "orders.py",
+    "line": 7
+   }
+  ],
+  "first_look": {
+   "file": "orders.py",
+   "line": 7
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "eslint-many",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 9.7,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 12,\n  \"failing\": [\n    {\"name\": null, \"file\": \"src/classify.ts\", \"line\": null},\n    {\"name\": null, \"file\": \"src/guardrail.ts\", \"line\": null},\n    {\"name\": null, \"file\": \"src/merge.ts\", \"line\": null},\n    {\"name\": null, \"file\": \"src/writer.ts\", \"line\": null}\n  ],\n  \"first_look\": {\"file\": \"src/classify.ts\", \"line\": null}\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 12,
+  "failing": [
+   {
+    "name": null,
+    "file": "src/classify.ts",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "src/guardrail.ts",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "src/merge.ts",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "src/writer.ts",
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": "src/classify.ts",
+   "line": null
+  }
+ }
+}

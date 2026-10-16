@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "gotest-one",
+ "view": "cc-caveman-engine",
+ "trial": 0,
+ "seconds": 4.1,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":\"TestCost\",\"file\":\"shipping_test.go\",\"line\":18}],\"first_look\":{\"file\":\"shipping.go\",\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "TestCost",
+    "file": "shipping_test.go",
+    "line": 18
+   }
+  ],
+  "first_look": {
+   "file": "shipping.go",
+   "line": null
+  }
+ }
+}

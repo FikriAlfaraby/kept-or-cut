@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "gotest-panic",
+ "view": "cc-raw",
+ "trial": 1,
+ "seconds": 79.6,
+ "reply": "```json\n{\n \"run_failed\": true,\n \"failing_count\": 1,\n \"failing\": [{\"name\": \"TestZone\", \"file\": \"shipping_test.go\", \"line\": 24}],\n \"first_look\": {\"file\": \"shipping.go\", \"line\": 12}\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "TestZone",
+    "file": "shipping_test.go",
+    "line": 24
+   }
+  ],
+  "first_look": {
+   "file": "shipping.go",
+   "line": 12
+  }
+ }
+}

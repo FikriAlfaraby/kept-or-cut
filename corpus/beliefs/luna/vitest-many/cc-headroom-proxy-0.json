@@ -1,0 +1,53 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "vitest-many",
+ "view": "cc-headroom-proxy",
+ "trial": 0,
+ "seconds": 8.2,
+ "reply": "{\"run_failed\":true,\"failing_count\":7,\"failing\":[{\"name\":\"parseMoneyToIDR parses '800jt' 800 million\",\"file\":\"test/deterministic.test.ts\",\"line\":14},{\"name\":\"parseMoneyToIDR parses 'Rp 900 juta' 900 million\",\"file\":\"test/deterministic.test.ts\",\"line\":35},{\"name\":\"runPipeline deterministic wins over conflicting LLM value for budget/intent/urgency\",\"file\":\"test/pipeline.test.ts\",\"line\":42},{\"name\":\"2026-10-14-eval.json re-scores published results\",\"file\":\"test/recordings.test.ts\",\"line\":41},{\"name\":\"hand review eval covers every fact scorer marks wrong, says left empty, and fixes made right\",\"file\":\"test/recordings.test.ts\",\"line\":130},{\"name\":null,\"file\":\"test/recordings.test.ts\",\"line\":157},{\"name\":\"verifyDraft passes clean draft only references facts in profile\",\"file\":\"test/writer-guardrail.test.ts\",\"line\":34}],\"first_look\":{\"file\":\"test/deterministic.test.ts\",\"line\":14}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 7,
+  "failing": [
+   {
+    "name": "parseMoneyToIDR parses '800jt' 800 million",
+    "file": "test/deterministic.test.ts",
+    "line": 14
+   },
+   {
+    "name": "parseMoneyToIDR parses 'Rp 900 juta' 900 million",
+    "file": "test/deterministic.test.ts",
+    "line": 35
+   },
+   {
+    "name": "runPipeline deterministic wins over conflicting LLM value for budget/intent/urgency",
+    "file": "test/pipeline.test.ts",
+    "line": 42
+   },
+   {
+    "name": "2026-10-14-eval.json re-scores published results",
+    "file": "test/recordings.test.ts",
+    "line": 41
+   },
+   {
+    "name": "hand review eval covers every fact scorer marks wrong, says left empty, and fixes made right",
+    "file": "test/recordings.test.ts",
+    "line": 130
+   },
+   {
+    "name": null,
+    "file": "test/recordings.test.ts",
+    "line": 157
+   },
+   {
+    "name": "verifyDraft passes clean draft only references facts in profile",
+    "file": "test/writer-guardrail.test.ts",
+    "line": 34
+   }
+  ],
+  "first_look": {
+   "file": "test/deterministic.test.ts",
+   "line": 14
+  }
+ }
+}

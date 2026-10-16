@@ -1,0 +1,28 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-two",
+ "view": "cc-caveman-engine",
+ "trial": 0,
+ "seconds": 2.4,
+ "reply": "{\"run_failed\":true,\"failing_count\":2,\"failing\":[{\"name\":\"test_text_nudge_rebuilds_at_any_step\",\"file\":\"tests/test_probe.py\",\"line\":12},{\"name\":\"test_shifted_keeps_padding_and_decimals\",\"file\":\"tests/test_probe.py\",\"line\":22}],\"first_look\":{\"file\":\"tests/test_probe.py\",\"line\":12}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 2,
+  "failing": [
+   {
+    "name": "test_text_nudge_rebuilds_at_any_step",
+    "file": "tests/test_probe.py",
+    "line": 12
+   },
+   {
+    "name": "test_shifted_keeps_padding_and_decimals",
+    "file": "tests/test_probe.py",
+    "line": 22
+   }
+  ],
+  "first_look": {
+   "file": "tests/test_probe.py",
+   "line": 12
+  }
+ }
+}

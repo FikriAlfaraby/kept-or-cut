@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "vitest-one",
+ "view": "cc-rtk",
+ "trial": 1,
+ "seconds": 6.9,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 1,\n  \"failing\": [\n    {\n      \"name\": \"qualify does not disqualify on a budget only moderately below the floor\",\n      \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/test/qualify.test.ts\",\n      \"line\": 70\n    }\n  ],\n  \"first_look\": {\n    \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/test/qualify.test.ts\",\n    \"line\": 70\n  }\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "qualify does not disqualify on a budget only moderately below the floor",
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/test/qualify.test.ts",
+    "line": 70
+   }
+  ],
+  "first_look": {
+   "file": "/home/dev/Documents/Projects/wa-lead-extractor/test/qualify.test.ts",
+   "line": 70
+  }
+ }
+}

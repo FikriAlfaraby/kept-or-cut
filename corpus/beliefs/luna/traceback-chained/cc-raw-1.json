@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "traceback-chained",
+ "view": "cc-raw",
+ "trial": 1,
+ "seconds": 2.3,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":null,\"file\":\"settings.json\",\"line\":1}],\"first_look\":{\"file\":\"settings.json\",\"line\":1}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "settings.json",
+    "line": 1
+   }
+  ],
+  "first_look": {
+   "file": "settings.json",
+   "line": 1
+  }
+ }
+}

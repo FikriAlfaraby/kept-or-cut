@@ -1,0 +1,48 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-few",
+ "view": "full",
+ "trial": 2,
+ "seconds": 5.4,
+ "reply": "{\"run_failed\":true,\"failing_count\":6,\"failing\":[{\"name\":\"test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges\",\"file\":\"tests/test_tasks.py\",\"line\":76},{\"name\":\"test_ongkir_charges_every_started_kilogram\",\"file\":\"tests/test_tools.py\",\"line\":46},{\"name\":\"test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock\",\"file\":\"tests/test_tools.py\",\"line\":57},{\"name\":\"test_cod_only_where_the_courier_offers_it_and_up_to_the_limit\",\"file\":\"tests/test_tools.py\",\"line\":88},{\"name\":\"test_items_change_only_before_payment_and_stock_follows\",\"file\":\"tests/test_tools.py\",\"line\":125},{\"name\":\"test_the_seeded_orders_follow_the_rules\",\"file\":\"tests/test_tools.py\",\"line\":191}],\"first_look\":{\"file\":\"toko_wa/tools.py\",\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 6,
+  "failing": [
+   {
+    "name": "test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges",
+    "file": "tests/test_tasks.py",
+    "line": 76
+   },
+   {
+    "name": "test_ongkir_charges_every_started_kilogram",
+    "file": "tests/test_tools.py",
+    "line": 46
+   },
+   {
+    "name": "test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock",
+    "file": "tests/test_tools.py",
+    "line": 57
+   },
+   {
+    "name": "test_cod_only_where_the_courier_offers_it_and_up_to_the_limit",
+    "file": "tests/test_tools.py",
+    "line": 88
+   },
+   {
+    "name": "test_items_change_only_before_payment_and_stock_follows",
+    "file": "tests/test_tools.py",
+    "line": 125
+   },
+   {
+    "name": "test_the_seeded_orders_follow_the_rules",
+    "file": "tests/test_tools.py",
+    "line": 191
+   }
+  ],
+  "first_look": {
+   "file": "toko_wa/tools.py",
+   "line": null
+  }
+ }
+}

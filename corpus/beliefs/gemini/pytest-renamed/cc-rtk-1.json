@@ -1,0 +1,68 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "pytest-renamed",
+ "view": "cc-rtk",
+ "trial": 1,
+ "seconds": 13.8,
+ "reply": "```json\n{\"run_failed\": true,\n \"failing_count\": 14,\n \"failing\": [{\"name\": \"test_reference_actions_run_without_error[smoke-01]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[smoke-02]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[ts-01]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[ts-02]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[ts-03]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[lc-01]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[lc-02]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[lc-03]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[lc-04]\", \"file\": \"tests/test_tasks.py\", \"line\": 58},\n             {\"name\": \"test_reference_actions_run_without_error[lc-05]\", \"file\": \"tests/test_tasks.py\", \"line\": 58}],\n \"first_look\": {\"file\": \"tests/test_tasks.py\", \"line\": 58}}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 14,
+  "failing": [
+   {
+    "name": "test_reference_actions_run_without_error[smoke-01]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[smoke-02]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[ts-01]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[ts-02]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[ts-03]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-01]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-02]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-03]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-04]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-05]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   }
+  ],
+  "first_look": {
+   "file": "tests/test_tasks.py",
+   "line": 58
+  }
+ }
+}

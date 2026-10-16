@@ -1,0 +1,33 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "eslint-few",
+ "view": "cc-rtk",
+ "trial": 1,
+ "seconds": 3.8,
+ "reply": "{\"run_failed\":true,\"failing_count\":3,\"failing\":[{\"name\":\"@typescript-eslint/no-unused-vars\",\"file\":\"src/qualify.ts\",\"line\":null},{\"name\":\"@typescript-eslint/no-unused-vars\",\"file\":\"src/qualify.ts\",\"line\":null},{\"name\":\"prefer-const\",\"file\":\"src/qualify.ts\",\"line\":null}],\"first_look\":{\"file\":\"src/qualify.ts\",\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 3,
+  "failing": [
+   {
+    "name": "@typescript-eslint/no-unused-vars",
+    "file": "src/qualify.ts",
+    "line": null
+   },
+   {
+    "name": "@typescript-eslint/no-unused-vars",
+    "file": "src/qualify.ts",
+    "line": null
+   },
+   {
+    "name": "prefer-const",
+    "file": "src/qualify.ts",
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": "src/qualify.ts",
+   "line": null
+  }
+ }
+}

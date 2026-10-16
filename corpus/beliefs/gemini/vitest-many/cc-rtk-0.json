@@ -1,0 +1,43 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "vitest-many",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 8.0,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 7,\n  \"failing\": [\n    {\n      \"name\": \"parseMoneyToIDR parses '800jt' as 800 million\",\n      \"file\": \"test/deterministic.test.ts\",\n      \"line\": 14\n    },\n    {\n      \"name\": \"parseMoneyToIDR parses 'Rp 900 juta' as 900 million\",\n      \"file\": \"test/deterministic.test.ts\",\n      \"line\": 35\n    },\n    {\n      \"name\": \"runPipeline deterministic wins over a conflicting LLM value for budget/intent/urgency\",\n      \"file\": \"test/pipeline.test.ts\",\n      \"line\": 42\n    },\n    {\n      \"name\": \"recording 2026-10-14-eval.json re-scores to the published results\",\n      \"file\": \"test/recordings.test.ts\",\n      \"line\": 41\n    },\n    {\n      \"name\": \"the hand review of the eval covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right\",\n      \"file\": \"test/recordings.test.ts\",\n      \"line\": 130\n    }\n  ],\n  \"first_look\": {\n    \"file\": \"src/deterministic.ts\",\n    \"line\": null\n  }\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 7,
+  "failing": [
+   {
+    "name": "parseMoneyToIDR parses '800jt' as 800 million",
+    "file": "test/deterministic.test.ts",
+    "line": 14
+   },
+   {
+    "name": "parseMoneyToIDR parses 'Rp 900 juta' as 900 million",
+    "file": "test/deterministic.test.ts",
+    "line": 35
+   },
+   {
+    "name": "runPipeline deterministic wins over a conflicting LLM value for budget/intent/urgency",
+    "file": "test/pipeline.test.ts",
+    "line": 42
+   },
+   {
+    "name": "recording 2026-10-14-eval.json re-scores to the published results",
+    "file": "test/recordings.test.ts",
+    "line": 41
+   },
+   {
+    "name": "the hand review of the eval covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right",
+    "file": "test/recordings.test.ts",
+    "line": 130
+   }
+  ],
+  "first_look": {
+   "file": "src/deterministic.ts",
+   "line": null
+  }
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-renamed",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 4.7,
+ "reply": "{\"run_failed\":true,\"failing_count\":14,\"failing\":[{\"name\":\"test_reference_actions_run_without_error[smoke-01]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[smoke-02]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[ts-01]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[ts-02]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[ts-03]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[lc-01]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[lc-02]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[lc-03]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[lc-04]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":\"test_reference_actions_run_without_error[lc-05]\",\"file\":\"tests/test_tasks.py\",\"line\":58},{\"name\":null,\"file\":null,\"line\":null},{\"name\":null,\"file\":null,\"line\":null},{\"name\":null,\"file\":null,\"line\":null},{\"name\":null,\"file\":null,\"line\":null}],\"first_look\":{\"file\":\"TokoTools\",\"line\":null}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 14,
+  "failing": [
+   {
+    "name": "test_reference_actions_run_without_error[smoke-01]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[smoke-02]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[ts-01]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[ts-02]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[ts-03]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-01]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-02]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-03]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-04]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": "test_reference_actions_run_without_error[lc-05]",
+    "file": "tests/test_tasks.py",
+    "line": 58
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": null
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": null
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": null
+   },
+   {
+    "name": null,
+    "file": null,
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": "TokoTools",
+   "line": null
+  }
+ }
+}

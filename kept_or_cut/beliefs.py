@@ -85,19 +85,19 @@ def ask(model: str, command: str, text: str, key: str, attempts: int = 4) -> str
 
 
 def parse(reply: str) -> dict | None:
-    """The first JSON object in the reply, or None when there is none."""
+    """The answer in the reply: the first JSON object that has "run_failed", or None.
+
+    A reply cut off mid-answer holds no complete answer. The objects nested inside it (one failing test each) are
+    not the answer, so they are skipped rather than read as one.
+    """
+    decoder = json.JSONDecoder()
     start = reply.find("{")
     while start != -1:
-        depth = 0
-        for end in range(start, len(reply)):
-            if reply[end] == "{":
-                depth += 1
-            elif reply[end] == "}":
-                depth -= 1
-                if depth == 0:
-                    try:
-                        return json.loads(reply[start : end + 1])
-                    except json.JSONDecodeError:
-                        break
+        try:
+            value, _ = decoder.raw_decode(reply, start)
+        except json.JSONDecodeError:
+            value = None
+        if isinstance(value, dict) and "run_failed" in value:
+            return value
         start = reply.find("{", start + 1)
     return None

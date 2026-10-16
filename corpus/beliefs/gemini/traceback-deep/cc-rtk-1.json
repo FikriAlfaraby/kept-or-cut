@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "traceback-deep",
+ "view": "cc-rtk",
+ "trial": 1,
+ "seconds": 8.5,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 1,\n  \"failing\": [\n    {\n      \"name\": null,\n      \"file\": \"orders.py\",\n      \"line\": 7\n    }\n  ],\n  \"first_look\": {\n    \"file\": \"orders.py\",\n    \"line\": 7\n  }\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": null,
+    "file": "orders.py",
+    "line": 7
+   }
+  ],
+  "first_look": {
+   "file": "orders.py",
+   "line": 7
+  }
+ }
+}

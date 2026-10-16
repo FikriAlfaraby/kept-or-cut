@@ -1,0 +1,53 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "vitest-many",
+ "view": "cc-headroom-proxy",
+ "trial": 1,
+ "seconds": 16.9,
+ "reply": "```json\n{\n  \"run_failed\": true,\n  \"failing_count\": 7,\n  \"failing\": [\n    {\n      \"name\": \"parseMoneyToIDR parses '800jt' 800 million\",\n      \"file\": \"test/deterministic.test.ts\",\n      \"line\": 14\n    },\n    {\n      \"name\": \"parseMoneyToIDR parses 'Rp 900 juta' 900 million\",\n      \"file\": \"test/deterministic.test.ts\",\n      \"line\": 35\n    },\n    {\n      \"name\": \"runPipeline deterministic wins over conflicting LLM value budget/intent/urgency\",\n      \"file\": \"test/pipeline.test.ts\",\n      \"line\": 42\n    },\n    {\n      \"name\": \"recording 2026-10-14-eval.json > re-scores published results\",\n      \"file\": \"test/recordings.test.ts\",\n      \"line\": 41\n    },\n    {\n      \"name\": \"hand review eval covers every fact scorer marks wrong, says left empty, and fixes made right\",\n      \"file\": \"test/recordings.test.ts\",\n      \"line\": 130\n    },\n    {\n      \"name\": \"hand review eval leaves one really wrong fact or\",\n      \"file\": \"test/recordings.test.ts\",\n      \"line\": 157\n    },\n    {\n      \"name\": \"verifyDraft > passes clean draft only references facts in profile\",\n      \"file\": \"test/writer-guardrail.test.ts\",\n      \"line\": 34\n    }\n  ],\n  \"first_look\": {\n    \"file\": \"src/deterministic.ts\",\n    \"line\": null\n  }\n}\n```",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 7,
+  "failing": [
+   {
+    "name": "parseMoneyToIDR parses '800jt' 800 million",
+    "file": "test/deterministic.test.ts",
+    "line": 14
+   },
+   {
+    "name": "parseMoneyToIDR parses 'Rp 900 juta' 900 million",
+    "file": "test/deterministic.test.ts",
+    "line": 35
+   },
+   {
+    "name": "runPipeline deterministic wins over conflicting LLM value budget/intent/urgency",
+    "file": "test/pipeline.test.ts",
+    "line": 42
+   },
+   {
+    "name": "recording 2026-10-14-eval.json > re-scores published results",
+    "file": "test/recordings.test.ts",
+    "line": 41
+   },
+   {
+    "name": "hand review eval covers every fact scorer marks wrong, says left empty, and fixes made right",
+    "file": "test/recordings.test.ts",
+    "line": 130
+   },
+   {
+    "name": "hand review eval leaves one really wrong fact or",
+    "file": "test/recordings.test.ts",
+    "line": 157
+   },
+   {
+    "name": "verifyDraft > passes clean draft only references facts in profile",
+    "file": "test/writer-guardrail.test.ts",
+    "line": 34
+   }
+  ],
+  "first_look": {
+   "file": "src/deterministic.ts",
+   "line": null
+  }
+ }
+}

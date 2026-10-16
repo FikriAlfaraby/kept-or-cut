@@ -1,0 +1,33 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "eslint-few",
+ "view": "cc-raw",
+ "trial": 1,
+ "seconds": 4.7,
+ "reply": "{\"run_failed\": true, \"failing_count\": 3, \"failing\": [{\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\", \"line\": 37}, {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\", \"line\": 38}, {\"name\": null, \"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\", \"line\": 38}], \"first_look\": {\"file\": \"/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts\", \"line\": 37}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 3,
+  "failing": [
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+    "line": 37
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+    "line": 38
+   },
+   {
+    "name": null,
+    "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+    "line": 38
+   }
+  ],
+  "first_look": {
+   "file": "/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts",
+   "line": 37
+  }
+ }
+}

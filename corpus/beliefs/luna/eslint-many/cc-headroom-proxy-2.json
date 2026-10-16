@@ -1,0 +1,78 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "eslint-many",
+ "view": "cc-headroom-proxy",
+ "trial": 2,
+ "seconds": 5.6,
+ "reply": "{\"run_failed\":true,\"failing_count\":12,\"failing\":[{\"name\":null,\"file\":\"src/classify.ts\",\"line\":40},{\"name\":null,\"file\":\"src/classify.ts\",\"line\":40},{\"name\":null,\"file\":\"src/classify.ts\",\"line\":41},{\"name\":null,\"file\":\"src/guardrail.ts\",\"line\":87},{\"name\":null,\"file\":\"src/guardrail.ts\",\"line\":87},{\"name\":null,\"file\":\"src/guardrail.ts\",\"line\":88},{\"name\":null,\"file\":\"src/merge.ts\",\"line\":12},{\"name\":null,\"file\":\"src/merge.ts\",\"line\":12},{\"name\":null,\"file\":\"src/merge.ts\",\"line\":13},{\"name\":null,\"file\":\"src/writer.ts\",\"line\":56},{\"name\":null,\"file\":\"src/writer.ts\",\"line\":56},{\"name\":null,\"file\":\"src/writer.ts\",\"line\":57}],\"first_look\":{\"file\":\"src/classify.ts\",\"line\":40}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 12,
+  "failing": [
+   {
+    "name": null,
+    "file": "src/classify.ts",
+    "line": 40
+   },
+   {
+    "name": null,
+    "file": "src/classify.ts",
+    "line": 40
+   },
+   {
+    "name": null,
+    "file": "src/classify.ts",
+    "line": 41
+   },
+   {
+    "name": null,
+    "file": "src/guardrail.ts",
+    "line": 87
+   },
+   {
+    "name": null,
+    "file": "src/guardrail.ts",
+    "line": 87
+   },
+   {
+    "name": null,
+    "file": "src/guardrail.ts",
+    "line": 88
+   },
+   {
+    "name": null,
+    "file": "src/merge.ts",
+    "line": 12
+   },
+   {
+    "name": null,
+    "file": "src/merge.ts",
+    "line": 12
+   },
+   {
+    "name": null,
+    "file": "src/merge.ts",
+    "line": 13
+   },
+   {
+    "name": null,
+    "file": "src/writer.ts",
+    "line": 56
+   },
+   {
+    "name": null,
+    "file": "src/writer.ts",
+    "line": 56
+   },
+   {
+    "name": null,
+    "file": "src/writer.ts",
+    "line": 57
+   }
+  ],
+  "first_look": {
+   "file": "src/classify.ts",
+   "line": 40
+  }
+ }
+}

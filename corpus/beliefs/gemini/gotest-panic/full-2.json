@@ -1,0 +1,23 @@
+{
+ "model": "ag/gemini-3.8-flash",
+ "case": "gotest-panic",
+ "view": "full",
+ "trial": 2,
+ "seconds": 5.9,
+ "reply": "{\"run_failed\": true, \"failing_count\": 1, \"failing\": [{\"name\": \"TestZone\", \"file\": \"/home/dev/Documents/Projects/kept-or-cut/fixtures/go/shipping_test.go\", \"line\": 24}], \"first_look\": {\"file\": \"/home/dev/Documents/Projects/kept-or-cut/fixtures/go/shipping.go\", \"line\": 12}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "TestZone",
+    "file": "/home/dev/Documents/Projects/kept-or-cut/fixtures/go/shipping_test.go",
+    "line": 24
+   }
+  ],
+  "first_look": {
+   "file": "/home/dev/Documents/Projects/kept-or-cut/fixtures/go/shipping.go",
+   "line": 12
+  }
+ }
+}

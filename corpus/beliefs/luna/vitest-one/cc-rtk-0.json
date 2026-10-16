@@ -1,0 +1,23 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "vitest-one",
+ "view": "cc-rtk",
+ "trial": 0,
+ "seconds": 3.8,
+ "reply": "{\"run_failed\":true,\"failing_count\":1,\"failing\":[{\"name\":\"qualify does not disqualify on a budget only moderately below the floor\",\"file\":\"test/qualify.test.ts\",\"line\":70}],\"first_look\":{\"file\":\"test/qualify.test.ts\",\"line\":70}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": 1,
+  "failing": [
+   {
+    "name": "qualify does not disqualify on a budget only moderately below the floor",
+    "file": "test/qualify.test.ts",
+    "line": 70
+   }
+  ],
+  "first_look": {
+   "file": "test/qualify.test.ts",
+   "line": 70
+  }
+ }
+}

@@ -1,0 +1,173 @@
+{
+ "model": "cx/gpt-6-luna",
+ "case": "pytest-renamed",
+ "view": "cc-raw",
+ "trial": 0,
+ "seconds": 5.9,
+ "reply": "{\"run_failed\":true,\"failing_count\":null,\"failing\":[{\"name\":\"test_the_chat_number_finds_the_customer\",\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":\"test_search_matches_every_word\",\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":\"test_ongkir_charges_every_started_kilogram\",\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null},{\"name\":null,\"file\":\"tests/test_tools.py\",\"line\":null}],\"first_look\":{\"file\":\"src/toko_wa/tools.py\",\"line\":336}}",
+ "answer": {
+  "run_failed": true,
+  "failing_count": null,
+  "failing": [
+   {
+    "name": "test_the_chat_number_finds_the_customer",
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": "test_search_matches_every_word",
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": "test_ongkir_charges_every_started_kilogram",
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   },
+   {
+    "name": null,
+    "file": "tests/test_tools.py",
+    "line": null
+   }
+  ],
+  "first_look": {
+   "file": "src/toko_wa/tools.py",
+   "line": 336
+  }
+ }
+}
