@@ -178,8 +178,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2801,
-   "input_tokens_optimized": 2352,
+   "input_tokens_original": 2845,
+   "input_tokens_optimized": 2789,
    "transforms_applied": [
     "router:tool_result:mixed",
     "cache_mode:cold_start_full"
@@ -191,8 +191,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2801,
-   "input_tokens_optimized": 2352,
+   "input_tokens_original": 2845,
+   "input_tokens_optimized": 2789,
    "transforms_applied": [
     "router:protected:user_message",
     "router:tool_result:mixed"
@@ -1134,10 +1134,10 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2697,
-   "input_tokens_optimized": 2440,
+   "input_tokens_original": 2889,
+   "input_tokens_optimized": 2133,
    "transforms_applied": [
-    "router:tool_result:mixed",
+    "router:tool_result:code_aware",
     "cache_mode:cold_start_full"
    ]
   },
@@ -1147,11 +1147,11 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2697,
-   "input_tokens_optimized": 2440,
+   "input_tokens_original": 2889,
+   "input_tokens_optimized": 2133,
    "transforms_applied": [
     "router:protected:user_message",
-    "router:tool_result:mixed"
+    "router:tool_result:code_aware"
    ]
   }
  },

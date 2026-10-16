@@ -16,12 +16,12 @@
    "pytest-many": {
     "different_outputs": 1,
     "kept": [
-     87,
-     87
+     77,
+     77
     ],
     "tokens": [
-     2307,
-     2307
+     2744,
+     2744
     ]
    },
    "pytest-collect": {
@@ -126,12 +126,12 @@
    "pytest-renamed": {
     "different_outputs": 1,
     "kept": [
-     63,
-     63
+     22,
+     22
     ],
     "tokens": [
-     2393,
-     2393
+     2086,
+     2086
     ]
    },
    "vitest-many": {
@@ -205,12 +205,12 @@
    "pytest-many": {
     "different_outputs": 1,
     "kept": [
-     87,
-     87
+     77,
+     77
     ],
     "tokens": [
-     2307,
-     2307
+     2744,
+     2744
     ]
    },
    "pytest-collect": {
@@ -315,12 +315,12 @@
    "pytest-renamed": {
     "different_outputs": 1,
     "kept": [
-     63,
-     63
+     22,
+     22
     ],
     "tokens": [
-     2393,
-     2393
+     2086,
+     2086
     ]
    },
    "vitest-many": {
@@ -389,9 +389,9 @@
      "kept": 6
     },
     "pytest-many": {
-     "sha256": "ff385b28d7dc02e1",
-     "tokens": 2307,
-     "kept": 87
+     "sha256": "4d56c88bba0c9304",
+     "tokens": 2744,
+     "kept": 77
     },
     "pytest-collect": {
      "sha256": "b3e9788e0ec19555",
@@ -439,9 +439,9 @@
      "kept": 2
     },
     "pytest-renamed": {
-     "sha256": "2bf9218ed39c3a15",
-     "tokens": 2393,
-     "kept": 63
+     "sha256": "06cb1e793aeaa729",
+     "tokens": 2086,
+     "kept": 22
     },
     "vitest-many": {
      "sha256": "62b75e4242858b25",
@@ -476,9 +476,9 @@
      "kept": 6
     },
     "pytest-many": {
-     "sha256": "0e9c5719eb0639e6",
-     "tokens": 2307,
-     "kept": 87
+     "sha256": "82dbc02567e04a6c",
+     "tokens": 2744,
+     "kept": 77
     },
     "pytest-collect": {
      "sha256": "b3e9788e0ec19555",
@@ -526,9 +526,9 @@
      "kept": 2
     },
     "pytest-renamed": {
-     "sha256": "bcf46cd3b53a9e8f",
-     "tokens": 2393,
-     "kept": 63
+     "sha256": "06cb1e793aeaa729",
+     "tokens": 2086,
+     "kept": 22
     },
     "vitest-many": {
      "sha256": "62b75e4242858b25",
@@ -565,9 +565,9 @@
      "kept": 6
     },
     "pytest-many": {
-     "sha256": "ff385b28d7dc02e1",
-     "tokens": 2307,
-     "kept": 87
+     "sha256": "4d56c88bba0c9304",
+     "tokens": 2744,
+     "kept": 77
     },
     "pytest-collect": {
      "sha256": "b3e9788e0ec19555",
@@ -615,9 +615,9 @@
      "kept": 2
     },
     "pytest-renamed": {
-     "sha256": "2bf9218ed39c3a15",
-     "tokens": 2393,
-     "kept": 63
+     "sha256": "06cb1e793aeaa729",
+     "tokens": 2086,
+     "kept": 22
     },
     "vitest-many": {
      "sha256": "62b75e4242858b25",
@@ -652,9 +652,9 @@
      "kept": 6
     },
     "pytest-many": {
-     "sha256": "0e9c5719eb0639e6",
-     "tokens": 2307,
-     "kept": 87
+     "sha256": "82dbc02567e04a6c",
+     "tokens": 2744,
+     "kept": 77
     },
     "pytest-collect": {
      "sha256": "b3e9788e0ec19555",
@@ -702,9 +702,9 @@
      "kept": 2
     },
     "pytest-renamed": {
-     "sha256": "bcf46cd3b53a9e8f",
-     "tokens": 2393,
-     "kept": 63
+     "sha256": "06cb1e793aeaa729",
+     "tokens": 2086,
+     "kept": 22
     },
     "vitest-many": {
      "sha256": "62b75e4242858b25",
@@ -741,9 +741,9 @@
      "kept": 6
     },
     "pytest-many": {
-     "sha256": "ff385b28d7dc02e1",
-     "tokens": 2307,
-     "kept": 87
+     "sha256": "4d56c88bba0c9304",
+     "tokens": 2744,
+     "kept": 77
     },
     "pytest-collect": {
      "sha256": "b3e9788e0ec19555",
@@ -791,9 +791,9 @@
      "kept": 2
     },
     "pytest-renamed": {
-     "sha256": "2bf9218ed39c3a15",
-     "tokens": 2393,
-     "kept": 63
+     "sha256": "06cb1e793aeaa729",
+     "tokens": 2086,
+     "kept": 22
     },
     "vitest-many": {
      "sha256": "62b75e4242858b25",
@@ -828,9 +828,9 @@
      "kept": 6
     },
     "pytest-many": {
-     "sha256": "0e9c5719eb0639e6",
-     "tokens": 2307,
-     "kept": 87
+     "sha256": "82dbc02567e04a6c",
+     "tokens": 2744,
+     "kept": 77
     },
     "pytest-collect": {
      "sha256": "b3e9788e0ec19555",
@@ -878,9 +878,9 @@
      "kept": 2
     },
     "pytest-renamed": {
-     "sha256": "bcf46cd3b53a9e8f",
-     "tokens": 2393,
-     "kept": 63
+     "sha256": "06cb1e793aeaa729",
+     "tokens": 2086,
+     "kept": 22
     },
     "vitest-many": {
      "sha256": "62b75e4242858b25",

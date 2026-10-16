@@ -8,7 +8,7 @@ import pytest
 
 from kept_or_cut.analyze import CORPUS, summary
 from kept_or_cut.cases import CASES
-from kept_or_cut.claude_code import cut, views
+from kept_or_cut.claude_code import cut, read_back, views
 from kept_or_cut.needed import needed
 from kept_or_cut.predictions import verdicts
 
@@ -27,17 +27,17 @@ FULL_OUTPUT = {
     "headroom-aggressive": (418, 159, 16, 60387, None),
 }
 IN_CLAUDE_CODE = {
-    "cc-raw": (340, 101, 12, 18720, "Claude Code alone"),
+    "cc-raw": (294, 83, 12, 18956, "Claude Code alone"),
     "cc-rtk": (270, 75, 9, 10030, "rtk, then Claude Code"),
-    "cc-caveman-hook": (340, 101, 12, 18790, "caveman's hook, then Claude Code"),
-    "cc-caveman-engine": (340, 104, 10, 19853, "caveman's engine, then Claude Code"),
-    "cc-headroom-proxy": (308, 88, 11, 15754, "Claude Code, then headroom's proxy"),
+    "cc-caveman-hook": (294, 83, 12, 19026, "caveman's hook, then Claude Code"),
+    "cc-caveman-engine": (347, 102, 10, 19917, "caveman's engine, then Claude Code"),
+    "cc-headroom-proxy": (257, 69, 11, 15884, "Claude Code, then headroom's proxy"),
 }
 # failing items fully visible in the five runs Claude Code cuts
 LONG_RUNS = {
-    "pytest-many": ("pytest, 44 failures", 13, 10, 28, 8),
+    "pytest-many": ("pytest, 44 failures", 7, 10, 33, 7),
     "pytest-few": ("pytest, 6 failures", 3, 6, 4, 2),
-    "pytest-renamed": ("pytest, 32 failures and errors", 18, 10, 18, 18),
+    "pytest-renamed": ("pytest, 32 failures and errors", 6, 10, 11, 0),
     "vitest-many": ("vitest, 7 failures", 7, 5, 3, 0),
     "tsc-many": ("tsc, 43 errors", 29, 29, 29, 29),
 }
@@ -131,6 +131,15 @@ def test_claude_codes_cut():
     shown = cut("x" * 29877)
     assert len(shown) == 10040 and shown.index("... [19877 characters truncated] ...") == 5002
     assert cut("x" * 11024) == "x" * 11024 and len(cut("x" * 11025)) < 11025
+
+
+def test_claude_code_reads_back_30000_bytes_first():
+    assert read_back("x" * 30000) == "x" * 30000 and read_back("x" * 30001) == "x" * 30000
+    # bytes, not characters: a two-byte character split at the limit becomes one replacement character
+    assert read_back("x" * 29999 + "é" * 3) == "x" * 29999 + "\ufffd"
+    # the two longest runs lose their end, summary line included
+    for case, summary_line in (("pytest-many", "44 failed"), ("pytest-renamed", "14 failed")):
+        assert summary_line in text(case, "raw") and summary_line not in views(CORPUS / case, RUNS)["cc-raw"]
 
 
 def test_rtk_calls_a_run_with_18_errors_a_pass(results):
@@ -275,10 +284,10 @@ def test_the_predictions_as_scored():
 
 def test_the_readme_repeats_the_same_numbers():
     for line in (
-        "| Claude Code alone | 101 | 18,720 |",
-        "| rtk, then Claude Code | 75 | 10,030 (−46%) |",
-        "| caveman's engine, then Claude Code | 104 | 19,853 (+6%) |",
-        "| Claude Code, then headroom's proxy | 88 | 15,754 (−16%) |",
+        "| Claude Code alone | 83 | 18,956 |",
+        "| rtk, then Claude Code | 75 | 10,030 (−47%) |",
+        "| caveman's engine, then Claude Code | 102 | 19,917 (+5%) |",
+        "| Claude Code, then headroom's proxy | 69 | 15,884 (−16%) |",
         "6 held, 2 wrong, 2 half",
         "Pytest: 255 passed in 18.56s",
     ):

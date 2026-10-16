@@ -82,87 +82,105 @@ E         ?           ^
 tests/test_mutants.py:67: AssertionError
 
 ______ test_inputs_on_disk_are_the_ones_the_code_builds[compliant-chain] _______
-m = Mutant(id='compliant-chain', group='control', title='Supervisor delegates agent, agent narrows sub...inside accounts:* (scope_subset, 48-5
-... [65028 characters truncated]
-/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[made-up-source] - assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
-Skipping 2383 identical leading characters in diff, use -v to show
-Skipping 84 identical trailing characters in diff, use -v to show
-- me_ns": 104, "parent
-? ^
-+ me_ns": 106, "parent
-? ^
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope-unknown] - assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
-Skipping 2402 identical leading characters in diff, use -v to show
-Skipping 84 identical trailing characters in diff, use -v to show
-- me_ns": 104, "parent
-? ^
-+ me_ns": 106, "parent
-? ^
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope-failed] - assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
-Skipping 2401 identical leading characters in diff, use -v to show
-Skipping 84 identical trailing characters in diff, use -v to show
-- me_ns": 104, "parent
-? ^
-+ me_ns": 106, "parent
-? ^
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[same-timestamps] - assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
-2379 -v
-99, 7}}
-101, 7}}
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[two-use-approval] 8}}\n' 8}}\n'
-2838 -v
-84 -v
-105,
-107,
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[revoked-after-use] 8}}\n' 8}}\n'
-2627 -v
-84 -v
-105,
-107,
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[two-sources] 8}}\n' 8}}\n'
-2817 -v
-84 -v
-105,
-107,
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[compliant-otlp]
-5855 in diff, use -v
-Skipping 173 identical trailing characters in diff, use -v show
-- Nano": "104",
-? ^
-+ Nano": "106",
-? ^
-- "endTimeUnixNano": "104",
-? ^
-+ "endTimeUnixNano": "106",
-? ^
-"attributes": [
-{
-"key": "ifixai.event",
-"value": {
-- "stringValue": "{\"event_id\": \"0000000000000007\", \"trace_id\": \"a0d17a0d17a0d17a0d17a0d17a0d17a0\", \"tenant_id\": \"demo-tenant\", \"sequence\": 7, \"time_ns\": 104, \"paren
-? ^
-+ "stringValue": "{\"event_id\": \"0000000000000007\", \"trace_id\": \"a0d17a0d17a0d17a0d17a0d17a0d17a0\", \"tenant_id\": \"demo-tenant\", \"sequence\": 7, \"time_ns\": 106, \"paren
-? ^
-FAILED tests/test_mutants.py::test_inputs_on_disk_are_the_ones_the_code_builds[upstream-revocation] - assert '{"schema_ver...vents": 9}}\n' == '{"schema_ver...vents": 9}}\n'
-Skipping 3015 identical leading characters in diff, use -v
-Skipping 84 identical trailing characters in diff, use -v show
-- me_ns": 106, "parent
-? ^
-+ me_ns": 108, "parent
-? ^
-FAILED tests/test_trace.py::test_rows_follow_the_recorder_defaults_and_seal_with_an_end_event - assert [100, 101, 102, 101] == [100, 101, 102, 103]
-At index 3 diff: 101 != 103
-Full diff:
-[489 words compressed to 329 (from 94 source lines). Original content preserved. Retrieve more: hash=69804bf014300f767fab1758]
 
-    [
-        100,
-        101,
-        102,
-  -     103,
-  ?       ^
-  +     101,
-  ?       ^
-    ]
+m = Mutant(id='compliant-chain', group='control', title='Supervisor delegates to the agent, the agent narrows it for a sub...inside accounts:* (scope_subset, 48-5
 
-======================== 44 failed, 153 passed in 1.77s ========================
+... [20012 characters truncated] ...
+
+>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on19')
+
+    @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
+    def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
+        folder = ROOT / "mutants" / m.id
+        m.build().write(tmp_path / trace_name(m), m.fmt)
+>       assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+            encoding="utf-8"
+        )
+E       assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+E         
+E         Skipping 2382 identical leading characters in diff, use -v to show
+E         Skipping 84 identical trailing characters in diff, use -v to show
+E         - me_ns": 104, "parent
+E         ?           ^
+E         + me_ns": 106, "parent
+E         ?           ^
+
+
+tests/test_mutants.py:67: AssertionError
+
+___ test_inputs_on_disk_are_the_ones_the_code_builds[wrong-digest-citation] ____
+
+m = Mutant(id='wrong-digest-citation', group='violation', title='The answer cites the receipt with the wrong content diges...GEST',), predicted_coverage=(), why='318-319.', policy='refund', build=<function <lambda> at 0x1091140e0>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on20')
+
+    @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
+    def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
+        folder = ROOT / "mutants" / m.id
+        m.build().write(tmp_path / trace_name(m), m.fmt)
+>       assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+            encoding="utf-8"
+        )
+E       assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+E         
+E         Skipping 2381 identical leading characters in diff, use -v to show
+E         Skipping 84 identical trailing characters in diff, use -v to show
+E         - me_ns": 104, "parent
+E         ?           ^
+E         + me_ns": 106, "parent
+E         ?           ^
+
+
+tests/test_mutants.py:67: AssertionError
+
+________ test_inputs_on_disk_are_the_ones_the_code_builds[no-citation] _________
+
+m = Mutant(id='no-citation', group='violation', title='The answer cites nothing', should=('BLOCK',), predicted='BLOCK', pr...equire_citations and an empty list (310-311).', policy='refund', build=<function <lambda> at 0x109114180>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on21')
+
+    @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
+    def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
+        folder = ROOT / "mutants" / m.id
+        m.build().write(tmp_path / trace_name(m), m.fmt)
+>       assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+            encoding="utf-8"
+        )
+E       assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+E         
+E         Skipping 2265 identical leading characters in diff, use -v to show
+E         Skipping 84 identical trailing characters in diff, use -v to show
+E         - me_ns": 104, "parent
+E         ?           ^
+E         + me_ns": 106, "parent
+E         ?           ^
+
+
+tests/test_mutants.py:67: AssertionError
+
+_____ test_inputs_on_disk_are_the_ones_the_code_builds[cites-an-approval] ______
+
+m = Mutant(id='cites-an-approval', group='violation', title='The answer cites the approval as if it were a source', should...URCE',), predicted_coverage=(), why='316-317.', policy='refund', build=<function <lambda> at 0x109114220>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on22')
+
+    @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
+    def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
+        folder = ROOT / "mutants" / m.id
+        m.build().write(tmp_path / trace_name(m), m.fmt)
+>       assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+            encoding="utf-8"
+        )
+E       assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+E         
+E         Skipping 2382 identical leading characters in diff, use -v to show
+E         Skipping 84 identical trailing characters in diff, use -v to show
+E         - me_ns": 104, "parent
+E         ?           ^
+E         + me_ns": 106, "parent
+E         ?           ^
+
+
+tests/test_mutants.py:67: AssertionError
+
+______ test_inputs_on_disk_are_the_ones_the_code_builds[vip-no-approval] _______
+
+m = Mutant(id='vip-no-approval', group='violation', title="A VIP refund without the supervisor's approval", should=('BLOCK...e matches accounts:vip-7 exactly (261, 264-267).', policy='vip', build=<function <lambda> at 0x1091142c0>, fmt='json

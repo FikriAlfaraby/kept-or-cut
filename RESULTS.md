@@ -3,43 +3,45 @@
 16 October 2026. The predictions were tagged before any compressor ran on the cases (`v0.1-prereg`,
 [PREDICTIONS.md](PREDICTIONS.md)). Every number here comes from `kept_or_cut/analyze.py` and
 `kept_or_cut/predictions.py`, and `tests/test_results.py` holds this file to them. What I added or changed after
-the results, including after a review, is listed near the end.
+the results, including after two reviews, is listed near the end.
 
-**In short.** In Claude Code, the agent never reads the middle of a long failing run: Claude Code itself keeps the
-first and last 5,000 characters of a failed command's output. On these 16 runs that alone leaves 101 of 159 failing
-items fully visible. With rtk it is 75, at 46% fewer tokens; with caveman's engine, 104; with headroom's proxy, 88,
-because it rewrites the assertions that are left. rtk's summary of a run with 18 errors reads as a pass, "Pytest:
-255 passed"; only the exit code above it says something failed.
+**In short.** In Claude Code, the agent never reads the middle of a long failing run: Claude Code reads back the
+first 30,000 bytes of a failed command's output and keeps the first and last 5,000 characters of that. On these 16
+runs that alone leaves 83 of 159 failing items fully visible. With rtk it is 75, at 47% fewer tokens; with caveman's
+engine, 102; with headroom's proxy, 69, because it rewrites the assertions that are left. rtk's summary of a run
+with 18 errors reads as a pass, "Pytest: 255 passed"; only the exit code above it says something failed.
 
 ## In Claude Code
 
-Added after the results. Claude Code 2.1.294 builds a failed command's tool result from "Exit code N" and the
-command's output, stdout before stderr; above 11,024 characters it keeps the first 5,000 and the last 5,000
-([kept_or_cut/claude_code.py](kept_or_cut/claude_code.py) has the rule and how I checked it). Five of the 16
-outputs are that long. rtk and caveman's hook change the command, so Claude Code cuts what they print. headroom's
-proxy sits after Claude Code, so it receives the cut text.
+Added after the results. Claude Code 2.1.294 reads back the first 30,000 bytes of a failed command's output
+(stdout before stderr), builds the tool result from "Exit code N" and that, and above 11,024 characters keeps the
+first 5,000 and the last 5,000 ([kept_or_cut/claude_code.py](kept_or_cut/claude_code.py) has the rule and how I
+checked it). Five of the 16 outputs are that long; the two longest (75,017 and 72,409 characters) also lose their
+end, summary line included. rtk and caveman's hook change the command, so Claude Code cuts what they print.
+headroom's proxy sits after Claude Code, so it receives the cut text.
 
 | What the model reads | Facts kept | Items fully visible | Outputs with every fact | Tokens |
 |---|---:|---:|---:|---:|
-| Claude Code alone | 340 | 101 | 12 | 18,720 |
-| rtk, then Claude Code | 270 | 75 | 9 | 10,030 (−46%) |
-| caveman's hook, then Claude Code | 340 | 101 | 12 | 18,790 (0%) |
-| caveman's engine, then Claude Code | 340 | 104 | 10 | 19,853 (+6%) |
-| Claude Code, then headroom's proxy | 308 | 88 | 11 | 15,754 (−16%) |
+| Claude Code alone | 294 | 83 | 12 | 18,956 |
+| rtk, then Claude Code | 270 | 75 | 9 | 10,030 (−47%) |
+| caveman's hook, then Claude Code | 294 | 83 | 12 | 19,026 (0%) |
+| caveman's engine, then Claude Code | 347 | 102 | 10 | 19,917 (+5%) |
+| Claude Code, then headroom's proxy | 257 | 69 | 11 | 15,884 (−16%) |
 
 Failing items fully visible in the five long runs:
 
 | Run | Claude Code alone | rtk | caveman's engine | headroom's proxy |
 |---|---:|---:|---:|---:|
-| pytest, 44 failures | 13 | 10 | 28 | 8 |
+| pytest, 44 failures | 7 | 10 | 33 | 7 |
 | pytest, 6 failures | 3 | 6 | 4 | 2 |
-| pytest, 32 failures and errors | 18 | 10 | 18 | 18 |
+| pytest, 32 failures and errors | 6 | 10 | 11 | 0 |
 | vitest, 7 failures | 7 | 5 | 3 | 0 |
 | tsc, 43 errors | 29 | 29 | 29 | 29 |
 
 A shorter output can show more. rtk's summary of the 6-failure run fits under the cut, so all six tests are
-visible, against three for Claude Code alone. caveman's engine packs the 44-failure run tightly enough that 28
-tests fit in the window, against 13.
+visible, against three for Claude Code alone, and on the two longest runs its ten listed failures beat what Claude
+Code alone shows (7 and 6). caveman's engine packs the 44-failure run tightly enough that 33 tests survive the cut,
+against 7.
 
 Getting the dropped text back works differently behind the cut. rtk's recall line and caveman's retrieve line
 fetch the full output the command printed. headroom's retrieve gives back what headroom received, which Claude Code
@@ -114,9 +116,10 @@ recovered. The agent has to know it needs it, and nothing in "255 passed" says w
   one frame line in a pytest run. An elided line becomes `… 2 lines elided (caveman) …`, and the output ends with
   `recover: caveman retrieve <handle>`, so the original is one command away.
 - **In Claude Code it helps some long runs and hurts one.** Its outputs for the five long runs are still over the
-  cut, but denser: it shows more of two pytest runs (28 of 44 tests against 13, 4 of 6 against 3), the same of two,
-  and fewer of the vitest run (3 of 7 against 7). It also prints a one-line JSON report on stderr, which Claude Code
-  shows for a failed command, so it costs 6% more tokens than Claude Code alone.
+  cut, but denser: it shows more of the three long pytest runs (33 of 44 tests against 7, 4 of 6 against 3, 11 of
+  32 against 6), the same of the tsc run, and fewer of the vitest run (3 of 7 against 7). It also prints a one-line
+  JSON report on stderr, which Claude Code shows for a failed command, so it costs 5% more tokens than Claude Code
+  alone.
 
 ## headroom
 
@@ -132,8 +135,9 @@ recovered. The agent has to know it needs it, and nothing in "255 passed" says w
   10,040 characters, just over that limit. Its model then drops words, and sometimes operators: "assert 134570 ==
   (((2 * 59000) + 15000) + 570)" became "assert 134570 == (((2 * 59000) 15000) + 570)", and "AssertionError:
   assert 199000 == 198000" became "AssertionError: 199000 198000". In the vitest run no failing test kept its
-  name: "parses '800jt' as 800 million" became "parses '800jt' 800 million". It kept 308 facts against 340 for
-  Claude Code alone, for 16% fewer tokens. Each compressed block ends with "Retrieve more: hash=…" and the proxy
+  name: "parses '800jt' as 800 million" became "parses '800jt' 800 million", and in the run with 32 failures and
+  errors none survived whole, against 6 for Claude Code alone. It kept 257 facts against 294 for Claude Code alone,
+  for 16% fewer tokens. Each compressed block ends with "Retrieve more: hash=…" and the proxy
   adds a `headroom_retrieve` tool, which returns the text headroom received: the cut one.
 - **Given the full output** (a client that sends long failures whole), it left 11 of the 16 outputs unchanged,
   reworded the vitest names the same way, and kept 407 facts for 8% fewer tokens.
@@ -172,7 +176,7 @@ headroom changed neither. What I said would surprise me did: rtk reported a coll
 
 - **Added:** the case with errors in setup; headroom through its proxy, on the full output and behind Claude Code;
   the Claude Code view; repeat runs of the proxy.
-- **Fixed after a review:**
+- **Fixed after a review by a separate AI agent** (Claude in a fresh session, asked to find what was wrong):
   - A number on a later row, such as "(14 tests)" under a file name, counted as a line number. Now a later row
     counts only when it opens with the number, as in "14:5  error" or "line 14". One fact changed: caveman's
     engine, vitest run.
@@ -183,6 +187,10 @@ headroom changed neither. What I said would surprise me did: rtk reported a coll
   - The proxy runs first sent the full output and called that the shape Claude Code sends. Claude Code cuts long
     failures first; both runs are reported now. My first Claude Code view also put stderr before stdout, which
     Claude Code does for some errors but not for a failed Bash command; a recorded run settled it.
+- **Fixed after a second review** (a separate AI agent playing a hiring manager, with this repository): Claude Code
+  reads back only the first 30,000 bytes of a failed command's output before its cut, which my first Claude Code
+  view left out. With it, Claude Code alone went from 101 to 83 failing items whole; headroom's proxy was run again
+  on the corrected text (from 88 to 69).
 - **Before the runs:** the tagged harness set `RTK_RECALL=0`, which hides rtk's recall line. I removed it, so rtk
   ran as installed.
 
@@ -194,7 +202,7 @@ headroom changed neither. What I said would surprise me did: rtk reported a coll
   person would recognise most of them.
 - The commands are mine. The TypeScript project's own npm scripts would route differently through both hooks.
 - The Claude Code view is rebuilt from the shipped code, not captured from a live session; it matches the one cut
-  in my own transcripts.
+  in my own transcripts, read-back included. Capturing it from a real session is the next step.
 - rtk ran its command live in the same planted state, so its timings differ from the raw run.
 - No model was asked to fix anything. Whether an agent would run `rtk recall`, `caveman retrieve` or
   `headroom_retrieve` when it needs the dropped text was not measured.

@@ -15,17 +15,17 @@ fixed rules which of those lines each tool keeps. The predictions were tagged be
 
 ## Results
 
-In Claude Code, the agent never reads the middle of a long failing run. Claude Code itself keeps the first and
-last 5,000 characters of a failed command's output, and each tool sits before or after that cut. 159 failing
-items:
+In Claude Code, the agent never reads the middle of a long failing run. Claude Code reads back the first 30,000
+bytes of a failed command's output and keeps the first and last 5,000 characters of that, and each tool sits
+before or after that cut. 159 failing items:
 
 | What the model reads | Items fully visible | Tokens |
 |---|---:|---:|
-| Claude Code alone | 101 | 18,720 |
-| rtk, then Claude Code | 75 | 10,030 (−46%) |
-| caveman's hook, then Claude Code | 101 | 18,790 (0%) |
-| caveman's engine, then Claude Code | 104 | 19,853 (+6%) |
-| Claude Code, then headroom's proxy | 88 | 15,754 (−16%) |
+| Claude Code alone | 83 | 18,956 |
+| rtk, then Claude Code | 75 | 10,030 (−47%) |
+| caveman's hook, then Claude Code | 83 | 19,026 (0%) |
+| caveman's engine, then Claude Code | 102 | 19,917 (+5%) |
+| Claude Code, then headroom's proxy | 69 | 15,884 (−16%) |
 
 - **rtk's summary can read as a pass.** In a case I added after the results, a pytest run with 18 errors and no
   failures came back as "Pytest: 255 passed in 18.56s", with only the exit code saying otherwise; rtk's summary has
@@ -42,7 +42,8 @@ items:
 
 Each tool on the full output, the comparison I pre-registered, is in [RESULTS.md](RESULTS.md), with links to the
 lines of each tool's source that explain what it did. My predictions: 6 held, 2 wrong, 2 half. I ran headroom
-wrong at first and missed Claude Code's own cut until a review; RESULTS.md says what changed after the results.
+wrong at first, and two reviews by separate AI agents caught what I had missed of Claude Code's own cut; RESULTS.md
+says what changed after the results.
 
 ## How it works
 

@@ -2,34 +2,26 @@ Exit code 1
 ........................................................................ [ 26%]
 ........................................................................ [ 52%]
 ........................................................................ [ 79%]
-.....FFFFF.FFFFF.FFF...............F...EEEEEEEEEEEEEEEEEE                [100%]
-==================================== ERRORS ====================================
-__________ ERROR at setup of test_the_chat_number_finds_the_customer ___________
-
-    @pytest.fixture
-    def shop() -> TokoTools:
->       return TokoTools(build())
-                         ^^^^^^^
-
-
+.....FFFFF.FFFFF.FFF...............F...EEEEEEEEEEEEEEEEEE [100%]
+ERRORS ====================================
+__________ ERROR setup test_the_chat_number_finds_the_customer ___________
+@pytest.fixture
+shop() -> TokoTools:
+return TokoTools(build())
+^^^^^^^
 tests/test_tools.py:14:
-
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 src/toko_wa/seed.py:515: in build
-
-    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 src/toko_wa/seed.py:491: in order
-
-made = tools.create_order(
+made tools.create_order(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 self = <toko_wa.tools.TokoTools object at 0x11c7ea720>, customer_id = 'C001'
 items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
 courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
 @is_tool(ToolType.WRITE)
-def create_order(
+create_order(
 self,
 customer_id: str,
 items: list[ItemQty],
@@ -37,47 +29,26 @@ address_id: str,
 courier: str,
 payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
 promo_code: str | None = None,
-Order:
+) -> Order:
 """Create order. Transfer orders wait payment and get kode unik added total;
-COD orders go straight processing. details back and get customer's 'ya'
-before calling this.
+COD orders straight processing. back and customer's 'ya'
+before this.
 Args:
-customer_id: customer id.
-items: List {'item_id', 'qty'}.
-address_id: One customer's saved address ids.
-courier: 'JNE', 'J&T' or 'SiCepat'.
-payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
-promo_code: Optional promo code.
-Returns:
-Order: new order total.
-"""
-customer = self._customer(customer_id)
-^^^^^^^^^^^^^^
-E AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
-[188 words compressed to 168 (from 36 source lines). Original content preserved. Retrieve more: hash=5e4abbbc45ce6ae5433ff78a]
-
+'JNE', or 'SiCepat'.
+or
+self._customer(customer_id)
+AttributeError: 'TokoTools'
 src/toko_wa/tools.py:336: AttributeError
-
-_______________ ERROR at setup of test_search_matches_every_word _______________
-
-    @pytest.fixture
-    def shop() -> TokoTools:
->       return TokoTools(build())
-                         ^^^^^^^
-
-
+_______________ ERROR _______________
+@pytest.fixture
+TokoTools:
+TokoTools(build())
 tests/test_tools.py:14:
-
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-src/toko_wa/seed.py:515: in build
-
-    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+src/toko_wa/seed.py:515:
+order(at(1, 9), [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 src/toko_wa/seed.py:491: in order
-
-made tools.create_order(
+made = tools.create_order(
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 self = <toko_wa.tools.TokoTools object at 0x11c7e8e90>, customer_id = 'C001'
 items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
@@ -93,7 +64,55 @@ payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
 promo_code: str | None = None,
 Order:
 """Create order. Transfer orders wait payment and get kode unik added total;
-COD orders go straight processing. details back and get customer's 'ya'
+COD orders straight processing. back and customer's 'ya'
+before calling this.
+Args:
+customer_id: customer id.
+items: List {'item_id', 'qty'}.
+address_id: One customer's saved address ids.
+courier: 'JNE', 'J&T' or 'SiCepat'.
+payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+promo_code: Optional promo code.
+Returns:
+Order: new order total.
+customer = self._customer(customer_id)
+^^^^^^^^^^^^^^
+E AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
+src/toko_wa/tools.py:336: AttributeError
+_________ ERROR test_ongkir_charges_every_started_kilogram _________
+@pytest.fixture
+shop() -> TokoTools:
+TokoTools(build())
+tests/test_tools.py:14:
+src/toko_wa/seed.py:515:
+order(at(1, 9), [("KS-HTM-M", 2)], "JNE", paid_at=at(1, 11))
+[20012
+src/toko_wa/tools.py:336: AttributeError
+ERROR
+@pytest.fixture
+TokoTools:
+TokoTools(build())
+tests/test_tools.py:14:
+src/toko_wa/seed.py:515:
+order(at(1, 9), [("KS-HTM-M", 2)], "JNE", paid_at=at(1, 11))
+src/toko_wa/seed.py:491: in order
+made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <toko_wa.tools.TokoTools object at 0x11c6bad20>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+@is_tool(ToolType.WRITE)
+def create_order(
+self,
+customer_id: str,
+items: list[ItemQty],
+address_id: str,
+courier: str,
+payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+promo_code: str | None = None,
+Order:
+"""Create order. Transfer orders wait payment and kode unik added total;
+COD orders straight processing. back and get customer's 'ya'
 before calling this.
 Args:
 customer_id: customer id.
@@ -108,57 +127,57 @@ Order: new order total.
 customer = self._customer(customer_id)
 ^^^^^^^^^^^^^^
 E AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
-[188 words compressed to 166 (from 36 source lines). Original content preserved. Retrieve more: hash=3d4b0ed1a961f88cd9de6edf]
-
 src/toko_wa/tools.py:336: AttributeError
-
-_________ ERROR at setup of test_ongkir_charges_every_started_kilogram _________
-
-    @pytest.fixture
-    def shop() -> TokoTools:
->       return TokoTools(build())
-                         ^^^^^^^
-
-
+__ ERROR test_returns_need_the_window_the_video_and_a_real_reason __
+@pytest.fixture
+shop() -> TokoTools:
+return TokoTools(build())
+^^^^^^^
 tests/test_tools.py:14:
-
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src/toko_wa/seed.py:515:
+order(at(1, 9), [("KS-HTM-M", 2)], "JNE", paid_at=at(1, 11))
+src/toko_wa/seed.py:491:
+tools.create_order(
+<toko_wa.tools.TokoTools 0x11c6ba900>,
+'KS-HTM-M', 2}],
+'JNE', None
+@is_tool(ToolType.WRITE)
+list[ItemQty],
+Literal["transfer_bca", "transfer_bri", "cod"],
+promo_code: str | None = None,
+) Order:
+"""Create order. Transfer orders wait payment and get kode unik added total;
+COD orders straight processing. back and customer's 'ya'
+calling this.
+Args:
+customer_id: customer id.
+items: {'item_id', 'qty'}.
+address_id: One customer's saved address ids.
+courier: 'JNE', 'J&T' or 'SiCepat'.
+payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+promo_code: Optional promo code.
+Returns:
+Order: new order total.
+"""
+customer = self._customer(customer_id)
+^^^^^^^^^^^^^^
+E AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
+src/toko_wa/tools.py:336: AttributeError
+___________ ERROR test_tracking_only_for_shipped_orders ____________
+@pytest.fixture
+shop() TokoTools:
+return TokoTools(build())
+^^^^^^^
+tests/test_tools.py:14:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 src/toko_wa/seed.py:515: in build
-
 o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-... [62420 characters truncated]
-sks.py::test_reference_actions_run_without_error[lc-05] - AssertionError: lc-05: create_order failed: Error: 'TokoTools' object no attribute '_customer'
-assert not True
-+ True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.257463').error
-FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ot-02] - AssertionError: ot-02: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
-assert not True
-+ True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.271007').error
-FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ot-03] - AssertionError: ot-03: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
-assert not True
-+ True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.280587').error
-FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ot-04] - AssertionError: ot-04: create_order failed: Error: 'TokoTools' object no '_customer'
-assert not True
-+ True = ToolMessage(id='ref-0', 'TokoTools' turn_idx=None, timestamp='2026-10-16T12:55:54.285548').error
-FAILED tests/test_tasks.py::test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges json.decoder.JSONDecodeError: 1 1 0)
-ERROR tests/test_tools.py::test_the_chat_number_finds_the_customer AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_search_matches_every_word AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_ongkir_charges_every_started_kilogram AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_resellers_pay_the_reseller_price_and_cannot_add_a_promo AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_promos_need_a_valid_code_and_the_minimum AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_cod_only_where_the_courier_offers_it_and_up_to_the_limit AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_out_of_stock_and_unknown_items_are_refused AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_payment_needs_the_exact_total_with_the_kode_unik AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_a_paid_transfer_cannot_pay_twice AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_items_change_only_before_payment_and_stock_follows AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_address_changes_before_shipping_and_never_change_a_paid_ongkir AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money AttributeError: 'TokoTools'
-ERROR tests/test_tools.py::test_returns_need_the_window_the_video_and_a_real_reason AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
-ERROR tests/test_tools.py::test_tracking_only_for_shipped_orders - AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
-ERROR tests/test_tools.py::test_calculate_takes_arithmetic_only - AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
-ERROR tests/test_tools.py::test_the_seeded_orders_follow_the_rules - AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
-ERROR tests/test_tools.py::test_a_hand_off_is_recorded_with_its_order_and_reason_only - AttributeError: 'TokoTools' object no attribute '_customer'. Did you mean: '_get_customer'?
-14 failed, 241 passed, 1 warning, 18 errors in 17.64s
-[426 words compressed to 266 (from 37 source lines). Original content preserved. Retrieve more: hash=73d26983fcae9a2c3184376a]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+made tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <toko_wa.tools.TokoTools object at 0x11c9ebf20>, customer_id = 'C001'
+items [{'item_id': 'KS-HTM-M', 2}],
+'JNE',
+[1297 words compressed to 867 (from 243 source lines). Original content preserved. Retrieve more: hash=fbd98354d6279283c789907e]
