@@ -1,0 +1,10 @@
+{
+ "command": [
+  "npx",
+  "vitest",
+  "run"
+ ],
+ "exit_code": 1,
+ "seconds": 1.64,
+ "what": "a budget threshold set too high"
+}

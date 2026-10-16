@@ -1,0 +1,11 @@
+{
+ "command": [
+  "uv",
+  "run",
+  "pytest",
+  "-q"
+ ],
+ "exit_code": 2,
+ "seconds": 6.5,
+ "what": "a test importing a name that does not exist"
+}

@@ -1,0 +1,10 @@
+{
+ "command": [
+  "npx",
+  "vitest",
+  "run"
+ ],
+ "exit_code": 1,
+ "seconds": 1.37,
+ "what": "a million written as a hundred thousand"
+}

@@ -1,0 +1,10 @@
+{
+ "command": [
+  "uv",
+  "run",
+  "pytest"
+ ],
+ "exit_code": 1,
+ "seconds": 1.06,
+ "what": "an off-by-one when a number is shifted"
+}

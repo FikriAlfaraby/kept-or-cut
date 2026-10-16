@@ -1,0 +1,9 @@
+{
+ "command": [
+  "python3",
+  "config_loader.py"
+ ],
+ "exit_code": 1,
+ "seconds": 0.05,
+ "what": "a trailing comma in a settings file"
+}

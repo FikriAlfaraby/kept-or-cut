@@ -1,0 +1,10 @@
+{
+ "command": [
+  "npx",
+  "tsc",
+  "--noEmit"
+ ],
+ "exit_code": 2,
+ "seconds": 1.24,
+ "what": "a string where a number belongs"
+}

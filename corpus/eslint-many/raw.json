@@ -1,0 +1,11 @@
+{
+ "command": [
+  "npx",
+  "eslint",
+  "--max-warnings=0",
+  "src"
+ ],
+ "exit_code": 1,
+ "seconds": 0.85,
+ "what": "eight variables nobody reads, in four files"
+}

@@ -1,0 +1,10 @@
+{
+ "command": [
+  "npx",
+  "tsc",
+  "--noEmit"
+ ],
+ "exit_code": 2,
+ "seconds": 1.25,
+ "what": "a field renamed in the schema only"
+}

@@ -1,0 +1,10 @@
+{
+ "command": [
+  "uv",
+  "run",
+  "pytest"
+ ],
+ "exit_code": 2,
+ "seconds": 0.5,
+ "what": "a syntax error in a test file"
+}

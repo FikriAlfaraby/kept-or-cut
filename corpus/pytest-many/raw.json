@@ -1,0 +1,10 @@
+{
+ "command": [
+  "uv",
+  "run",
+  "pytest"
+ ],
+ "exit_code": 1,
+ "seconds": 2.78,
+ "what": "an end event stamped before its parent"
+}

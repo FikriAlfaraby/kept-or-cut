@@ -1,0 +1,11 @@
+{
+ "command": [
+  "npx",
+  "eslint",
+  "--max-warnings=0",
+  "src"
+ ],
+ "exit_code": 1,
+ "seconds": 1.59,
+ "what": "two variables nobody reads"
+}

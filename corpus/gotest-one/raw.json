@@ -1,0 +1,10 @@
+{
+ "command": [
+  "go",
+  "test",
+  "./..."
+ ],
+ "exit_code": 1,
+ "seconds": 1.09,
+ "what": "kilograms rounded down instead of up"
+}

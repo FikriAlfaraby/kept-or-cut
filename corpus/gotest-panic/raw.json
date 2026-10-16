@@ -1,0 +1,10 @@
+{
+ "command": [
+  "go",
+  "test",
+  "./..."
+ ],
+ "exit_code": 1,
+ "seconds": 0.51,
+ "what": "an index past the end of a slice"
+}

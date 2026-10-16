@@ -1,0 +1,9 @@
+{
+ "command": [
+  "python3",
+  "orders.py"
+ ],
+ "exit_code": 1,
+ "seconds": 0.03,
+ "what": "an order for a product with no price"
+}
