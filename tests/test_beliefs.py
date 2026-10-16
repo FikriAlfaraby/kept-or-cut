@@ -278,3 +278,11 @@ def test_the_site_export_quotes_part_2():
     assert block["names"] == 96 and block["names_in_text"]["cc-raw"] == 34
     assert [p["verdict"] for p in block["predictions"]] == [v["verdict"] for v in verdicts()]
     assert {a["failing_count"] for a in block["answers"]["pytest-renamed"]["gemini/cc-rtk"]} == {14}
+    assert [(a["model"], a["view"]) for a in block["absent_names"]] == [
+        ("luna", "cc-caveman-engine"),
+        ("gemini", "cc-caveman-engine"),
+    ]
+    quoted = block["replies"]["pytest-setup-errors/cc-rtk"]
+    assert {" ".join(r.split()) for rs in quoted.values() for r in rs} == {
+        '{"run_failed": true, "failing_count": null, "failing": [], "first_look": {"file": null, "line": null}}'
+    }

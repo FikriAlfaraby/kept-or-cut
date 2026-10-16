@@ -14,9 +14,10 @@ import subprocess
 import sys
 
 from .analyze import CORPUS, ROOT, summary, tokens
-from .beliefs_score import TRIALS, first_file, load, moved
+from .beliefs_score import TRIALS, answer_path, first_file, load, moved, truth
 from .beliefs_score import VIEWS as READ_VIEWS
 from .beliefs_score import summary as beliefs_summary
+from .beliefs_score import views as read_views
 from .cases import CASES, EXPLORATORY
 from .claude_code import VIEWS, views
 from .needed import needed, survives
@@ -66,6 +67,31 @@ def beliefs(text: dict) -> dict:
             "first_look": answer.get("first_look"),
         }
 
+    runs = json.loads((CORPUS / "runs.json").read_text(encoding="utf-8"))
+    absent = []  # a failing test the model named that is not in the text it read
+    for case in CASES:
+        names, texts = truth(case)["names"], read_views(case, runs)
+        for m in MODELS:
+            for v in READ_VIEWS:
+                for trial, answer in enumerate(load(m, case.id, v)):
+                    listed = [
+                        str(f.get("name") or "") for f in answer.get("failing") or [] if isinstance(f, dict)
+                    ]
+                    absent += [
+                        {"case": case.id, "model": m, "view": v, "trial": trial, "name": name}
+                        for name in names
+                        if any(name in got for got in listed) and name not in texts[v]
+                    ]
+
+    def replies(case_id: str, view: str) -> dict:
+        return {
+            m: [
+                json.loads(answer_path(m, case_id, view, t).read_text(encoding="utf-8"))["reply"]
+                for t in range(TRIALS)
+            ]
+            for m in MODELS
+        }
+
     return {
         "models": {"luna": "GPT-6 Luna", "gemini": "Gemini 3.8 Flash"},
         "trials": TRIALS,
@@ -86,6 +112,8 @@ def beliefs(text: dict) -> dict:
             c.id: {f"{m}/{v}": [brief(a) for a in load(m, c.id, v)] for m in MODELS for v in READ_VIEWS}
             for c in CASES + EXPLORATORY
         },
+        "absent_names": absent,
+        "replies": {"pytest-setup-errors/cc-rtk": replies("pytest-setup-errors", "cc-rtk")},
         "predictions": verdicts2(None, text),
     }
 
