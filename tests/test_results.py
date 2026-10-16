@@ -283,3 +283,12 @@ def test_the_readme_repeats_the_same_numbers():
         "Pytest: 255 passed in 18.56s",
     ):
         assert line in README
+
+
+def test_the_site_export_quotes_the_same_numbers(results):
+    from kept_or_cut.export import SHOWN, case_entry
+
+    for case in CASES:
+        entry = case_entry(case, RUNS, False)
+        for view in SHOWN:
+            assert sum(entry["views"][view]["kept"]) == results["cases"][case.id]["configs"][view]["kept"], case.id
