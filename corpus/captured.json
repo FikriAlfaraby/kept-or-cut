@@ -1,0 +1,231 @@
+{
+ "claude": "2.1.294 (Claude Code)",
+ "cases": {
+  "pytest-two": {
+   "cc-raw": {
+    "command": "uv run pytest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "uv run rtk pytest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "pytest-many": {
+   "cc-raw": {
+    "command": "uv run pytest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "uv run rtk pytest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "pytest-collect": {
+   "cc-raw": {
+    "command": "uv run pytest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "uv run rtk pytest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "pytest-import": {
+   "cc-raw": {
+    "command": "uv run pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "uv run rtk pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "pytest-few": {
+   "cc-raw": {
+    "command": "uv run pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "uv run rtk pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "traceback-deep": {
+   "cc-raw": {
+    "command": "python3 orders.py",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "traceback-chained": {
+   "cc-raw": {
+    "command": "python3 config_loader.py",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "gotest-one": {
+   "cc-raw": {
+    "command": "go test ./...",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk go test ./...",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "gotest-panic": {
+   "cc-raw": {
+    "command": "go test ./...",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk go test ./...",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "vitest-one": {
+   "cc-raw": {
+    "command": "npx vitest run",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk vitest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "tsc-one": {
+   "cc-raw": {
+    "command": "npx tsc --noEmit",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk tsc --noEmit",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "pytest-renamed": {
+   "cc-raw": {
+    "command": "uv run pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "uv run rtk pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "vitest-many": {
+   "cc-raw": {
+    "command": "npx vitest run",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk vitest",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "tsc-many": {
+   "cc-raw": {
+    "command": "npx tsc --noEmit",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk tsc --noEmit",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "eslint-few": {
+   "cc-raw": {
+    "command": "npx eslint --max-warnings=0 src",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk lint --max-warnings=0 src",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "eslint-many": {
+   "cc-raw": {
+    "command": "npx eslint --max-warnings=0 src",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "rtk lint --max-warnings=0 src",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  },
+  "pytest-setup-errors": {
+   "cc-raw": {
+    "command": "uv run pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   },
+   "cc-rtk": {
+    "command": "uv run rtk pytest -q",
+    "is_error": true,
+    "requests": 2,
+    "claude_exit": 0
+   }
+  }
+ }
+}

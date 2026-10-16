@@ -1,23 +1,23 @@
 """What Claude Code puts in front of the model when a Bash command fails. Added after review; not pre-registered.
 
-Read from Claude Code 2.1.294, the shipped binary. The Bash tool writes a command's output to a file and reads back
-only its first 30,000 bytes (BASH_MAX_OUTPUT_LENGTH's default, `Jar=30000`; `#m` reads the file from offset 0 up to
-that many bytes). The tool result is "Exit code N" and that block, joined by a newline and trimmed. Above 11,024
-characters it keeps the first 5,000 and the last 5,000, with "... [N characters truncated] ..." between them.
+Captured from a real session (scripts/capture_claude_code.py): `claude -p`, Claude Code 2.1.294, runs each failing
+command in its planted repository, pointed at a stub on this machine that plays the model and keeps the tool result
+Claude Code sends back. Those captures are cc-raw and cc-rtk below.
 
-Checked against my own transcripts. One cut run (2.1.295) is 10,040 characters with the marker at character 5,002,
-and its last characters stop mid-word, about 30,000 characters into the output: the read-back, which my first
-version of this file left out (a reviewer found it).
-One failed vitest run shows the block as stdout, then stderr: the summary vitest prints on stdout comes before the
-failure details it prints on stderr, though through a single pipe vitest writes the details first. The raw capture
-stored stdout and then stderr, so raw.txt is that block.
+The same behaviour, read from the shipped binary, rebuilds those two from raw.txt (`rebuilt`, kept as a cross-check
+and for the views no session ran). The Bash tool writes a command's output to a file and reads back only its first
+30,000 bytes (BASH_MAX_OUTPUT_LENGTH's default, `Jar=30000`; `#m` reads the file from offset 0 up to that many bytes).
+The tool result is "Exit code N" and that block, joined by a newline and trimmed. Above 11,024 characters it keeps
+the first 5,000 and the last 5,000, with "... [N characters truncated] ..." between them. The rebuild gives the
+captured count of whole failures for every case. The texts differ in timings, temporary names and, for vitest, the
+order: Claude Code keeps stdout and stderr in the order the command wrote them, and raw.txt stored stdout first.
 
-Each configuration's view is that text, built from what the configuration hands Claude Code:
+Each configuration's view:
 
-- cc-raw: the command itself.
-- cc-rtk: rtk's output, with rtk's exit code; the command's own output when rtk leaves the command alone.
-- cc-caveman-engine: what `caveman shrink` prints: the shrunk output and its recover line, then the engine's
-  report, which it writes on stderr.
+- cc-raw: the command itself, captured.
+- cc-rtk: the command rtk's hook rewrites it to, captured; the command's own output when rtk leaves it alone.
+- cc-caveman-engine: rebuilt: what `caveman shrink` prints (the shrunk output and its recover line, then the engine's
+  report on stderr), read back and cut as above. No session ran caveman's CLI.
 - cc-caveman-hook: cc-caveman-engine when the hook wraps the command, else cc-raw.
 - cc-headroom-proxy: what headroom's proxy forwarded when the tool result was cc-raw (scripts/headroom_proxy.py).
 """
@@ -51,17 +51,26 @@ def failed_command(exit_code: int, output: str) -> str:
     return cut("\n".join(part for part in (f"Exit code {exit_code}", read_back(output)) if part).strip())
 
 
-def views(case_dir: Path, runs: dict) -> dict[str, str]:
-    run = runs[case_dir.name]
+def rebuilt(case_dir: Path, runs: dict) -> dict[str, str]:
+    """cc-raw and cc-rtk as the binary's rules make them from raw.txt and rtk.txt."""
     raw = (case_dir / "raw.txt").read_text(encoding="utf-8")
     exit_code = json.loads((case_dir / "raw.json").read_text(encoding="utf-8"))["exit_code"]
+    rtk = runs[case_dir.name]["rtk"]
     out = {"cc-raw": failed_command(exit_code, raw)}
-    rtk = run["rtk"]
     out["cc-rtk"] = (
         failed_command(rtk["exit_code"], (case_dir / "rtk.txt").read_text(encoding="utf-8"))
         if rtk["command"]
         else out["cc-raw"]
     )
+    return out
+
+
+def views(case_dir: Path, runs: dict) -> dict[str, str]:
+    run = runs[case_dir.name]
+    exit_code = json.loads((case_dir / "raw.json").read_text(encoding="utf-8"))["exit_code"]
+    out = {"cc-raw": (case_dir / "captured-cc-raw.txt").read_text(encoding="utf-8")}
+    rtk = case_dir / "captured-cc-rtk.txt"
+    out["cc-rtk"] = rtk.read_text(encoding="utf-8") if rtk.exists() else out["cc-raw"]
     engine = (case_dir / "caveman-engine.txt").read_text(encoding="utf-8")
     out["cc-caveman-engine"] = failed_command(exit_code, engine + run["caveman-engine"]["stderr"])
     out["cc-caveman-hook"] = out["cc-caveman-engine"] if run["caveman-hook"]["wraps"] else out["cc-raw"]

@@ -20,4 +20,4 @@ E   ImportError: cannot import name 'normalize_courier' from 'toko_wa.tools' (/h
 =========================== short test summary info ============================
 ERROR tests/test_tools.py
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-1 warning, 1 error in 5.22s
+1 warning, 1 error in 3.50s

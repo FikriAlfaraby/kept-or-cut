@@ -55,4 +55,4 @@ FAILED tests/test_probe.py::test_shifted_keeps_padding_and_decimals - AssertionE
   
   - 012
   + 013
-========================= 2 failed, 42 passed in 0.18s =========================
+========================= 2 failed, 42 passed in 0.13s =========================

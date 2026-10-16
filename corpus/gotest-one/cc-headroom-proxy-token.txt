@@ -5,5 +5,5 @@ Exit code 1
     shipping_test.go:18: Cost(2500) = 17000, want 21000
     shipping_test.go:18: Cost(5200) = 29000, want 33000
 FAIL
-FAIL	example.com/shipping	0.501s
+FAIL	example.com/shipping	0.777s
 FAIL

@@ -245,4 +245,4 @@ ERROR tests/test_tools.py::test_calculate_takes_arithmetic_only TypeError: TokoT
 ERROR tests/test_tools.py::test_the_seeded_orders_follow_the_rules TypeError: TokoTools.__init__()
 ERROR tests/test_tools.py::test_a_hand_off_is_recorded_with_its_order_and_reason_only TypeError: TokoTools.__init__()
 255 1 18
-[234 words compressed to 136 (from 26 source lines). Original content preserved. Retrieve more: hash=d0ae313a3d6c4bc32085bec2]
+[234 words compressed to 136 (from 26 source lines). Original content preserved. Retrieve more: hash=ab077943b020d4ced54a75a9]

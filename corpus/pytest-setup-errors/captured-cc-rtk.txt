@@ -1,0 +1,3 @@
+Exit code 1
+Pytest: 255 passed in 14.89s
+[full output: rtk recall 501de4ea67fb]

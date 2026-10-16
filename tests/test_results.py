@@ -8,8 +8,8 @@ import pytest
 
 from kept_or_cut.analyze import CORPUS, summary
 from kept_or_cut.cases import CASES
-from kept_or_cut.claude_code import cut, read_back, views
-from kept_or_cut.needed import needed
+from kept_or_cut.claude_code import cut, read_back, rebuilt, views
+from kept_or_cut.needed import needed, survives
 from kept_or_cut.predictions import verdicts
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,11 +27,11 @@ FULL_OUTPUT = {
     "headroom-aggressive": (418, 159, 16, 60387, None),
 }
 IN_CLAUDE_CODE = {
-    "cc-raw": (294, 83, 12, 18956, "Claude Code alone"),
-    "cc-rtk": (270, 75, 9, 10030, "rtk, then Claude Code"),
-    "cc-caveman-hook": (294, 83, 12, 19026, "caveman's hook, then Claude Code"),
+    "cc-raw": (294, 83, 12, 18973, "Claude Code alone"),
+    "cc-rtk": (270, 75, 9, 10034, "rtk, then Claude Code"),
+    "cc-caveman-hook": (294, 83, 12, 19038, "caveman's hook, then Claude Code"),
     "cc-caveman-engine": (347, 102, 10, 19917, "caveman's engine, then Claude Code"),
-    "cc-headroom-proxy": (257, 69, 11, 15884, "Claude Code, then headroom's proxy"),
+    "cc-headroom-proxy": (258, 69, 11, 15857, "Claude Code, then headroom's proxy"),
 }
 # failing items fully visible in the five runs Claude Code cuts
 LONG_RUNS = {
@@ -137,9 +137,36 @@ def test_claude_code_reads_back_30000_bytes_first():
     assert read_back("x" * 30000) == "x" * 30000 and read_back("x" * 30001) == "x" * 30000
     # bytes, not characters: a two-byte character split at the limit becomes one replacement character
     assert read_back("x" * 29999 + "é" * 3) == "x" * 29999 + "\ufffd"
-    # the two longest runs lose their end, summary line included
+    # the two longest runs lose their end, summary line included, in the rebuild and in the capture
     for case, summary_line in (("pytest-many", "44 failed"), ("pytest-renamed", "14 failed")):
-        assert summary_line in text(case, "raw") and summary_line not in views(CORPUS / case, RUNS)["cc-raw"]
+        assert summary_line in text(case, "raw")
+        assert summary_line not in rebuilt(CORPUS / case, RUNS)["cc-raw"]
+        assert summary_line not in views(CORPUS / case, RUNS)["cc-raw"]
+
+
+CAPTURED = json.loads((CORPUS / "captured.json").read_text(encoding="utf-8"))
+
+
+def test_a_real_claude_code_session_was_captured_for_every_case():
+    assert CAPTURED["claude"].startswith("2.1.294")
+    assert sorted(CAPTURED["cases"]) == sorted([c.id for c in CASES] + ["pytest-setup-errors"])
+    for case, kinds in CAPTURED["cases"].items():
+        for name, record in kinds.items():
+            assert record["is_error"] and record["claude_exit"] == 0, (case, name)
+            assert text(case, f"captured-{name}").startswith("Exit code "), (case, name)
+
+
+def test_the_rebuild_gives_the_captured_count_for_every_case():
+    for case in CASES:
+        facts = needed(case.kind, text(case.id, "raw"))
+        items = list(dict.fromkeys(f.item for f in facts))
+        built, seen = rebuilt(CORPUS / case.id, RUNS), views(CORPUS / case.id, RUNS)
+        for view in ("cc-raw", "cc-rtk"):
+            counts = []
+            for source in (built[view], seen[view]):
+                kept = [survives(f, source) for f in facts]
+                counts.append(sum(all(k for f, k in zip(facts, kept) if f.item == i) for i in items))
+            assert counts[0] == counts[1], (case.id, view, counts)
 
 
 def test_rtk_calls_a_run_with_18_errors_a_pass(results):
@@ -284,10 +311,10 @@ def test_the_predictions_as_scored():
 
 def test_the_readme_repeats_the_same_numbers():
     for line in (
-        "| Claude Code alone | 83 | 18,956 |",
-        "| rtk, then Claude Code | 75 | 10,030 (−47%) |",
+        "| Claude Code alone | 83 | 18,973 |",
+        "| rtk, then Claude Code | 75 | 10,034 (−47%) |",
         "| caveman's engine, then Claude Code | 102 | 19,917 (+5%) |",
-        "| Claude Code, then headroom's proxy | 69 | 15,884 (−16%) |",
+        "| Claude Code, then headroom's proxy | 69 | 15,857 (−16%) |",
         "6 held, 2 wrong, 2 half",
         "Pytest: 255 passed in 18.56s",
     ):

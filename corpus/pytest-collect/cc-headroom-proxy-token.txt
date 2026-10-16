@@ -38,4 +38,4 @@ E   SyntaxError: invalid syntax
 =========================== short test summary info ============================
 ERROR tests/test_probe.py
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.18s ===============================
+=============================== 1 error in 0.15s ===============================

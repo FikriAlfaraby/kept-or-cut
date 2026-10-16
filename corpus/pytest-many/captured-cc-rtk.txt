@@ -1,0 +1,58 @@
+Exit code 1
+Pytest: 153 passed, 44 failed in 0.74s
+
+Failures:
+1. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[compliant]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+
+2. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[compliant-vip]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+
+3. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[compliant-colleague]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 6}}\n' == '{"schema_ver...vents": 6}}\n'
+
+4. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[compliant-chain]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 8}}\n' == '{"schema_ver...vents": 8}}\n'
+
+5. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[approval-replay]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 8}}\n' == '{"schema_ver...vents": 8}}\n'
+
+6. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[changed-amount]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+
+7. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[outside-scope]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+
+8. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[budget-overrun]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 9}}\n' == '{"schema_ver...vents": 9}}\n'
+
+9. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[expired-approval]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+
+10. [FAIL] test_inputs_on_disk_are_the_ones_the_code_builds[agent-approves]
+     tests/test_mutants.py:67: in test_inputs_on_disk_are_the_ones_the_code_builds
+     assert (folder / trace_name(m)).read_text(encoding="utf-8") == (tmp_path / trace_name(m)).read_text(
+     E   assert '{"schema_ver...vents": 7}}\n' == '{"schema_ver...vents": 7}}\n'
+
+
+… +31 more failures
+  [full output: rtk recall b3383b82f63f]
+[full output: rtk recall b6c655ffbe6c]

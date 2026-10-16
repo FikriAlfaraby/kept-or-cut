@@ -1,0 +1,24 @@
+Exit code 1
+
+/home/dev/Documents/Projects/wa-lead-extractor/src/classify.ts
+  40:5  error  'staleLabel' is never reassigned. Use 'const' instead  prefer-const
+  40:5  error  'staleLabel' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  41:7  error  'unusedCutoff' is assigned a value but never used      @typescript-eslint/no-unused-vars
+
+/home/dev/Documents/Projects/wa-lead-extractor/src/guardrail.ts
+  87:5  error  'retryCount' is never reassigned. Use 'const' instead  prefer-const
+  87:5  error  'retryCount' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  88:7  error  'unusedLimit' is assigned a value but never used       @typescript-eslint/no-unused-vars
+
+/home/dev/Documents/Projects/wa-lead-extractor/src/merge.ts
+  12:5  error  'lastMerge' is never reassigned. Use 'const' instead  prefer-const
+  12:5  error  'lastMerge' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  13:7  error  'unusedWeight' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+/home/dev/Documents/Projects/wa-lead-extractor/src/writer.ts
+  56:5  error  'draftCount' is never reassigned. Use 'const' instead  prefer-const
+  56:5  error  'draftCount' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  57:7  error  'unusedTone' is assigned a value but never used        @typescript-eslint/no-unused-vars
+
+✖ 12 problems (12 errors, 0 warnings)
+  4 errors and 0 warnings potentially fixable with the `--fix` option.

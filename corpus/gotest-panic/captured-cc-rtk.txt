@@ -1,0 +1,11 @@
+Exit code 1
+Go test: 1 passed, 1 failed in 1 packages
+
+shipping (1 passed, 1 failed)
+  [FAIL] TestZone
+     panic: runtime error: index out of range [2] with length 2 [recovered, repanicked]
+     /opt/homebrew/Cellar/go/1.26.5/libexec/src/testing/testing.go:1974 +0x1a0
+     testing.tRunner.func1()
+     /opt/homebrew/Cellar/go/1.26.5/libexec/src/testing/testing.go:1977 +0x318
+     panic({0x1043fbbe0?, 0x7bc2b41b8018?})
+[full output: rtk recall 89ca7e9085f3]

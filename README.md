@@ -17,15 +17,15 @@ fixed rules which of those lines each tool keeps. The predictions were tagged be
 
 In Claude Code, the agent never reads the middle of a long failing run. Claude Code reads back the first 30,000
 bytes of a failed command's output and keeps the first and last 5,000 characters of that, and each tool sits
-before or after that cut. 159 failing items:
+before or after that cut. Captured from a real Claude Code session, 159 failing items:
 
 | What the model reads | Items fully visible | Tokens |
 |---|---:|---:|
-| Claude Code alone | 83 | 18,956 |
-| rtk, then Claude Code | 75 | 10,030 (−47%) |
-| caveman's hook, then Claude Code | 83 | 19,026 (0%) |
+| Claude Code alone | 83 | 18,973 |
+| rtk, then Claude Code | 75 | 10,034 (−47%) |
+| caveman's hook, then Claude Code | 83 | 19,038 (0%) |
 | caveman's engine, then Claude Code | 102 | 19,917 (+5%) |
-| Claude Code, then headroom's proxy | 69 | 15,884 (−16%) |
+| Claude Code, then headroom's proxy | 69 | 15,857 (−16%) |
 
 - **rtk's summary can read as a pass.** In a case I added after the results, a pytest run with 18 errors and no
   failures came back as "Pytest: 255 passed in 18.56s", with only the exit code saying otherwise; rtk's summary has

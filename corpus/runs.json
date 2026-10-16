@@ -178,8 +178,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2845,
-   "input_tokens_optimized": 2789,
+   "input_tokens_original": 2853,
+   "input_tokens_optimized": 2801,
    "transforms_applied": [
     "router:tool_result:mixed",
     "cache_mode:cold_start_full"
@@ -191,8 +191,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2845,
-   "input_tokens_optimized": 2789,
+   "input_tokens_original": 2853,
+   "input_tokens_optimized": 2801,
    "transforms_applied": [
     "router:protected:user_message",
     "router:tool_result:mixed"
@@ -471,8 +471,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 3078,
-   "input_tokens_optimized": 2634,
+   "input_tokens_original": 3077,
+   "input_tokens_optimized": 2630,
    "transforms_applied": [
     "router:tool_result:mixed",
     "cache_mode:cold_start_full"
@@ -484,8 +484,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 3078,
-   "input_tokens_optimized": 2634,
+   "input_tokens_original": 3077,
+   "input_tokens_optimized": 2630,
    "transforms_applied": [
     "router:protected:user_message",
     "router:tool_result:mixed"
@@ -845,8 +845,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 409,
-   "input_tokens_optimized": 409,
+   "input_tokens_original": 414,
+   "input_tokens_optimized": 414,
    "transforms_applied": []
   },
   "cc-headroom-proxy-token": {
@@ -855,8 +855,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 409,
-   "input_tokens_optimized": 409,
+   "input_tokens_original": 414,
+   "input_tokens_optimized": 414,
    "transforms_applied": [
     "router:protected:user_message",
     "router:protected:error_output"
@@ -939,8 +939,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 629,
-   "input_tokens_optimized": 629,
+   "input_tokens_original": 630,
+   "input_tokens_optimized": 630,
    "transforms_applied": []
   },
   "cc-headroom-proxy-token": {
@@ -949,8 +949,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 629,
-   "input_tokens_optimized": 629,
+   "input_tokens_original": 630,
+   "input_tokens_optimized": 630,
    "transforms_applied": [
     "router:protected:user_message",
     "router:protected:error_output"
@@ -1134,8 +1134,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2889,
-   "input_tokens_optimized": 2133,
+   "input_tokens_original": 2884,
+   "input_tokens_optimized": 2128,
    "transforms_applied": [
     "router:tool_result:code_aware",
     "cache_mode:cold_start_full"
@@ -1147,8 +1147,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 2889,
-   "input_tokens_optimized": 2133,
+   "input_tokens_original": 2884,
+   "input_tokens_optimized": 2128,
    "transforms_applied": [
     "router:protected:user_message",
     "router:tool_result:code_aware"
@@ -1234,8 +1234,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 3489,
-   "input_tokens_optimized": 2423,
+   "input_tokens_original": 3498,
+   "input_tokens_optimized": 2387,
    "transforms_applied": [
     "router:tool_result:text",
     "cache_mode:cold_start_full"
@@ -1247,8 +1247,8 @@
    "tools_added": [
     "headroom_retrieve"
    ],
-   "input_tokens_original": 3489,
-   "input_tokens_optimized": 2423,
+   "input_tokens_original": 3498,
+   "input_tokens_optimized": 2387,
    "transforms_applied": [
     "router:protected:user_message",
     "router:tool_result:text"
@@ -1625,7 +1625,7 @@
     "headroom_retrieve"
    ],
    "input_tokens_original": 2396,
-   "input_tokens_optimized": 2295,
+   "input_tokens_optimized": 2294,
    "transforms_applied": [
     "router:tool_result:mixed",
     "cache_mode:cold_start_full"
@@ -1638,7 +1638,7 @@
     "headroom_retrieve"
    ],
    "input_tokens_original": 2396,
-   "input_tokens_optimized": 2295,
+   "input_tokens_optimized": 2294,
    "transforms_applied": [
     "router:protected:user_message",
     "router:tool_result:mixed"

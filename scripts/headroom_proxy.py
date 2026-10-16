@@ -12,7 +12,7 @@ loaded before the first case is sent, or the run stops.
 Each case is sent as a failed Bash call: the call, then a tool result marked is_error whose text starts with
 "Exit code N" (the shape Claude Code writes in its own transcripts). By default the text is the full output, and
 what the proxy forwarded is written to <case>/headroom-proxy[-token].txt without the "Exit code N" line. With
---claude-code the text is exactly what Claude Code would send, cut included, and the forwarded text is written whole
+--claude-code the text is what a real Claude Code session sent (corpus/<case>/captured-cc-raw.txt), cut included, and the forwarded text is written whole
 to corpus/<case>/cc-headroom-proxy[-token].txt. The proxy forwards to a stub on this machine that keeps the request
 and answers "ok"; nothing leaves the machine.
 """
@@ -36,7 +36,6 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kept_or_cut.cases import CASES, EXPLORATORY
-from kept_or_cut.claude_code import failed_command
 
 PROMPT = "The checks are failing. Find the cause and fix it."  # the request the compress() runs used
 MODEL = "claude-sonnet-5-5"
@@ -212,7 +211,8 @@ def run_config(
                 raw = (case_dir / "raw.txt").read_text(encoding="utf-8")
                 exit_code = json.loads((case_dir / "raw.json").read_text(encoding="utf-8"))["exit_code"]
                 prefix = f"Exit code {exit_code}\n"
-                content = failed_command(exit_code, raw) if claude_code else prefix + raw
+                captured = case_dir / "captured-cc-raw.txt"  # what a real Claude Code session sent
+                content = captured.read_text(encoding="utf-8") if claude_code else prefix + raw
                 body = request(case, content)
                 before = len(received)
                 req = urllib.request.Request(

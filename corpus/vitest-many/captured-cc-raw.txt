@@ -1,0 +1,294 @@
+Exit code 1
+
+ RUN  v2.1.9 /home/dev/Documents/Projects/wa-lead-extractor
+
+ ✓ test/classify.test.ts (7 tests) 2ms
+ ❯ test/deterministic.test.ts (10 tests | 2 failed) 8ms
+   × parseMoneyToIDR > parses '800jt' as 800 million 5ms
+     → expected { amount: 80000000, …(1) } to deeply equal { amount: 800000000, …(1) }
+   × parseMoneyToIDR > parses 'Rp 900 juta' as 900 million 0ms
+     → expected { amount: 90000000, …(1) } to deeply equal { amount: 900000000, …(1) }
+ ✓ test/guardrail.test.ts (7 tests) 3ms
+ ✓ test/qualify.test.ts (16 tests) 3ms
+ ❯ test/writer-guardrail.test.ts (9 tests | 1 failed) 8ms
+   × verifyDraft > passes a clean draft that only references facts in the profile 7ms
+     → expected { passed: false, …(1) } to deeply equal { passed: true, violations: [] }
+ ❯ test/pipeline.test.ts (4 tests | 1 failed) 7ms
+   × runPipeline > deterministic wins over a conflicting LLM value for budget/intent/urgency 5ms
+     → expected 90000000 to be 900000000 // Object.is equality
+ ✓ test/fixes-2026-10-14.test.ts (14 tests) 6ms
+ ❯ test/recordings.test.ts (14 tests | 3 failed) 31ms
+   × recording 2026-10-14-eval.json > re-scores to the published results 19ms
+     → expected { model: 'cx/gpt-6-luna', …(6) } to deeply equal { model: 'cx/gpt-6-luna', …(6) }
+   × the hand review of the eval > covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right 2ms
+     → cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR is not reviewed: expected undefined to be defined
+   × the hand review of the eval > leaves one really wrong fact under the word rule, the rest translations, extra places or debatable labels 1ms
+     → cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR: expected undefined to be defined
+ ✓ test/glosses.test.ts (31 tests) 28ms
+ ✓ test/second-rater.test.ts (4 tests) 5ms
+ ✓ test/judge.test.ts (2 tests) 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/deterministic.test.ts > parseMoneyToIDR > parses '800jt' as 800 million
+AssertionError: expected { amount: 80000000, …(1) } to deeply equal { amount: 800000000, …(1) }
+
+- Expected
++ Received
+
+  Object {
+-   "amount": 800000000,
++   "amount": 80000000,
+    "matchedText": "800jt",
+  }
+
+ ❯ test/deterministic.test.ts:14:52
+     12| describe("parseMoneyToIDR", () => {
+     13|   it("parses '800jt' as 800 million", () => {
+     14|     expect(parseMoneyToIDR("budgetnya 800jt aja")).toEqual({
+       |                                                    ^
+     15|       amount: 800_000_000,
+     16|       matchedText: "800jt",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  test/deterministic.test.ts > parseMoneyToIDR > parses 'Rp 900 juta' as 900 million
+AssertionError: expected { amount: 90000000, …(1) } to deeply equal { amount: 900000000, …(1) }
+
+- Expected
++ Received
+
+  Object {
+-   "amount": 900000000,
++   "amount": 90000000,
+    "matchedText": "Rp 900 juta",
+  }
+
+ ❯ test/deterministic.test.ts:35:58
+     33| 
+     34|   it("parses 'Rp 900 juta' as 900 million", () => {
+     35|     expect(parseMoneyToIDR("Rp 900 juta paling mentok")).toEqual({
+       |                                                          ^
+     36|       amount: 900_000_000,
+     37|       matchedText: "Rp 900 juta",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  test/pipeline.test.ts > runPipeline > deterministic wins over a conflicting LLM value for budget/intent/urgency
+AssertionError: expected 90000000 to be 900000000 // Object.is equality
+
+- Expected
++ Received
+
+- 900000000
++ 90000000
+
+ ❯ test/pipeline.test.ts:42:31
+     40|     const { profile } = await runPipeline(conversation, mockExtractFn(…
+     41| 
+     42|     expect(profile.budgetIDR).toBe(900_000_000); // deterministic valu…
+       |                               ^
+     43|     expect(profile.intent).toBe("buy"); // deterministic value, not "r…
+     44|     expect(profile.urgency).toBe("high"); // deterministic value, not …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  test/recordings.test.ts > recording 2026-10-14-eval.json > re-scores to the published results
+AssertionError: expected { model: 'cx/gpt-6-luna', …(6) } to deeply equal { model: 'cx/gpt-6-luna', …(6) }
+
+- Expected
++ Received
+
+  Object {
+    "byWords": Object {
+      "overall": Object {
+-       "accuracy": 0.8472222222222222,
+-       "hallucinationRate": 0.21951219512195122,
+-       "precision": 0.7804878048780488,
+-       "recall": 0.8472222222222222,
++       "accuracy": 0.8888888888888888,
++       "hallucinationRate": 0.14634146341463414,
++       "precision": 0.8536585365853658,
++       "recall": 0.8888888888888888,
+      },
+      "perField": Object {
+        "areas": Object {
+          "correct": 11,
+          "hallucinations": 1,
+          "predictedNonEmpty": 8,
+          "total": 12,
+        },
+        "budgetIDR": Object {
+-         "correct": 9,
+-         "hallucinations": 3,
++         "correct": 12,
++         "hallucinations": 0,
+          "predictedNonEmpty": 6,
+          "total": 12,
+        },
+        "intent": Object {
+          "correct": 11,
+        
+
+... [11651 characters truncated] ...
+
+: Object {
+          "areas": true,
+          "budgetIDR": true,
+          "intent": false,
+          "propertyType": false,
+          "timeline": true,
+          "urgency": true,
+        },
+        "id": "c11_adversarial_agent_states_budget",
+        "predicted": Object {
+          "areas": Array [
+            "Alam Sutera",
+          ],
+          "budgetIDR": null,
+          "intent": "unknown",
+          "propertyType": "2BR",
+          "timeline": null,
+          "urgency": "unknown",
+        },
+        "rejected": Array [],
+        "unreadable": false,
+        "violations": 0,
+      },
+      Object {
+        "expected": Object {
+          "areas": Array [],
+          "budgetIDR": null,
+          "intent": "unknown",
+          "propertyType": null,
+          "timeline": null,
+          "urgency": "unknown",
+        },
+        "fieldMatches": Object {
+          "areas": true,
+          "budgetIDR": true,
+          "intent": true,
+          "propertyType": true,
+          "timeline": true,
+          "urgency": false,
+        },
+        "id": "c12_adversarial_friend_budget",
+        "predicted": Object {
+          "areas": Array [],
+          "budgetIDR": null,
+          "intent": "unknown",
+          "propertyType": null,
+          "timeline": null,
+          "urgency": "low",
+        },
+        "rejected": Array [],
+        "unreadable": false,
+        "violations": 0,
+      },
+    ],
+    "perField": Object {
+      "areas": Object {
+        "correct": 10,
+        "hallucinations": 2,
+        "predictedNonEmpty": 8,
+        "total": 12,
+      },
+      "budgetIDR": Object {
+-       "correct": 9,
+-       "hallucinations": 3,
++       "correct": 12,
++       "hallucinations": 0,
+        "predictedNonEmpty": 6,
+        "total": 12,
+      },
+      "intent": Object {
+        "correct": 11,
+        "hallucinations": 0,
+        "predictedNonEmpty": 7,
+        "total": 12,
+      },
+      "propertyType": Object {
+        "correct": 6,
+        "hallucinations": 5,
+        "predictedNonEmpty": 8,
+        "total": 12,
+      },
+      "timeline": Object {
+        "correct": 9,
+        "hallucinations": 3,
+        "predictedNonEmpty": 6,
+        "total": 12,
+      },
+      "urgency": Object {
+        "correct": 11,
+        "hallucinations": 1,
+        "predictedNonEmpty": 6,
+        "total": 12,
+      },
+    },
+    "unreadable": 0,
+  }
+
+ ❯ test/recordings.test.ts:41:25
+     39|       expect(recordedAt).toBe(recording.recordedAt);
+     40|       expect(source).toBe(`eval/recordings/${file}`);
+     41|       expect(published).toEqual(await scoreRun(model, evalItems(record…
+       |                         ^
+     42|     }
+     43|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  test/recordings.test.ts > the hand review of the eval > covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right
+AssertionError: cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR is not reviewed: expected undefined to be defined
+ ❯ test/recordings.test.ts:130:69
+    128|           }
+    129|           wrong += 1;
+    130|           expect(fact, `${model} ${c.id} ${field} is not reviewed`).to…
+       |                                                                     ^
+    131|           const empty = field === "areas" ? c.predicted.areas.length =…
+    132|           expect(fact?.category === "missed", `${model} ${c.id} ${fiel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  test/recordings.test.ts > the hand review of the eval > leaves one really wrong fact under the word rule, the rest translations, extra places or debatable labels
+AssertionError: cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR: expected undefined to be defined
+ ❯ test/recordings.test.ts:157:63
+    155|         if (empty) continue;
+    156|         const fact = review.facts.find((f) => f.model === model && f.c…
+    157|         expect(fact, `${model} ${w.conversation} ${w.field}`).toBeDefi…
+       |                                                               ^
+    158|         kinds.push(`${fact!.category}`);
+    159|       }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  test/writer-guardrail.test.ts > verifyDraft > passes a clean draft that only references facts in the profile
+AssertionError: expected { passed: false, …(1) } to deeply equal { passed: true, violations: [] }
+
+- Expected
++ Received
+
+  Object {
+-   "passed": true,
+-   "violations": Array [],
++   "passed": false,
++   "violations": Array [
++     "number \"900 million\" not grounded in the lead profile",
++   ],
+  }
+
+ ❯ test/writer-guardrail.test.ts:34:21
+     32|     };
+     33|     const verdict = verifyDraft(draft, PROFILE, AGENT);
+     34|     expect(verdict).toEqual({ passed: true, violations: [] });
+       |                     ^
+     35|   });
+     36| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+ Test Files  4 failed | 7 passed (11)
+      Tests  7 failed | 111 passed (118)
+   Start at  16:00:38
+   Duration  639ms (transform 470ms, setup 0ms, collect 1.09s, tests 103ms, environment 1ms, prepare 778ms)

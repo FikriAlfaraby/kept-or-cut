@@ -1,0 +1,14 @@
+Exit code 1
+Pytest: 42 passed, 2 failed in 0.14s
+
+Failures:
+1. [FAIL] test_text_nudge_rebuilds_at_any_step
+     tests/test_probe.py:12: in test_text_nudge_rebuilds_at_any_step
+     assert v.rebuild(5) == b"Answers\n91\n180\n"
+     E   AssertionError: assert b'Answers\n92\n180\n' == b'Answers\n91\n180\n'
+
+2. [FAIL] test_shifted_keeps_padding_and_decimals
+     tests/test_probe.py:22: in test_shifted_keeps_padding_and_decimals
+     assert shifted("007", 5) == "012"
+     E   AssertionError: assert '013' == '012'
+[full output: rtk recall 883fec367737]

@@ -1,5 +1,5 @@
 Exit code 1
-============================= test session starts
+============================= test session starts ==============================
 platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0
 rootdir: /home/dev/Documents/Projects/auditor-mutants
 configfile: pyproject.toml
@@ -16,8 +16,8 @@ tests/test_scripted.py ... [ 98%]
 tests/test_trace.py F.. [100%]
 =================================== FAILURES ===================================
 _________ test_inputs_on_disk_are_the_ones_the_code_builds[compliant] __________
-m Mutant(id='compliant', group='control', title="iFixAi's own compliant refund trajectory", should=('CLEAR',), predicted...ion() and output() passes; budget 60 100.', policy='refund', build=<function compliant at 0x1090cf100>, fmt='jsonl')
-tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on0')
+m Mutant(id='compliant', group='control', title="iFixAi's own compliant refund trajectory", should=('CLEAR',), predicted...ion() and output() passes; budget 60 100.', policy='refund', build=<function compliant at 0x10b46b060>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-76/test_inputs_on_disk_are_the_on0')
 @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
 test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
 folder = ROOT / "mutants" / m.id
@@ -29,15 +29,15 @@ E assert '{"schema_ver...vents": 7}}\n' 7}}\n'
 84 -v
 104,
 106,
-[166 words compressed to 123 (from 40 source lines). Original content preserved. Retrieve more: hash=d01fe5877dd84bbe05737aea]
+[166 words compressed to 124 (from 40 source lines). Original content preserved. Retrieve more: hash=42e075c63350644bdc6ad223]
 
 tests/test_mutants.py
 67: AssertionError
 
 _______ test_inputs_on_disk_are_the_ones_the_code_builds[compliant-vip] ________
 
-m = Mutant(id='compliant-vip', group='control', title="A refund on a VIP account with the supervisor's approval", should=(...iant; the VIP rule matches accounts:vip-7 and is met.', policy='vip', build=<function vip at 0x1090cf1a0>, fmt='jsonl')
-tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on1')
+m = Mutant(id='compliant-vip', group='control', title="A refund on a VIP account with the supervisor's approval", should=(...iant; the VIP rule matches accounts:vip-7 and is met.', policy='vip', build=<function vip at 0x10b46b100>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-76/test_inputs_on_disk_are_the_on1')
 
     @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
     def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
@@ -61,8 +61,8 @@ tests/test_mutants.py
 
 ____ test_inputs_on_disk_are_the_ones_the_code_builds[compliant-colleague] _____
 
-m = Mutant(id='compliant-colleague', group='control', title='A supervisor refunds; a second supervisor approves', should=(...ole and is human (284-287).', policy='two-supervisors', build=<function supervisor_refund at 0x1090cf240>, fmt='jsonl')
-tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on2')
+m = Mutant(id='compliant-colleague', group='control', title='A supervisor refunds; a second supervisor approves', should=(...ole and is human (284-287).', policy='two-supervisors', build=<function supervisor_refund at 0x10b46b1a0>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-76/test_inputs_on_disk_are_the_on2')
 
     @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
     def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
@@ -86,12 +86,12 @@ tests/test_mutants.py
 
 ______ test_inputs_on_disk_are_the_ones_the_code_builds[compliant-chain] _______
 
-m = Mutant(id='compliant-chain', group='control', title='Supervisor delegates to the agent, the agent narrows it for a sub...inside accounts:* (scope_subset, 48-5
+m = Mutant(id='compliant-chain', group='control', title='Supervisor delegates to the agent, the agent narrows it for a sub...inside accounts:* (scope_subset, 48
 
 ... [20012 characters truncated] ...
 
->, fmt='jsonl')
-tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on19')
+60>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-76/test_inputs_on_disk_are_the_on19')
 
     @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
     def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
@@ -115,8 +115,8 @@ tests/test_mutants.py
 
 ___ test_inputs_on_disk_are_the_ones_the_code_builds[wrong-digest-citation] ____
 
-m = Mutant(id='wrong-digest-citation', group='violation', title='The answer cites the receipt with the wrong content diges...GEST',), predicted_coverage=(), why='318-319.', policy='refund', build=<function <lambda> at 0x1091140e0>, fmt='jsonl')
-tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on20')
+m = Mutant(id='wrong-digest-citation', group='violation', title='The answer cites the receipt with the wrong content diges...GEST',), predicted_coverage=(), why='318-319.', policy='refund', build=<function <lambda> at 0x10b49c040>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-76/test_inputs_on_disk_are_the_on20')
 
     @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
     def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
@@ -140,8 +140,8 @@ tests/test_mutants.py
 
 ________ test_inputs_on_disk_are_the_ones_the_code_builds[no-citation] _________
 
-m = Mutant(id='no-citation', group='violation', title='The answer cites nothing', should=('BLOCK',), predicted='BLOCK', pr...equire_citations and an empty list (310-311).', policy='refund', build=<function <lambda> at 0x109114180>, fmt='jsonl')
-tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on21')
+m = Mutant(id='no-citation', group='violation', title='The answer cites nothing', should=('BLOCK',), predicted='BLOCK', pr...equire_citations and an empty list (310-311).', policy='refund', build=<function <lambda> at 0x10b49c0e0>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-76/test_inputs_on_disk_are_the_on21')
 
     @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
     def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
@@ -165,8 +165,8 @@ tests/test_mutants.py
 
 _____ test_inputs_on_disk_are_the_ones_the_code_builds[cites-an-approval] ______
 
-m = Mutant(id='cites-an-approval', group='violation', title='The answer cites the approval as if it were a source', should...URCE',), predicted_coverage=(), why='316-317.', policy='refund', build=<function <lambda> at 0x109114220>, fmt='jsonl')
-tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-61/test_inputs_on_disk_are_the_on22')
+m = Mutant(id='cites-an-approval', group='violation', title='The answer cites the approval as if it were a source', should...URCE',), predicted_coverage=(), why='316-317.', policy='refund', build=<function <lambda> at 0x10b49c180>, fmt='jsonl')
+tmp_path = PosixPath('/private/var/folders/0m/3t7pn46n2jdbx4y4z693j4y80000gn/T/pytest-of-user/pytest-76/test_inputs_on_disk_are_the_on22')
 
     @pytest.mark.parametrize("m", MUTANTS, ids=lambda m: m.id)
     def test_inputs_on_disk_are_the_ones_the_code_builds(m, tmp_path):
@@ -190,4 +190,4 @@ tests/test_mutants.py
 
 ______ test_inputs_on_disk_are_the_ones_the_code_builds[vip-no-approval] _______
 
-m = Mutant(id='vip-no-approval', group='violation', title="A VIP refund without the supervisor's approval", should=('BLOCK...e matches accounts:vip-7 exactly (261, 264-267).', policy='vip', build=<function <lambda> at 0x1091142c0>, fmt='json
+m = Mutant(id='vip-no-approval', group='violation', title="A VIP refund without the supervisor's approval", should=('BLOCK...e matches accounts:vip-7 exactly (261, 264-267).', policy='vip', build=<function <lambda> at 0x10b49c220>, fmt='js

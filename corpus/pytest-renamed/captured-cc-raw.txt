@@ -1,0 +1,243 @@
+Exit code 1
+........................................................................ [ 26%]
+........................................................................ [ 52%]
+........................................................................ [ 79%]
+.....FFFFF.FFFFF.FFF...............F...EEEEEEEEEEEEEEEEEE                [100%]
+==================================== ERRORS ====================================
+__________ ERROR at setup of test_the_chat_number_finds_the_customer ___________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x118e30410>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_______________ ERROR at setup of test_search_matches_every_word _______________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x118d50cb0>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_________ ERROR at setup of test_ongkir_charges_every_started_kilogram _________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+... [20012 characters truncated] ...
+
+r'?
+
+src/toko_wa/tools.py:336: AttributeError
+_ ERROR at setup of test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money _
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x118cb9eb0>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+__ ERROR at setup of test_returns_need_the_window_the_video_and_a_real_reason __
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x118e33440>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+___________ ERROR at setup of test_tracking_only_for_shipped_orders ____________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x118e323f0>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_me

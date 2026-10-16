@@ -1,0 +1,16 @@
+Exit code 1
+PASS (117) FAIL (1)
+
+1. qualify does not disqualify on a budget only moderately below the floor
+   AssertionError: expected 'disqualified' not to be 'disqualified' // Object.is equality
+       at /home/dev/Documents/Projects/wa-lead-extractor/test/qualify.test.ts:70:30
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:146:14
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:533:11
+       at runWithTimeout (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:39:7)
+       at runTest (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1056:17)
+       at processTicksAndRejections (node:internal/process/task_queues:104:5)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runFiles (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1262:5)
+       at startTests (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1271:3)
+[full output: rtk recall ffe994d5ef6d]

@@ -1,0 +1,21 @@
+Exit code 1
+--- FAIL: TestZone (0.00s)
+panic: runtime error: index out of range [2] with length 2 [recovered, repanicked]
+
+goroutine 4 [running]:
+testing.tRunner.func1.2({0x102fb3be0, 0x6c2a570de198})
+	/opt/homebrew/Cellar/go/1.26.5/libexec/src/testing/testing.go:1974 +0x1a0
+testing.tRunner.func1()
+	/opt/homebrew/Cellar/go/1.26.5/libexec/src/testing/testing.go:1977 +0x318
+panic({0x102fb3be0?, 0x6c2a570de198?})
+	/opt/homebrew/Cellar/go/1.26.5/libexec/src/runtime/panic.go:860 +0x12c
+example.com/shipping.Zone(...)
+	/home/dev/Documents/Projects/kept-or-cut/fixtures/go/shipping.go:12
+example.com/shipping.TestZone(0x6c2a57208488?)
+	/home/dev/Documents/Projects/kept-or-cut/fixtures/go/shipping_test.go:24 +0x20
+testing.tRunner(0x6c2a57208488, 0x102fc3f00)
+	/opt/homebrew/Cellar/go/1.26.5/libexec/src/testing/testing.go:2036 +0xc4
+created by testing.(*T).Run in goroutine 1
+	/opt/homebrew/Cellar/go/1.26.5/libexec/src/testing/testing.go:2101 +0x3a8
+FAIL	example.com/shipping	0.633s
+FAIL

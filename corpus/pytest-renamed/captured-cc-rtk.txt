@@ -1,0 +1,58 @@
+Exit code 1
+Pytest: 241 passed, 14 failed in 15.40s
+
+Failures:
+1. [FAIL] test_reference_actions_run_without_error[smoke-01]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: smoke-01: create_order failed: Error: 'TokoTools' object has no attribute '_c...
+
+2. [FAIL] test_reference_actions_run_without_error[smoke-02]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: smoke-02: create_order failed: Error: 'TokoTools' object has no attribute '_c...
+
+3. [FAIL] test_reference_actions_run_without_error[ts-01]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: ts-01: list_orders failed: Error: 'TokoTools' object has no attribute '_custo...
+
+4. [FAIL] test_reference_actions_run_without_error[ts-02]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: ts-02: list_orders failed: Error: 'TokoTools' object has no attribute '_custo...
+
+5. [FAIL] test_reference_actions_run_without_error[ts-03]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: ts-03: update_order_address failed: Error: 'TokoTools' object has no attribut...
+
+6. [FAIL] test_reference_actions_run_without_error[lc-01]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: lc-01: create_order failed: Error: 'TokoTools' object has no attribute '_cust...
+
+7. [FAIL] test_reference_actions_run_without_error[lc-02]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: lc-02: create_order failed: Error: 'TokoTools' object has no attribute '_cust...
+
+8. [FAIL] test_reference_actions_run_without_error[lc-03]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: lc-03: create_order failed: Error: 'TokoTools' object has no attribute '_cust...
+
+9. [FAIL] test_reference_actions_run_without_error[lc-04]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: lc-04: create_order failed: Error: 'TokoTools' object has no attribute '_cust...
+
+10. [FAIL] test_reference_actions_run_without_error[lc-05]
+     tests/test_tasks.py:58: in test_reference_actions_run_without_error
+     assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+     E   AssertionError: lc-05: create_order failed: Error: 'TokoTools' object has no attribute '_cust...
+
+
+… +4 more failures
+  [full output: rtk recall 87932a3ae948]
+[full output: rtk recall 8c3b3ef50536]
