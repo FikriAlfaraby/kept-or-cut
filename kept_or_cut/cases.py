@@ -241,3 +241,22 @@ CASES: tuple[Case, ...] = (
         "eight variables nobody reads, in four files",
     ),
 )
+
+# Added after the results, to test what rtk's pytest summary does when a run has errors and no failures.
+# Not pre-registered; reported apart from the 16.
+EXPLORATORY: tuple[Case, ...] = (
+    Case(
+        "pytest-setup-errors",
+        "pytest",
+        TOKO,
+        (
+            Edit(
+                "tests/test_tools.py",
+                "    return TokoTools(build())\n",
+                '    return TokoTools(build(), currency="IDR")\n',
+            ),
+        ),
+        ("uv", "run", "pytest", "-q"),
+        "a fixture that cannot build its object",
+    ),
+)

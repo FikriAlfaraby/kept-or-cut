@@ -1,0 +1,198 @@
+Exit code 1
+RUN v2.1.9 /home/dev/Documents/Projects/wa-lead-extractor
+✓ test/classify.test.ts (7 tests) 2ms
+❯ test/deterministic.test.ts (10 tests | 2 failed) 8ms
+× parseMoneyToIDR parses '800jt' 800 million 6ms
+→ expected { amount: 80000000, …(1) } deeply equal { amount: 800000000, …(1) }
+× parseMoneyToIDR parses 'Rp 900 juta' 900 million 1ms
+→ expected { amount: 90000000, …(1) } deeply equal { amount: 900000000, …(1) }
+✓ test/qualify.test.ts (16 tests) 3ms
+✓ test/guardrail.test.ts (7 tests) 3ms
+❯ test/writer-guardrail.test.ts (9 tests | 1 failed) 8ms
+× verifyDraft > passes clean draft only references facts in profile 6ms
+→ expected { passed: false, …(1) } deeply equal { passed: true, violations: [] }
+❯ test/pipeline.test.ts (4 tests | 1 failed) 8ms
+× runPipeline deterministic wins over conflicting LLM value budget/intent/urgency 5ms
+→ expected 90000000 900000000 // Object.is equality
+✓ test/fixes-2026-10-14.test.ts (14 tests) 5ms
+❯ test/recordings.test.ts (14 tests | 3 failed) 36ms
+× recording 2026-10-14-eval.json > re-scores published results 20ms
+→ expected { model: 'cx/gpt-6-luna', …(6) } deeply equal { model: 'cx/gpt-6-luna', …(6) }
+× hand review eval covers every fact scorer marks wrong, says left empty, and fixes made right 2ms
+→ cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR not reviewed: expected undefined defined
+× hand review eval leaves one really wrong fact or
+cx/gpt-6-luna budgetIDR:
+test/glosses.test.ts (31
+test/second-rater.test.ts (4
+test/judge.test.ts (2
+4 7 (11)
+7 111 (118)
+12:55:57
+7
+FAIL test/deterministic.test.ts parseMoneyToIDR 800
+AssertionError: 80000000, …(1) 800000000, …(1)
+800000000,
+80000000,
+"800jt",
+}
+❯ test/deterministic.test.ts:14:52
+12| describe("parseMoneyToIDR", () => {
+13| it("parses '800jt' 800 million", () => {
+14| expect(parseMoneyToIDR("budgetnya 800jt aja")).toEqual({
+| ^
+15| amount: 800_000_000,
+16| matchedText: "800jt",
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+FAIL test/deterministic.test.ts > parseMoneyToIDR > parses 'Rp 900 juta' 900 million
+AssertionError: expected { amount: 90000000, …(1) } to deeply equal { amount: 900000000, …(1) }
+- Expected
++ Received
+Object {
+- "amount": 900000000,
++ "amount": 90000000,
+"matchedText": "Rp 900 juta",
+}
+❯ test/deterministic.test.ts:35:58
+33|
+34| it("parses 'Rp 900 juta' 900 million", () => {
+35| expect(parseMoneyToIDR("Rp 900 juta paling mentok")).toEqual({
+| ^
+36| amount: 900_000_000,
+37| matchedText: "Rp 900 juta",
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+FAIL test/pipeline.test.ts > runPipeline > deterministic wins over conflicting LLM value for budget/intent/urgency
+AssertionError: expected 90000000 be 900000000 // Object.is equality
+- Expected
++ Received
+- 900000000
++ 90000000
+❯ test/pipeline.test.ts:42:31
+40| const
+41|
+42| expect(profile.budgetIDR).toBe(900_000_000);
+43| expect(profile.intent).toBe("buy"); not
+44| expect(profile.urgency).toBe("high"); not
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+FAIL test/recordings.test.ts 2026-10-14-eval.json re-scores
+AssertionError: 'cx/gpt-6-luna', …(6) 'cx/gpt-6-luna', …(6)
+0.8472222222222222,
+0.21951219512195122,
+0.7804878048780488,
+0.8472222222222222,
+0.8888888888888888,
+0.14634146341463414,
+0.8536585365853658,
+0.8888888888888888,
+11,
+1,
+8,
+12,
+"budgetIDR":
+9,
+[11649
+"budgetIDR":
+2BR",
+"budgetIDR":
+"budgetIDR":
+"2BR",
+0,
+"budgetIDR":
+"budgetIDR":
+true,
+"timeline": true,
+"urgency": false,
+},
+"id": "c12_adversarial_friend_budget",
+"predicted": Object {
+"areas": Array [],
+"budgetIDR": null,
+"intent": "unknown",
+"propertyType": null,
+"timeline": null,
+"urgency": "low",
+},
+"rejected": Array [],
+"unreadable": false,
+"violations": 0,
+},
+],
+"perField": Object {
+"areas": Object {
+"correct": 10,
+"hallucinations": 2,
+"predictedNonEmpty": 8,
+"total": 12,
+},
+"budgetIDR": Object {
+- "correct": 9,
+- "hallucinations": 3,
++ "correct": 12,
++ "hallucinations": 0,
+"predictedNonEmpty": 6,
+"total": 12,
+},
+"intent": Object {
+"correct": 11,
+"hallucinations": 0,
+"predictedNonEmpty": 7,
+"total": 12,
+},
+"propertyType": Object {
+"correct": 6,
+"hallucinations": 5,
+"predictedNonEmpty": 8,
+"total": 12,
+},
+"timeline": Object {
+"correct": 9,
+"hallucinations": 3,
+"predictedNonEmpty": 6,
+"total": 12,
+},
+"urgency": Object {
+"correct": 11,
+"hallucinations": 1,
+"predictedNonEmpty": 6,
+"total": 12,
+},
+},
+"unreadable": 0,
+}
+❯ test/recordings.test.ts:41:25
+39| expect(recordedAt).toBe(recording.recordedAt);
+40| expect(source).toBe(`eval/recordings/${file}`);
+41| expect(published).toEqual(await scoreRun(model, evalItems(record…
+| ^
+42| }
+43| });
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+FAIL test/recordings.test.ts > hand review eval > covers every fact scorer marks wrong, says were left empty, and
+AssertionError: cx/gpt-6-luna budgetIDR not
+test/recordings.test.ts:130:69
+128|
+129| 1;
+130| ${c.id} not reviewed`).to…
+131| c.predicted.areas.length
+132| ${c.id}
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+FAIL test/recordings.test.ts or
+AssertionError: cx/gpt-6-luna budgetIDR:
+test/recordings.test.ts:157:63
+155|
+156| review.facts.find((f) f.model f.c…
+157| ${w.conversation} ${w.field}`).toBeDefi…
+158| kinds.push(`${fact!.category}`);
+159|
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+FAIL test/writer-guardrail.test.ts only
+AssertionError: …(1)
+\"900 not
+test/writer-guardrail.test.ts:34:21
+32|
+33| verdict = verifyDraft(draft, PROFILE, AGENT);
+34| expect(verdict).toEqual({ passed: true, violations: [] });
+| ^
+35| });
+36|
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+[1068 words compressed to 630 (from 294 source lines). Original content preserved. Retrieve more: hash=31348a58db49b5eb13f6c111]

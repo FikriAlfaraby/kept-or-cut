@@ -1,0 +1,9 @@
+
+/home/dev/Documents/Projects/wa-lead-extractor/src/qualify.ts
+  37:7  error  'unusedFloor' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  38:5  error  'neverRead' is never reassigned. Use 'const' instead  prefer-const
+  38:5  error  'neverRead' is assigned a value but never used        @typescript-eslint/no-unused-vars
+
+✖ 3 problems (3 errors, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

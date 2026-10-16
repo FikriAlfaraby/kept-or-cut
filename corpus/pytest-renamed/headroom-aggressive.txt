@@ -1,0 +1,1233 @@
+........................................................................ [ 26%]
+........................................................................ [ 52%]
+........................................................................ [ 79%]
+.....FFFFF.FFFFF.FFF...............F...EEEEEEEEEEEEEEEEEE                [100%]
+==================================== ERRORS ====================================
+__________ ERROR at setup of test_the_chat_number_finds_the_customer ___________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c7ea720>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_______________ ERROR at setup of test_search_matches_every_word _______________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c7e8e90>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_________ ERROR at setup of test_ongkir_charges_every_started_kilogram _________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c7eba40>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_ ERROR at setup of test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock _
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c7e8e90>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_ ERROR at setup of test_resellers_pay_the_reseller_price_and_cannot_add_a_promo _
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c7eaea0>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_______ ERROR at setup of test_promos_need_a_valid_code_and_the_minimum ________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c8e0650>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_ ERROR at setup of test_cod_only_where_the_courier_offers_it_and_up_to_the_limit _
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c6cb260>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+______ ERROR at setup of test_out_of_stock_and_unknown_items_are_refused _______
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c7e9e20>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+___ ERROR at setup of test_payment_needs_the_exact_total_with_the_kode_unik ____
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c7e8e90>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+___________ ERROR at setup of test_a_paid_transfer_cannot_pay_twice ____________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c6cad20>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+__ ERROR at setup of test_items_change_only_before_payment_and_stock_follows ___
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c9e82c0>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_ ERROR at setup of test_address_changes_before_shipping_and_never_change_a_paid_ongkir _
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c6cade0>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_ ERROR at setup of test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money _
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c6bad20>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+__ ERROR at setup of test_returns_need_the_window_the_video_and_a_real_reason __
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c6ba900>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+___________ ERROR at setup of test_tracking_only_for_shipped_orders ____________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c9ebf20>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+____________ ERROR at setup of test_calculate_takes_arithmetic_only ____________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c9eb890>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+__________ ERROR at setup of test_the_seeded_orders_follow_the_rules ___________
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c6bab70>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+_ ERROR at setup of test_a_hand_off_is_recorded_with_its_order_and_reason_only _
+
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build())
+                         ^^^^^^^
+
+tests/test_tools.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/toko_wa/seed.py:515: in build
+    o = order(at(1, 9), "C001", [("KS-HTM-M", 2)], "JNE", "transfer_bca", paid_at=at(1, 11))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/toko_wa/seed.py:491: in order
+    made = tools.create_order(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <toko_wa.tools.TokoTools object at 0x11c9e8b30>, customer_id = 'C001'
+items = [{'item_id': 'KS-HTM-M', 'qty': 2}], address_id = 'C001-A1'
+courier = 'JNE', payment_method = 'transfer_bca', promo_code = None
+
+    @is_tool(ToolType.WRITE)
+    def create_order(
+        self,
+        customer_id: str,
+        items: list[ItemQty],
+        address_id: str,
+        courier: str,
+        payment_method: Literal["transfer_bca", "transfer_bri", "cod"],
+        promo_code: str | None = None,
+    ) -> Order:
+        """Create an order. Transfer orders wait for payment and get a kode unik added to the total;
+        COD orders go straight to processing. Read the details back and get the customer's 'ya'
+        before calling this.
+    
+        Args:
+            customer_id: The customer id.
+            items: List of {'item_id', 'qty'}.
+            address_id: One of the customer's saved address ids.
+            courier: 'JNE', 'J&T' or 'SiCepat'.
+            payment_method: 'transfer_bca', 'transfer_bri' or 'cod'.
+            promo_code: Optional promo code.
+    
+        Returns:
+            Order: The new order with its total.
+        """
+>       customer = self._customer(customer_id)
+                   ^^^^^^^^^^^^^^
+E       AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+
+src/toko_wa/tools.py:336: AttributeError
+=================================== FAILURES ===================================
+______________ test_reference_actions_run_without_error[smoke-01] ______________
+
+task = Task(id='smoke-01', description=Description(purpose='Smoke test: a plain order with a stock question and ongkir, in Wh...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: smoke-01: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-3', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:53.957458').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:53.957 | DEBUG    | tau2.environment.environment:get_response:482 - Response: phone='6281234500008' now='2026-10-15T10:00:00+07:00'
+2026-10-16 12:55:53.957 | DEBUG    | tau2.environment.environment:get_response:482 - Response: customer_id='C008' name='Agus Setiawan' phone='6281234500008' addresses=[Address(address_id='C008-A1', label='Rumah', recipient='Agus Setiawan', street='Jl. Antapani Lama No. 4', district='Antapani', city='Bandung', province='Jawa Barat', postal_code='40291')] default_address_id='C008-A1' is_reseller=False
+2026-10-16 12:55:53.957 | DEBUG    | tau2.environment.environment:get_response:482 - Response: product_id='JK' name='Jaket Hoodie Fleece' category='jaket' variants={'JK-HTM-M': Variant(item_id='JK-HTM-M', options={'warna': 'hitam', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-HTM-L': Variant(item_id='JK-HTM-L', options={'warna': 'hitam', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-HTM-XL': Variant(item_id='JK-HTM-XL', options={'warna': 'hitam', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-M': Variant(item_id='JK-ABU-M', options={'warna': 'abu', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-L': Variant(item_id='JK-ABU-L', options={'warna': 'abu', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-XL': Variant(item_id='JK-ABU-XL', options={'warna': 'abu', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-MRN-M': Variant(item_id='JK-MRN-M', options={'warna': 'maroon', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-L': Variant(item_id='JK-MRN-L', options={'warna': 'maroon', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-XL': Variant(item_id='JK-MRN-XL', options={'warna': 'maroon', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=1, weight_grams=600)}
+2026-10-16 12:55:53.957 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+______________ test_reference_actions_run_without_error[smoke-02] ______________
+
+task = Task(id='smoke-02', description=Description(purpose='Probe for the context strategies: a long history with an early co...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: smoke-02: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-3', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.204003').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.203 | DEBUG    | tau2.environment.environment:get_response:482 - Response: phone='6281234500008' now='2026-10-15T10:00:00+07:00'
+2026-10-16 12:55:54.203 | DEBUG    | tau2.environment.environment:get_response:482 - Response: customer_id='C008' name='Agus Setiawan' phone='6281234500008' addresses=[Address(address_id='C008-A1', label='Rumah', recipient='Agus Setiawan', street='Jl. Antapani Lama No. 4', district='Antapani', city='Bandung', province='Jawa Barat', postal_code='40291')] default_address_id='C008-A1' is_reseller=False
+2026-10-16 12:55:54.203 | DEBUG    | tau2.environment.environment:get_response:482 - Response: product_id='JK' name='Jaket Hoodie Fleece' category='jaket' variants={'JK-HTM-M': Variant(item_id='JK-HTM-M', options={'warna': 'hitam', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-HTM-L': Variant(item_id='JK-HTM-L', options={'warna': 'hitam', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-HTM-XL': Variant(item_id='JK-HTM-XL', options={'warna': 'hitam', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-M': Variant(item_id='JK-ABU-M', options={'warna': 'abu', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-L': Variant(item_id='JK-ABU-L', options={'warna': 'abu', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-XL': Variant(item_id='JK-ABU-XL', options={'warna': 'abu', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-MRN-M': Variant(item_id='JK-MRN-M', options={'warna': 'maroon', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-L': Variant(item_id='JK-MRN-L', options={'warna': 'maroon', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-XL': Variant(item_id='JK-MRN-XL', options={'warna': 'maroon', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=1, weight_grams=600)}
+2026-10-16 12:55:54.203 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[ts-01] ________________
+
+task = Task(id='ts-01', description=Description(purpose='Switch and return: an ongkir question, then a tracking question, the...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: ts-01: list_orders failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.210015').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.209 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+2026-10-16 12:55:54.210 | DEBUG    | tau2.environment.environment:get_response:482 - Response: status='dikirim' courier='JNE' tracking_number='JNE0100000102' events=['2026-10-14 16:02 Paket diterima di agen JNE Bandung', '2026-10-14 22:40 Berangkat dari Bandung menuju Yogyakarta', '2026-10-15 06:15 Tiba di gudang JNE Yogyakarta']
+2026-10-16 12:55:54.210 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[ts-02] ________________
+
+task = Task(id='ts-02', description=Description(purpose='Switch and never return: a product question, then a stuck parcel; th...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: ts-02: list_orders failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.215035').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.214 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+2026-10-16 12:55:54.215 | DEBUG    | tau2.environment.environment:get_response:482 - Response: status='dikirim' courier='J&T' tracking_number='JT0200000201' events=['2026-10-11 14:30 Paket diterima di drop point J&T Bandung', '2026-10-11 18:10 Transit di gateway Bandung', '2026-10-11 21:45 Paket tertahan di gateway, menunggu jadwal berikutnya']
+2026-10-16 12:55:54.215 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Transfer successful
+_______________ test_reference_actions_run_without_error[ts-03] ________________
+
+task = Task(id='ts-03', description=Description(purpose='Two orders interleaved: an address change for the unpaid order and a...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: ts-03: update_order_address failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.221288').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.221 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+2026-10-16 12:55:54.221 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[lc-01] ________________
+
+task = Task(id='lc-01', description=Description(purpose="A detail from early in yesterday's chat: the parcel goes to Mama's h...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: lc-01: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.231387').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.231 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[lc-02] ________________
+
+task = Task(id='lc-02', description=Description(purpose="A corrected detail: the hoodie was changed from M to L later in this...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: lc-02: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.237079').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.236 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[lc-03] ________________
+
+task = Task(id='lc-03', description=Description(purpose="A reference into yesterday's numbered list, which is in a different ...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: lc-03: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.243546').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.243 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[lc-04] ________________
+
+task = Task(id='lc-04', description=Description(purpose='Yesterday the admin promised GAJIAN10 for 2 hoodies and refused free...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: lc-04: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.250644').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.250 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[lc-05] ________________
+
+task = Task(id='lc-05', description=Description(purpose="Yesterday the customer forwarded a fake 'admin' free-ongkir message;...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: lc-05: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.257463').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.257 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[ot-02] ________________
+
+task = Task(id='ot-02', description=Description(purpose='Sundanese: asks for COD to Garut, which the couriers do not offer; s...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: ot-02: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.271007').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.270 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[ot-03] ________________
+
+task = Task(id='ot-03', description=Description(purpose="Changing one's mind inside the chat: 2 chinos become 1.", relevant_p...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: ot-03: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.280587').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.280 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+_______________ test_reference_actions_run_without_error[ot-04] ________________
+
+task = Task(id='ot-04', description=Description(purpose="A forwarded 'admin' message promises free ongkir and reseller prices...wardType.DB: 'DB'>, <RewardType.NL_ASSERTION: 'NL_ASSERTION'>]), issues=None, required_documents=None, user_tools=None)
+
+    @pytest.mark.parametrize("task", TASKS, ids=[t.id for t in TASKS])
+    def test_reference_actions_run_without_error(task):
+        env, before, results = replay(task)
+        for name, reply in results:
+>           assert not reply.error, f"{task.id}: {name} failed: {reply.content}"
+E           AssertionError: ot-04: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+E           assert not True
+E            +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.285548').error
+
+tests/test_tasks.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.285 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+____ test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges _____
+
+    def test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges():
+        task = next(t for t in TASKS if t.id == "smoke-01")
+        _, _, results = replay(task)
+>       order = json.loads(results[-1][1].content)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tasks.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x10a688740>
+s = "Error: 'TokoTools' object has no attribute '_customer'", idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+../../../.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/json/decoder.py:356: JSONDecodeError
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:54.302 | DEBUG    | tau2.environment.environment:get_response:482 - Response: phone='6281234500008' now='2026-10-15T10:00:00+07:00'
+2026-10-16 12:55:54.302 | DEBUG    | tau2.environment.environment:get_response:482 - Response: customer_id='C008' name='Agus Setiawan' phone='6281234500008' addresses=[Address(address_id='C008-A1', label='Rumah', recipient='Agus Setiawan', street='Jl. Antapani Lama No. 4', district='Antapani', city='Bandung', province='Jawa Barat', postal_code='40291')] default_address_id='C008-A1' is_reseller=False
+2026-10-16 12:55:54.302 | DEBUG    | tau2.environment.environment:get_response:482 - Response: product_id='JK' name='Jaket Hoodie Fleece' category='jaket' variants={'JK-HTM-M': Variant(item_id='JK-HTM-M', options={'warna': 'hitam', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-HTM-L': Variant(item_id='JK-HTM-L', options={'warna': 'hitam', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-HTM-XL': Variant(item_id='JK-HTM-XL', options={'warna': 'hitam', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-M': Variant(item_id='JK-ABU-M', options={'warna': 'abu', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-L': Variant(item_id='JK-ABU-L', options={'warna': 'abu', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-XL': Variant(item_id='JK-ABU-XL', options={'warna': 'abu', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-MRN-M': Variant(item_id='JK-MRN-M', options={'warna': 'maroon', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-L': Variant(item_id='JK-MRN-L', options={'warna': 'maroon', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-XL': Variant(item_id='JK-MRN-XL', options={'warna': 'maroon', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=1, weight_grams=600)}
+2026-10-16 12:55:54.302 | DEBUG    | tau2.environment.environment:get_response:482 - Response: Error: 'TokoTools' object has no attribute '_customer'
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/tau2/voice/utils/audio_preprocessing.py:4
+  /home/dev/Documents/Projects/toko-wa-bench/.venv/lib/python3.12/site-packages/tau2/voice/utils/audio_preprocessing.py:4: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+    import audioop
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[smoke-01] - AssertionError: smoke-01: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-3', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:53.957458').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[smoke-02] - AssertionError: smoke-02: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-3', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.204003').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ts-01] - AssertionError: ts-01: list_orders failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.210015').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ts-02] - AssertionError: ts-02: list_orders failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.215035').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ts-03] - AssertionError: ts-03: update_order_address failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.221288').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[lc-01] - AssertionError: lc-01: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.231387').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[lc-02] - AssertionError: lc-02: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.237079').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[lc-03] - AssertionError: lc-03: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.243546').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[lc-04] - AssertionError: lc-04: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.250644').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[lc-05] - AssertionError: lc-05: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.257463').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ot-02] - AssertionError: ot-02: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.271007').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ot-03] - AssertionError: ot-03: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.280587').error
+FAILED tests/test_tasks.py::test_reference_actions_run_without_error[ot-04] - AssertionError: ot-04: create_order failed: Error: 'TokoTools' object has no attribute '_customer'
+assert not True
+ +  where True = ToolMessage(id='ref-0', role='tool', content="Error: 'TokoTools' object has no attribute '_customer'", requestor='assistant', error=True, turn_idx=None, timestamp='2026-10-16T12:55:54.285548').error
+FAILED tests/test_tasks.py::test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges - json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR tests/test_tools.py::test_the_chat_number_finds_the_customer - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_search_matches_every_word - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_ongkir_charges_every_started_kilogram - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_resellers_pay_the_reseller_price_and_cannot_add_a_promo - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_promos_need_a_valid_code_and_the_minimum - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_cod_only_where_the_courier_offers_it_and_up_to_the_limit - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_out_of_stock_and_unknown_items_are_refused - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_payment_needs_the_exact_total_with_the_kode_unik - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_a_paid_transfer_cannot_pay_twice - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_items_change_only_before_payment_and_stock_follows - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_address_changes_before_shipping_and_never_change_a_paid_ongkir - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_returns_need_the_window_the_video_and_a_real_reason - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_tracking_only_for_shipped_orders - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_calculate_takes_arithmetic_only - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_the_seeded_orders_follow_the_rules - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+ERROR tests/test_tools.py::test_a_hand_off_is_recorded_with_its_order_and_reason_only - AttributeError: 'TokoTools' object has no attribute '_customer'. Did you mean: '_get_customer'?
+14 failed, 241 passed, 1 warning, 18 errors in 17.64s

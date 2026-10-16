@@ -1,0 +1,9 @@
+Go test: 1 passed, 1 failed in 1 packages
+
+shipping (1 passed, 1 failed)
+  [FAIL] TestCost
+     shipping_test.go:18: Cost(500) = 9000, want 13000
+     shipping_test.go:18: Cost(1001) = 13000, want 17000
+     shipping_test.go:18: Cost(2500) = 17000, want 21000
+     shipping_test.go:18: Cost(5200) = 29000, want 33000
+[full output: rtk recall 4bc7a4518f2c]

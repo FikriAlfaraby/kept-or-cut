@@ -1,0 +1,2 @@
+src/qualify.ts(36,14): error TS2322: Type 'string' is not assignable to type 'number'.
+TypeScript: 1 errors in 1 files

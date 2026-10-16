@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from kept_or_cut.cases import CASES
+from kept_or_cut.cases import CASES, EXPLORATORY
 from kept_or_cut.plant import planted, public, run
 
 
@@ -53,23 +53,36 @@ def clean(repo: Path) -> bool:
     ).stdout
 
 
-for case in CASES:
-    if not clean(case.repo):
-        raise SystemExit(f"{case.repo} has uncommitted changes; refusing to plant into it")
-    before = untracked(case.repo)
-    with planted(case.repo, case.edits):
-        r = run(case.raw, case.repo)
-    tidy(case.repo, before)
-    if not clean(case.repo):
-        raise SystemExit(f"{case.repo} is not clean after {case.id}")
-    out = ROOT / "corpus" / case.id
-    out.mkdir(parents=True, exist_ok=True)
-    (out / "raw.txt").write_text(public(r.output), encoding="utf-8")
-    (out / "raw.json").write_text(
-        json.dumps(
-            {"command": list(r.command), "exit_code": r.exit_code, "seconds": r.seconds, "what": case.what},
-            indent=1,
+def main() -> None:
+    wanted = set(sys.argv[1:])  # case ids; none means every case
+    for case in CASES + EXPLORATORY:
+        if wanted and case.id not in wanted:
+            continue
+        if not clean(case.repo):
+            raise SystemExit(f"{case.repo} has uncommitted changes; refusing to plant into it")
+        before = untracked(case.repo)
+        with planted(case.repo, case.edits):
+            r = run(case.raw, case.repo)
+        tidy(case.repo, before)
+        if not clean(case.repo):
+            raise SystemExit(f"{case.repo} is not clean after {case.id}")
+        out = ROOT / "corpus" / case.id
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "raw.txt").write_text(public(r.output), encoding="utf-8")
+        (out / "raw.json").write_text(
+            json.dumps(
+                {
+                    "command": list(r.command),
+                    "exit_code": r.exit_code,
+                    "seconds": r.seconds,
+                    "what": case.what,
+                },
+                indent=1,
+            )
+            + "\n"
         )
-        + "\n"
-    )
-    print(f"{case.id}: exit {r.exit_code}, {len(r.output.splitlines())} lines")
+        print(f"{case.id}: exit {r.exit_code}, {len(r.output.splitlines())} lines")
+
+
+if __name__ == "__main__":
+    main()

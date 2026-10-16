@@ -1,0 +1,454 @@
+RUN v2.1.9 /home/dev/Documents/Projects/wa-lead-extractor
+✓ test/classify.test.ts (7 tests) 2ms
+❯ test/deterministic.test.ts (10 tests | 2 failed) 8ms
+× parseMoneyToIDR parses '800jt' 800 million 6ms
+→ expected { amount: 80000000, …(1) } deeply equal { amount: 800000000, …(1) }
+× parseMoneyToIDR parses 'Rp 900 juta' 900 million 1ms
+→ expected { amount: 90000000, …(1) } deeply equal { amount: 900000000, …(1) }
+✓ test/qualify.test.ts (16 tests) 3ms
+✓ test/guardrail.test.ts (7 tests) 3ms
+❯ test/writer-guardrail.test.ts (9 tests | 1 failed) 8ms
+× verifyDraft > passes clean draft only references facts in profile 6ms
+→ expected { passed: false, …(1) } deeply equal { passed: true, violations: [] }
+❯ test/pipeline.test.ts (4 tests | 1 failed) 8ms
+× runPipeline deterministic wins over conflicting LLM value budget/intent/urgency 5ms
+→ expected 90000000 900000000 // Object.is equality
+✓ test/fixes-2026-10-14.test.ts (14 tests) 5ms
+❯ test/recordings.test.ts (14 tests | 3 failed) 36ms
+× recording 2026-10-14-eval.json > re-scores published results 20ms
+→ expected { model: 'cx/gpt-6-luna', …(6) } deeply equal { model: 'cx/gpt-6-luna', …(6) }
+× hand review eval covers every fact scorer marks wrong, says left empty, and fixes made right 2ms
+→ cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR not reviewed: expected undefined defined
+× hand review eval leaves one really wrong fact or
+cx/gpt-6-luna budgetIDR:
+test/glosses.test.ts (31
+test/second-rater.test.ts (4
+test/judge.test.ts (2
+4 7 (11)
+7 111 (118)
+12:55:57
+7
+FAIL test/deterministic.test.ts parseMoneyToIDR 800
+AssertionError: 80000000, …(1) 800000000, …(1)
+800000000,
+80000000,
+"800jt",
+}
+❯ test/deterministic.test.ts:14:52
+12| describe("parseMoneyToIDR", () => {
+13| it("parses '800jt' 800 million", () => {
+14| expect(parseMoneyToIDR("budgetnya 800jt aja")).toEqual({
+| ^
+15| amount: 800_000_000,
+16| matchedText: "800jt",
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+FAIL test/deterministic.test.ts > parseMoneyToIDR > parses 'Rp 900 juta' 900 million
+AssertionError: expected { amount: 90000000, …(1) } to deeply equal { amount: 900000000, …(1) }
+- Expected
++ Received
+Object {
+- "amount": 900000000,
++ "amount": 90000000,
+"matchedText": "Rp 900 juta",
+}
+❯ test/deterministic.test.ts:35:58
+33|
+34| it("parses 'Rp 900 juta' 900 million", () => {
+35| expect(parseMoneyToIDR("Rp 900 juta paling mentok")).toEqual({
+| ^
+36| amount: 900_000_000,
+37| matchedText: "Rp 900 juta",
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+FAIL test/pipeline.test.ts > runPipeline > deterministic wins over conflicting LLM value for budget/intent/urgency
+AssertionError: expected 90000000 be 900000000 // Object.is equality
+- Expected
++ Received
+- 900000000
++ 90000000
+❯ test/pipeline.test.ts:42:31
+40| const
+41|
+42| expect(profile.budgetIDR).toBe(900_000_000);
+43| expect(profile.intent).toBe("buy"); not
+44| expect(profile.urgency).toBe("high"); not
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+FAIL test/recordings.test.ts 2026-10-14-eval.json re-scores
+AssertionError: 'cx/gpt-6-luna', …(6) 'cx/gpt-6-luna', …(6)
+0.8472222222222222,
+0.21951219512195122,
+0.7804878048780488,
+0.8472222222222222,
+0.8888888888888888,
+0.14634146341463414,
+0.8536585365853658,
+0.8888888888888888,
+11,
+1,
+8,
+12,
+"budgetIDR":
+9,
+3,
+12,
+0,
+6,
+12,
+11,
+0,
+7,
+12,
+10,
+1,
+8,
+12,
+9,
+3,
+6,
+12,
+11,
+1,
+6,
+12,
+"budgetIDR",
+"field": "timeline",
+},
+Object {
+"conversation": "c04_bsd_rent_house_asap",
+- "field": "budgetIDR",
+- },
+- Object {
+- "conversation": "c04_bsd_rent_house_asap",
+"field": "areas",
+- },
+- Object {
+- "conversation": "c05_jkt_buy_apartment_seller_nego",
+- "field": "budgetIDR",
+},
+Object {
+"conversation": "c05_jkt_buy_apartment_seller_nego",
+"field": "timeline",
+},
+Object {
+"conversation": "c08_sparse_general_inquiry",
+"field": "propertyType",
+},
+Object {
+"conversation": "c11_adversarial_agent_states_budget",
+"field": "intent",
+},
+Object {
+"conversation": "c12_adversarial_friend_budget",
+"field": "urgency",
+},
+],
+},
+"guardrailViolations": 0,
+"model": "cx/gpt-6-luna",
+"overall": Object {
+- "accuracy": 0.7777777777777778,
+- "hallucinationRate": 0.34146341463414637,
+- "precision": 0.6585365853658537,
+- "recall": 0.7777777777777778,
++ "accuracy": 0.8194444444444444,
++ "hallucinationRate": 0.2682926829268293,
++ "precision": 0.7317073170731707,
++ "recall": 0.8194444444444444,
+},
+"perConversation": Array [
+Object {
+"expected": Object {
+"areas": Array [
+"BSD",
+],
+"budgetIDR": 1500000000,
+"intent": "buy",
+"propertyType": "rumah",
+"timeline": "bulan ini",
+"urgency": "high",
+},
+"fieldMatches": Object {
+"areas": false,
+"budgetIDR": true,
+"intent": true,
+"propertyType": false,
+"timeline": true,
+"urgency": true,
+},
+"id": "c01_bsd_buy_urgent",
+"predicted": Object {
+"areas": Array [
+"BSD City",
+"budgetIDR": 1500000000,
+0,
+"budgetIDR": 15000000,
+"budgetIDR":
+"budgetIDR":
+"budgetIDR": 1500000,
+"budgetIDR": 15000000,
+0,
+9",
+10",
+"budgetIDR": 2000000000,
+"budgetIDR":
+9",
+10",
+"budgetIDR": 2000000000,
+0,
+"BSD",
+"budgetIDR": 20000000,
+"budgetIDR":
+"budgetIDR": true,
+"intent": true,
+"propertyType": false,
+"timeline": true,
+"urgency": true,
+},
+"id": "c04_bsd_rent_house_asap",
+"predicted": Object {
+"areas": Array [
+"BSD",
+"deket De Park",
+],
+- "budgetIDR": 2000000,
++ "budgetIDR": 20000000,
+"intent": "rent",
+"propertyType": "rumah kontrakan 3KT",
+"timeline": "minggu ini",
+"urgency": "high",
+},
+"rejected": Array [],
+"unreadable": false,
+"violations": 0,
+},
+Object {
+"expected": Object {
+"areas": Array [
+"Kemang",
+],
+"budgetIDR": 900000000,
+"intent": "buy",
+"propertyType": "apartemen",
+"timeline": null,
+"urgency": "low",
+},
+"fieldMatches": Object {
+"areas": true,
+- "budgetIDR": false,
++ "budgetIDR": true,
+"intent": true,
+"propertyType": true,
+"timeline": false,
+"urgency": true,
+},
+"id": "c05_jkt_buy_apartment_seller_nego",
+"predicted": Object {
+"areas": Array [
+"Kemang",
+],
+- "budgetIDR": 90000000,
++ "budgetIDR": 900000000,
+"intent": "buy",
+"propertyType": "apartemen",
+"timeline": "weekend ini",
+"urgency": "low",
+},
+"rejected": Array [],
+"unreadable": false,
+"violations": 0,
+},
+Object {
+"expected": Object {
+"areas": Array [
+"Bintaro",
+],
+"budgetIDR": 2000000000,
+"intent": "buy",
+"propertyType": "tanah kavling",
+"timeline": "tahun depan",
+"urgency": "low",
+},
+"fieldMatches": Object {
+"areas": true,
+"budgetIDR": true,
+"intent": true,
+"propertyType": true,
+"timeline": true,
+"urgency": true,
+},
+"id": "c06_jkt_land_buy_nextyear",
+"predicted": Object {
+"areas": Array [
+"Bintaro",
+],
+"budgetIDR": 2000000000,
+0,
+"BSD",
+"budgetIDR":
+1BR",
+"budgetIDR":
+"BSD",
+"budgetIDR":
+"1BR",
+0,
+"budgetIDR":
+"budgetIDR":
+"budgetIDR":
+0,
+"budgetIDR":
+true,
+"budgetIDR": true,
+"intent": true,
+"propertyType": true,
+"timeline": true,
+"urgency": true,
+},
+"id": "c09_sparse_smalltalk_only",
+"predicted": Object {
+"areas": Array [],
+"budgetIDR": null,
+"intent": "unknown",
+"propertyType": null,
+"timeline": null,
+"urgency": "unknown",
+},
+"rejected": Array [],
+"unreadable": false,
+"violations": 0,
+},
+Object {
+"expected": Object {
+"areas": Array [],
+"budgetIDR": null,
+"intent": "unknown",
+"propertyType": null,
+"timeline": null,
+"urgency": "unknown",
+},
+"fieldMatches": Object {
+"areas": true,
+"budgetIDR": true,
+"intent": true,
+"propertyType": true,
+"timeline": true,
+"urgency": true,
+},
+"id": "c10_sparse_voicenote_dropoff",
+"predicted": Object {
+"areas": Array [],
+"budgetIDR": null,
+"intent": "unknown",
+"propertyType": null,
+"timeline": null,
+"urgency": "unknown",
+},
+"rejected": Array [],
+"unreadable": false,
+"violations": 0,
+},
+Object {
+"expected": Object {
+"areas": Array [
+"Alam Sutera",
+],
+"budgetIDR": null,
+"intent": "buy",
+"propertyType": "apartemen 2BR",
+"timeline": null,
+"urgency": "unknown",
+},
+"fieldMatches": Object {
+"areas": true,
+"budgetIDR": true,
+"intent": false,
+"propertyType": false,
+"timeline": true,
+"urgency": true,
+},
+"id": "c11_adversarial_agent_states_budget",
+"predicted": Object {
+"areas": Array [
+"Alam Sutera",
+],
+"budgetIDR": null,
+"intent": "unknown",
+"propertyType": "2BR",
+"timeline": null,
+"urgency": "unknown",
+},
+"rejected": Array [],
+"unreadable": false,
+"violations": 0,
+},
+Object {
+"expected": Object {
+"areas": Array [],
+"budgetIDR":
+"budgetIDR":
+"budgetIDR":
+0,
+10,
+2,
+8,
+12,
+"budgetIDR":
+9,
+3,
+12,
+0,
+6,
+12,
+11,
+0,
+7,
+12,
+6,
+5,
+8,
+12,
+9,
+3,
+6,
+12,
+11,
+1,
+6,
+12,
+0,
+test/recordings.test.ts:41:25
+39| expect(recordedAt).toBe(recording.recordedAt);
+40| expect(source).toBe(`eval/recordings/${file}`);
+41|
+42|
+43|
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+FAIL test/recordings.test.ts scorer marks wrong, says left empty, and my fixes made right
+AssertionError: cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR not reviewed: expected undefined be defined
+❯ test/recordings.test.ts:130:69
+128| }
+129| wrong += 1;
+130| expect(fact, `${model} ${c.id} ${field} not reviewed`).to…
+| ^
+131| const empty = field === "areas" ? c.predicted.areas.length =…
+132| expect(fact?.category === "missed", `${model} ${c.id} ${fiel…
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+FAIL test/recordings.test.ts > hand review eval > leaves one really wrong fact under word rule, rest translations, extra places or debatable labels
+AssertionError: cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR: expected undefined be defined
+❯ test/recordings.test.ts:157:63
+155| if (empty) continue;
+156| const fact = review.facts.find((f) => f.model === model && f.c…
+157| expect(fact, `${model} ${w.conversation} ${w.field}`).toBeDefi…
+| ^
+158| kinds.push(`${fact!.category}`);
+159| }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+FAIL test/writer-guardrail.test.ts > verifyDraft > passes clean draft only references facts in profile
+AssertionError: …(1)
+\"900 not
+test/writer-guardrail.test.ts:34:21
+32|
+33| PROFILE, AGENT);
+34|
+35|
+36|
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+[1967 words compressed to 1146 (from 725 source lines). Original content preserved. Retrieve more: hash=05e2437a53cae8a9dad9859a]

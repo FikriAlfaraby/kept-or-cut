@@ -1,0 +1,10 @@
+ESLint: 3 errors, 0 warnings in 1 files
+Top rules:
+  @typescript-eslint/no-unused-vars (2x)
+  prefer-const (1x)
+
+Top files:
+  src/qualify.ts (3 issues)
+    @typescript-eslint/no-unused-vars (2)
+    prefer-const (1)
+[full output: rtk recall d99f91be2683]

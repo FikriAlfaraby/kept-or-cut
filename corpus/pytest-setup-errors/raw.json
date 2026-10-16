@@ -1,0 +1,11 @@
+{
+ "command": [
+  "uv",
+  "run",
+  "pytest",
+  "-q"
+ ],
+ "exit_code": 1,
+ "seconds": 18.65,
+ "what": "a fixture that cannot build its object"
+}

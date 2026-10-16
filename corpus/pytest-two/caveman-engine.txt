@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/dev/Documents/Projects/oracle-mutants
+configfile: pyproject.toml
+testpaths: tests
+collected 44 items
+
+tests/test_compare.py ...                                                [  6%]
+tests/test_operators.py ................                                 [ 43%]
+tests/test_probe.py F.F..                                                [ 54%]
+tests/test_pyast.py .......                                              [ 70%]
+tests/test_results.py .......                                            [ 86%]
+tests/test_runner.py ......                                              [100%]
+
+=================================== FAILURES ===================================
+_____________________ test_text_nudge_rebuilds_at_any_step _____________________
+
+    def test_text_nudge_rebuilds_at_any_step():
+        v = nudge("/r/a.csv", b"Answers\n86\n180\n")
+        assert v.value == "86"
+>       assert v.rebuild(5) == b"Answers\n91\n180\n"
+E       AssertionError: assert b'Answers\n92\n180\n' == b'Answers\n91\n180\n'
+E         
+E         At index 9 diff: b'2' != b'1'
+E         
+E         Full diff:
+E         - (b'Answers\n91\n180\n')
+E         ?              ^
+E         + (b'Answers\n92\n180\n')
+E         ?              ^
+
+tests/test_probe.py:12: AssertionError
+___________________ test_shifted_keeps_padding_and_decimals ____________________
+
+    def test_shifted_keeps_padding_and_decimals():
+>       assert shifted("007", 5) == "012"
+E       AssertionError: assert '013' == '012'
+E         
+E         - 012
+E         + 013
+
+tests/test_probe.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_probe.py::test_text_nudge_rebuilds_at_any_step - AssertionError: assert b'Answers\n92\n180\n' == b'Answers\n91\n180\n'
+  
+  At index 9 diff: b'2' != b'1'
+  
+  Full diff:
+  - (b'Answers\n91\n180\n')
+  ?              ^
+  + (b'Answers\n92\n180\n')
+  ?              ^
+FAILED tests/test_probe.py::test_shifted_keeps_padding_and_decimals - AssertionError: assert '013' == '012'
+  
+  - 012
+  + 013
+========================= 2 failed, 42 passed in 0.18s =========================

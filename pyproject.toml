@@ -3,7 +3,9 @@ name = "kept-or-cut"
 version = "0.1.0"
 description = "Does the error line a coding agent needs survive token compression? rtk, caveman and headroom on real failing test runs, type checks, lint reports and tracebacks."
 requires-python = ">=3.12"
-dependencies = ["headroom-ai==0.41.0"]
+dependencies = [
+    "headroom-ai[all]==0.41.0",
+]
 
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.6"]
@@ -14,3 +16,4 @@ target-version = "py312"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]

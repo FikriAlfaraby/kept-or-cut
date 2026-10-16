@@ -23,7 +23,6 @@ ENV = {
     "CI": "1",
     "PAGER": "cat",
     "DO_NOT_TRACK": "1",
-    "RTK_RECALL": "0",
     "HEADROOM_BEACON": "off",
     "HEADROOM_OFFLINE": "1",
     "HEADROOM_TELEMETRY_WARN": "off",

@@ -42,7 +42,10 @@ def message(text: str) -> str:
 # --- pytest -------------------------------------------------------------------------------------------------
 
 SECTION = re.compile(r"^_+ (.+?) _+$", re.MULTILINE)  # long titles get a single underscore each side
-WHERE = re.compile(r"^(\S+\.py):(\d+): \S", re.MULTILINE)
+# a frame: "path.py:12: AssertionError", or "path.py:12: " when the frame's code follows on the next lines
+WHERE = re.compile(r"^(\S+\.py):(\d+):(?: |$)", re.MULTILINE)
+# the agent needs a line in the project, not in Python itself or an installed package (amended after review)
+OUTSIDE = ("/lib/python", "site-packages", "<frozen")
 
 
 def _pytest(raw: str) -> list[Fact]:
@@ -74,7 +77,7 @@ def _pytest(raw: str) -> list[Fact]:
         facts.append(Fact(item, "name", item))
         if m := re.search(r"^E\s+(.+)$", body, re.MULTILINE):
             facts.append(Fact(item, "message", message(m.group(1))))
-        wheres = WHERE.findall(body)
+        wheres = [(p, ln) for p, ln in WHERE.findall(body) if not any(o in p for o in OUTSIDE)]
         if wheres:
             path, line = wheres[-1]
             facts.append(Fact(item, "location", base(path), int(line)))
@@ -196,9 +199,12 @@ def survives(fact: Fact, compressed: str) -> bool:
     if fact.field in ("name", "message"):
         return flat(fact.text) in flat(text)
     # a location: the base name, then the line number written as a location (":12", "(12,", "line 12", "L12"),
-    # on the same line or on a line under it (a tool that groups errors by file), within the next 30 lines
+    # on the same line, or opening a row under it ("12:5  error", "L12:", "line 12"; a tool that groups errors by
+    # file), within the next 30 lines. Amended after review: any number on a later row counted, so "(14 tests)"
+    # under a file name passed for line 14.
     lines = text.splitlines()
     number = re.compile(rf"(?:[:(]|\bline |\bL|^\s*)\s*{fact.line}(?=[:,)\s]|$)")
+    grouped = re.compile(rf"^\s*(?:L?{fact.line}[:,]|line {fact.line}\b)")
     for i, row in enumerate(lines):
         if fact.text in row:
             if number.search(row.split(fact.text, 1)[1]):
@@ -210,6 +216,6 @@ def survives(fact: Fact, compressed: str) -> bool:
                     and not later.startswith(" ")
                 ):
                     break  # the next file's block
-                if number.search(later):
+                if grouped.search(later):
                     return True
     return False

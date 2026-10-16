@@ -1,0 +1,1441 @@
+{
+ "runs": 6,
+ "summary": {
+  "headroom-proxy": {
+   "pytest-two": {
+    "different_outputs": 1,
+    "kept": [
+     6,
+     6
+    ],
+    "tokens": [
+     555,
+     555
+    ]
+   },
+   "pytest-many": {
+    "different_outputs": 1,
+    "kept": [
+     132,
+     132
+    ],
+    "tokens": [
+     21595,
+     21595
+    ]
+   },
+   "pytest-collect": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     514,
+     514
+    ]
+   },
+   "pytest-import": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     345,
+     345
+    ]
+   },
+   "pytest-few": {
+    "different_outputs": 1,
+    "kept": [
+     18,
+     18
+    ],
+    "tokens": [
+     4014,
+     4014
+    ]
+   },
+   "traceback-deep": {
+    "different_outputs": 1,
+    "kept": [
+     2,
+     2
+    ],
+    "tokens": [
+     265,
+     265
+    ]
+   },
+   "traceback-chained": {
+    "different_outputs": 1,
+    "kept": [
+     4,
+     4
+    ],
+    "tokens": [
+     399,
+     399
+    ]
+   },
+   "gotest-one": {
+    "different_outputs": 1,
+    "kept": [
+     9,
+     9
+    ],
+    "tokens": [
+     114,
+     114
+    ]
+   },
+   "gotest-panic": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     360,
+     360
+    ]
+   },
+   "vitest-one": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     579,
+     579
+    ]
+   },
+   "tsc-one": {
+    "different_outputs": 1,
+    "kept": [
+     2,
+     2
+    ],
+    "tokens": [
+     28,
+     28
+    ]
+   },
+   "pytest-renamed": {
+    "different_outputs": 2,
+    "kept": [
+     96,
+     96
+    ],
+    "tokens": [
+     19341,
+     19353
+    ]
+   },
+   "vitest-many": {
+    "different_outputs": 1,
+    "kept": [
+     10,
+     10
+    ],
+    "tokens": [
+     3770,
+     3770
+    ]
+   },
+   "tsc-many": {
+    "different_outputs": 1,
+    "kept": [
+     86,
+     86
+    ],
+    "tokens": [
+     3145,
+     3145
+    ]
+   },
+   "eslint-few": {
+    "different_outputs": 1,
+    "kept": [
+     6,
+     6
+    ],
+    "tokens": [
+     131,
+     131
+    ]
+   },
+   "eslint-many": {
+    "different_outputs": 1,
+    "kept": [
+     24,
+     24
+    ],
+    "tokens": [
+     425,
+     425
+    ]
+   },
+   "pytest-setup-errors": {
+    "different_outputs": 1,
+    "kept": [
+     54,
+     54
+    ],
+    "tokens": [
+     2240,
+     2240
+    ]
+   }
+  },
+  "headroom-proxy-token": {
+   "pytest-two": {
+    "different_outputs": 1,
+    "kept": [
+     6,
+     6
+    ],
+    "tokens": [
+     555,
+     555
+    ]
+   },
+   "pytest-many": {
+    "different_outputs": 1,
+    "kept": [
+     132,
+     132
+    ],
+    "tokens": [
+     21595,
+     21595
+    ]
+   },
+   "pytest-collect": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     514,
+     514
+    ]
+   },
+   "pytest-import": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     345,
+     345
+    ]
+   },
+   "pytest-few": {
+    "different_outputs": 1,
+    "kept": [
+     18,
+     18
+    ],
+    "tokens": [
+     4014,
+     4014
+    ]
+   },
+   "traceback-deep": {
+    "different_outputs": 1,
+    "kept": [
+     2,
+     2
+    ],
+    "tokens": [
+     265,
+     265
+    ]
+   },
+   "traceback-chained": {
+    "different_outputs": 1,
+    "kept": [
+     4,
+     4
+    ],
+    "tokens": [
+     399,
+     399
+    ]
+   },
+   "gotest-one": {
+    "different_outputs": 1,
+    "kept": [
+     9,
+     9
+    ],
+    "tokens": [
+     114,
+     114
+    ]
+   },
+   "gotest-panic": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     360,
+     360
+    ]
+   },
+   "vitest-one": {
+    "different_outputs": 1,
+    "kept": [
+     3,
+     3
+    ],
+    "tokens": [
+     579,
+     579
+    ]
+   },
+   "tsc-one": {
+    "different_outputs": 1,
+    "kept": [
+     2,
+     2
+    ],
+    "tokens": [
+     28,
+     28
+    ]
+   },
+   "pytest-renamed": {
+    "different_outputs": 1,
+    "kept": [
+     96,
+     96
+    ],
+    "tokens": [
+     19353,
+     19353
+    ]
+   },
+   "vitest-many": {
+    "different_outputs": 1,
+    "kept": [
+     10,
+     10
+    ],
+    "tokens": [
+     3770,
+     3770
+    ]
+   },
+   "tsc-many": {
+    "different_outputs": 1,
+    "kept": [
+     86,
+     86
+    ],
+    "tokens": [
+     3145,
+     3145
+    ]
+   },
+   "eslint-few": {
+    "different_outputs": 1,
+    "kept": [
+     6,
+     6
+    ],
+    "tokens": [
+     131,
+     131
+    ]
+   },
+   "eslint-many": {
+    "different_outputs": 1,
+    "kept": [
+     24,
+     24
+    ],
+    "tokens": [
+     425,
+     425
+    ]
+   },
+   "pytest-setup-errors": {
+    "different_outputs": 1,
+    "kept": [
+     54,
+     54
+    ],
+    "tokens": [
+     2240,
+     2240
+    ]
+   }
+  }
+ },
+ "per_run": [
+  {
+   "headroom-proxy": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "367399b3fe6f07cd",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "f7192f63fa26e4c3",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "5ccd5e5f0c394f12",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "13cf69279d6e5bdb",
+     "tokens": 2240,
+     "kept": 54
+    }
+   },
+   "headroom-proxy-token": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "c8b73788ad543ce8",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "1e0d8bdbce1ce5af",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "04bda32ffe8dd46b",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "4b4fcc2ca1799274",
+     "tokens": 2240,
+     "kept": 54
+    }
+   }
+  },
+  {
+   "headroom-proxy": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "367399b3fe6f07cd",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "f7192f63fa26e4c3",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "69148eb6776f9d59",
+     "tokens": 19341,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "13cf69279d6e5bdb",
+     "tokens": 2240,
+     "kept": 54
+    }
+   },
+   "headroom-proxy-token": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "c8b73788ad543ce8",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "1e0d8bdbce1ce5af",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "04bda32ffe8dd46b",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "4b4fcc2ca1799274",
+     "tokens": 2240,
+     "kept": 54
+    }
+   }
+  },
+  {
+   "headroom-proxy": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "367399b3fe6f07cd",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "f7192f63fa26e4c3",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "69148eb6776f9d59",
+     "tokens": 19341,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "13cf69279d6e5bdb",
+     "tokens": 2240,
+     "kept": 54
+    }
+   },
+   "headroom-proxy-token": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "c8b73788ad543ce8",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "1e0d8bdbce1ce5af",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "04bda32ffe8dd46b",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "4b4fcc2ca1799274",
+     "tokens": 2240,
+     "kept": 54
+    }
+   }
+  },
+  {
+   "headroom-proxy": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "367399b3fe6f07cd",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "f7192f63fa26e4c3",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "69148eb6776f9d59",
+     "tokens": 19341,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "13cf69279d6e5bdb",
+     "tokens": 2240,
+     "kept": 54
+    }
+   },
+   "headroom-proxy-token": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "c8b73788ad543ce8",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "1e0d8bdbce1ce5af",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "04bda32ffe8dd46b",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "4b4fcc2ca1799274",
+     "tokens": 2240,
+     "kept": 54
+    }
+   }
+  },
+  {
+   "headroom-proxy": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "367399b3fe6f07cd",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "f7192f63fa26e4c3",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "5ccd5e5f0c394f12",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "13cf69279d6e5bdb",
+     "tokens": 2240,
+     "kept": 54
+    }
+   },
+   "headroom-proxy-token": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "c8b73788ad543ce8",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "1e0d8bdbce1ce5af",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "04bda32ffe8dd46b",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "4b4fcc2ca1799274",
+     "tokens": 2240,
+     "kept": 54
+    }
+   }
+  },
+  {
+   "headroom-proxy": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "367399b3fe6f07cd",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "f7192f63fa26e4c3",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "69148eb6776f9d59",
+     "tokens": 19341,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "13cf69279d6e5bdb",
+     "tokens": 2240,
+     "kept": 54
+    }
+   },
+   "headroom-proxy-token": {
+    "pytest-two": {
+     "sha256": "db98359b8e29b196",
+     "tokens": 555,
+     "kept": 6
+    },
+    "pytest-many": {
+     "sha256": "c8b73788ad543ce8",
+     "tokens": 21595,
+     "kept": 132
+    },
+    "pytest-collect": {
+     "sha256": "2a3072ad02dbe20b",
+     "tokens": 514,
+     "kept": 3
+    },
+    "pytest-import": {
+     "sha256": "35a09b3ec0a8511e",
+     "tokens": 345,
+     "kept": 3
+    },
+    "pytest-few": {
+     "sha256": "1e0d8bdbce1ce5af",
+     "tokens": 4014,
+     "kept": 18
+    },
+    "traceback-deep": {
+     "sha256": "3b1ce2222c9c5d09",
+     "tokens": 265,
+     "kept": 2
+    },
+    "traceback-chained": {
+     "sha256": "a17d1619f9f44458",
+     "tokens": 399,
+     "kept": 4
+    },
+    "gotest-one": {
+     "sha256": "0ec7a725489bec3c",
+     "tokens": 114,
+     "kept": 9
+    },
+    "gotest-panic": {
+     "sha256": "1377ea129feba9df",
+     "tokens": 360,
+     "kept": 3
+    },
+    "vitest-one": {
+     "sha256": "25c61c8922570ea8",
+     "tokens": 579,
+     "kept": 3
+    },
+    "tsc-one": {
+     "sha256": "a77b5eef63c462af",
+     "tokens": 28,
+     "kept": 2
+    },
+    "pytest-renamed": {
+     "sha256": "04bda32ffe8dd46b",
+     "tokens": 19353,
+     "kept": 96
+    },
+    "vitest-many": {
+     "sha256": "a43653d7b73c49fb",
+     "tokens": 3770,
+     "kept": 10
+    },
+    "tsc-many": {
+     "sha256": "62bdfb84d9b17031",
+     "tokens": 3145,
+     "kept": 86
+    },
+    "eslint-few": {
+     "sha256": "27853ff1a8a79862",
+     "tokens": 131,
+     "kept": 6
+    },
+    "eslint-many": {
+     "sha256": "037cd9407fb28e8a",
+     "tokens": 425,
+     "kept": 24
+    },
+    "pytest-setup-errors": {
+     "sha256": "4b4fcc2ca1799274",
+     "tokens": 2240,
+     "kept": 54
+    }
+   }
+  }
+ ]
+}

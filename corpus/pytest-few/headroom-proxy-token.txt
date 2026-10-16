@@ -1,0 +1,143 @@
+........................................................................ [ 26%]
+........................................................................ [ 52%]
+........................................................................ [ 79%]
+...................................F.....FF..F...F.....F.                [100%]
+=================================== FAILURES ===================================
+____ test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges _____
+
+    def test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges():
+        task = next(t for t in TASKS if t.id == "smoke-01")
+        _, _, results = replay(task)
+        order = json.loads(results[-1][1].content)
+>       assert order["total"] == 198_570
+E       assert 199570 == 198570
+
+
+tests/test_tasks.py
+76: AssertionError
+
+----------------------------- Captured stderr call -----------------------------
+2026-10-16 12:55:29.975 | DEBUG | tau2.environment.environment:get_response:482 - Response: phone='6281234500008' now='2026-10-15T10:00:00+07:00'
+2026-10-16 12:55:29.975 | DEBUG | tau2.environment.environment:get_response:482 - Response: customer_id='C008' name='Agus Setiawan' phone='6281234500008' addresses=[Address(address_id='C008-A1', label='Rumah', recipient='Agus Setiawan', street='Jl. Antapani Lama No. 4', district='Antapani', city='Bandung', province='Jawa Barat', postal_code='40291')] default_address_id='C008-A1' is_reseller=False
+2026-10-16 12:55:29.975 | DEBUG | tau2.environment.environment:get_response:482 - Response: product_id='JK' name='Jaket Hoodie Fleece' category='jaket' variants={'JK-HTM-M': Variant(item_id='JK-HTM-M', options={'warna': 'hitam', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-HTM-L': Variant(item_id='JK-HTM-L', options={'warna': 'hitam', 'ukuran': 'L'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-HTM-XL': Variant(item_id='JK-HTM-XL', options={'warna': 'hitam', 'ukuran': 'XL'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-M': Variant(item_id='JK-ABU-M', options={'warna': 'abu', 'ukuran': 'M'}, price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-L': Variant(item_id='JK-ABU-L', price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-ABU-XL': Variant(item_id='JK-ABU-XL', 'XL'}, price=189000, reseller_price=159000, stock=11, weight_grams=600), 'JK-MRN-M': Variant(item_id='JK-MRN-M', price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-L': Variant(item_id='JK-MRN-L', price=189000, reseller_price=159000, stock=12, weight_grams=600), 'JK-MRN-XL': Variant(item_id='JK-MRN-XL', 'XL'}, price=189000, reseller_price=159000, stock=1, weight_grams=600)}
+2026-10-16 12:55:29.975 DEBUG tau2.environment.environment:get_response:482 order_id='ORD-1010' created_at='2026-10-15T10:00:00+07:00' items=[OrderItem(item_id='JK-HTM-L', product_id='JK', qty=1, unit_price=189000)] shipment=Shipment(courier='JNE', 4', postal_code='40291'), shipping_cost=10000, tracking_number=None, promo_code=None discount=0 unique_code=570 total=199570 paid_transfer_id=None delivered_at=None cancel_reason=None refund_due=0 return_request=None
+__________________ __________________
+<toko_wa.tools.TokoTools 0x11c63d040>
+shop.get_shipping_quote("Yogyakarta", "JNE", 300).shipping_cost
+AssertionError: 16000 15000
+E + where 16000 = ShippingQuote(shipping_cost=16000, eta_days='2-3', cod_available=True).shipping_cost
+E + where ShippingQuote(shipping_cost=16000, eta_days='2-3', cod_available=True) = get_shipping_quote('Yogyakarta', 'JNE', 300)
+E + where get_shipping_quote = <toko_wa.tools.TokoTools object at 0x11c63d040>.get_shipping_quote
+[248 words compressed to 189 (from 16 source lines). Original content preserved. Retrieve more: hash=528e03b89d0a4d13d6b1ca41]
+
+tests/test_tools.py
+46: AssertionError
+
+______ test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock _______
+
+shop = <toko_wa.tools.TokoTools object at 0x11c63cb60>
+
+    def test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock(shop):
+        before = stock(shop, "KS-HTM-L")
+        order = shop.create_order("C001", [{"item_id": "KS-HTM-L", "qty": 2}], "C001-A1", "JNE", "transfer_bca")
+        assert order.status == "menunggu_pembayaran"
+        assert 100 <= order.unique_code <= 999
+>       assert order.total == 2 * 59_000 + 15_000 + order.unique_code
+E       AssertionError: assert 134570 == (((2 * 59000) + 15000) + 570)
+E        +  where 134570 = Order(order_id='ORD-1010', customer_id='C001', status='menunggu_pembayaran', created_at='2026-10-15T10:00:00+07:00', i...ode=570, total=134570, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).total
+E        +  and   570 = Order(order_id='ORD-1010', customer_id='C001', status='menunggu_pembayaran', created_at='2026-10-15T10:00:00+07:00', i...ode=570, total=134570, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).unique_code
+
+
+tests/test_tools.py
+57: AssertionError
+
+________ test_cod_only_where_the_courier_offers_it_and_up_to_the_limit _________
+
+shop = <toko_wa.tools.TokoTools object at 0x11c63c350>
+
+    def test_cod_only_where_the_courier_offers_it_and_up_to_the_limit(shop):
+        with pytest.raises(ValueError, match="COD is not available in Garut"):
+            shop.create_order("C010", [{"item_id": "KS-HTM-L", "qty": 1}], "C010-A1", "JNE", "cod")
+        with pytest.raises(ValueError, match="up to"):
+            shop.create_order("C002", [{"item_id": "JK-HTM-L", "qty": 6}], "C002-A1", "JNE", "cod")
+>       assert (
+            shop.create_order("C002", [{"item_id": "JK-HTM-L", "qty": 1}], "C002-A1", "JNE", "cod").total
+            == 198_000
+        )
+E       AssertionError: assert 199000 == 198000
+E        +  where 199000 = Order(order_id='ORD-1010', customer_id='C002', status='diproses', created_at='2026-10-15T10:00:00+07:00', items=[Order..._code=0, total=199000, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).total
+E        +    where Order(order_id='ORD-1010', customer_id='C002', status='diproses', created_at='2026-10-15T10:00:00+07:00', items=[Order..._code=0, total=199000, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None) = create_order('C002', [{'item_id': 'JK-HTM-L', 'qty': 1}], 'C002-A1', 'JNE', 'cod')
+E        +      where create_order = <toko_wa.tools.TokoTools object at 0x11c63c350>.create_order
+
+
+tests/test_tools.py
+88: AssertionError
+
+___________ test_items_change_only_before_payment_and_stock_follows ____________
+
+shop = <toko_wa.tools.TokoTools object at 0x11c63ee70>
+
+    def test_items_change_only_before_payment_and_stock_follows(shop):
+        unpaid = order_of(shop, "C004", "menunggu_pembayaran")
+        before = stock(shop, "KS-ABU-L"), stock(shop, "KS-HTM-L")
+        shop.update_order_items(unpaid.order_id, [{"item_id": "KS-HTM-L", "qty": 1}])
+        assert (stock(shop, "KS-ABU-L"), stock(shop, "KS-HTM-L")) == (before[0] + 2, before[1] - 1)
+>       assert unpaid.total == 59_000 + 10_000 + unpaid.unique_code
+E       AssertionError: assert 70422 == ((59000 + 10000) + 422)
+E        +  where 70422 = Order(order_id='ORD-1006', customer_id='C004', status='menunggu_pembayaran', created_at='2026-10-15T09:30:00+07:00', i...code=422, total=70422, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).total
+E        +  and   422 = Order(order_id='ORD-1006', customer_id='C004', status='menunggu_pembayaran', created_at='2026-10-15T09:30:00+07:00', i...code=422, total=70422, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).unique_code
+
+
+tests/test_tools.py
+125: AssertionError
+
+___________________ test_the_seeded_orders_follow_the_rules ____________________
+shop <toko_wa.tools.TokoTools object at 0x11c63a360>
+test_the_seeded_orders_follow_the_rules(shop):
+order in shop.db.orders.values():
+subtotal sum(i.unit_price * i.qty i in order.items)
+weight sum(shop._variant(i.item_id)[1].weight_grams * i.qty i in order.items)
+rate shop._rate(order.shipment.address.city, order.shipment.courier)
+assert order.shipment.shipping_cost == rate.price_per_kg * max(1, math.ceil(weight / 1000))
+E AssertionError: assert 16000 == (15000 * 1)
+E 16000 Shipment(courier='JNE', address=Address(address_id='C001-A1', label='Kos', recipient='Rina Wulandari', street='Jl. Kal...1', events=['2026-10-02 15:10 Paket diterima di agen JNE Bandung', '2026-10-04 13:20 Diterima oleh yang bersangkutan']).shipping_cost
+E + where Shipment(courier='JNE', address=Address(address_id='C001-A1', label='Kos', recipient='Rina Wulandari', street='Jl. Kal...1', events=['2026-10-02 15:10 Paket diterima di agen JNE Bandung', '2026-10-04 13:20 Diterima oleh yang bersangkutan']) Order(order_id='ORD-1001', customer_id='C001', status='diterima', created_at='2026-10-01T09:00:00+07:00', items=[Order...transfer_id='TRF-501', delivered_at='2026-10-04T13:20:00+07:00', cancel_reason=None, refund_due=0, return_request=None).shipment
+E + and 15000 ShippingRate(city='Yogyakarta', courier='JNE', price_per_kg=15000, eta_days='2-3',
+and 1 max(1, 1)
+1 <built-in ceil>((400 1000))
+<built-in math.ceil
+[150 words compressed to 120 (from 18 source lines). Original content preserved. Retrieve more: hash=b95f2ab6052e2e7d98177bd9]
+
+tests/test_tools.py
+191: AssertionError
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/tau2/voice/utils/audio_preprocessing.py:4
+/home/dev/Documents/Projects/toko-wa-bench/.venv/lib/python3.12/site-packages/tau2/voice/utils/audio_preprocessing.py:4: DeprecationWarning: 'audioop' deprecated and slated removal in Python 3.13
+import audioop
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_tasks.py::test_the_smoke_total_quoted_in_its_assertion_is_what_the_shop_charges - assert 199570 == 198570
+FAILED tests/test_tools.py::test_ongkir_charges_every_started_kilogram - AssertionError: assert 16000 == 15000
++ where 16000 ShippingQuote(shipping_cost=16000, eta_days='2-3', cod_available=True).shipping_cost
++ where ShippingQuote(shipping_cost=16000, eta_days='2-3', cod_available=True) get_shipping_quote('Yogyakarta', 'JNE', 300)
+where get_shipping_quote <toko_wa.tools.TokoTools object at 0x11c63d040>.get_shipping_quote
+FAILED tests/test_tools.py::test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock - AssertionError: assert 134570 == (((2 * 59000) 15000) + 570)
++ where 134570 Order(order_id='ORD-1010', customer_id='C001', status='menunggu_pembayaran', created_at='2026-10-15T10:00:00+07:00', i...ode=570, total=134570, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).total
+and 570 Order(order_id='ORD-1010', created_at='2026-10-15T10:00:00+07:00', i...ode=570, total=134570, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).unique_code
+FAILED tests/test_tools.py::test_cod_only_where_the_courier_offers_it_and_up_to_the_limit AssertionError: 199000 198000
+199000 Order(order_id='ORD-1010', created_at='2026-10-15T10:00:00+07:00', items=[Order..._code=0, total=199000, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).total
+Order(order_id='ORD-1010', created_at='2026-10-15T10:00:00+07:00', items=[Order..._code=0, total=199000, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None) 'JK-HTM-L', 1}], 'JNE',
+<toko_wa.tools.TokoTools 0x11c63c350>.create_order
+FAILED tests/test_tools.py::test_items_change_only_before_payment_and_stock_follows AssertionError: 70422 ((59000 10000) 422)
+70422 Order(order_id='ORD-1006', created_at='2026-10-15T09:30:00+07:00', i...code=422, total=70422, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).total
+and 422 Order(order_id='ORD-1006', created_at='2026-10-15T09:30:00+07:00', i...code=422, total=70422, paid_transfer_id=None, delivered_at=None, cancel_reason=None, refund_due=0, return_request=None).unique_code
+FAILED tests/test_tools.py::test_the_seeded_orders_follow_the_rules AssertionError: 16000 (15000 1)
+16000 Shipment(courier='JNE', events=['2026-10-02 15:10 JNE '2026-10-04 13:20
+Shipment(courier='JNE', events=['2026-10-02 15:10 JNE '2026-10-04 13:20 Order(order_id='ORD-1001', created_at='2026-10-01T09:00:00+07:00', items=[Order...transfer_id='TRF-501', delivered_at='2026-10-04T13:20:00+07:00', cancel_reason=None, refund_due=0, return_request=None).shipment
+and 15000 ShippingRate(city='Yogyakarta', courier='JNE', price_per_kg=15000, eta_days='2-3',
+and 1 max(1, 1)
+1 <built-in ceil>((400 1000))
+<built-in math.ceil
+6 267 1
+[313 words compressed to 201 (from 31 source lines). Original content preserved. Retrieve more: hash=c3643ae36de45ab962e3ef9e]

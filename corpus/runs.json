@@ -1,0 +1,1714 @@
+{
+ "pytest-two": {
+  "rtk": {
+   "command": [
+    "uv",
+    "run",
+    "rtk",
+    "pytest"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 555,
+   "tokens_after": 555,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":555,\"tokens_after\":555,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 600,
+   "tokens_after": 600,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 600,
+   "tokens_after": 600,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 600,
+   "tokens_after": 600,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 605,
+   "input_tokens_optimized": 605,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 605,
+   "input_tokens_optimized": 605,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 604,
+   "input_tokens_optimized": 604,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 604,
+   "input_tokens_optimized": 604,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "pytest-many": {
+  "rtk": {
+   "command": [
+    "uv",
+    "run",
+    "rtk",
+    "pytest"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 21650,
+   "tokens_after": 9153,
+   "token_count_basis": "o200k_base",
+   "ratio": 0.5772286374133949,
+   "basis": "inferred",
+   "recovery_handle": "ccr_569a812e5bab8e0530f60e53688a67cd",
+   "method": "terminal",
+   "lossless_to_model": false,
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":21650,\"tokens_after\":9153,\"token_count_basis\":\"o200k_base\",\"ratio\":0.5772286374133949,\"basis\":\"inferred\",\"recovery_handle\":\"ccr_569a812e5bab8e0530f60e53688a67cd\",\"method\":\"terminal\",\"lossless_to_model\":false}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 21694,
+   "tokens_after": 21694,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:recent_code"
+   ],
+   "decision": "protected:recent_code"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 21694,
+   "tokens_after": 21694,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:analysis_context"
+   ],
+   "decision": "protected:analysis_context"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 21694,
+   "tokens_after": 21694,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:ratio_too_high"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 21699,
+   "input_tokens_optimized": 21645,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 21699,
+   "input_tokens_optimized": 21645,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2801,
+   "input_tokens_optimized": 2352,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2801,
+   "input_tokens_optimized": 2352,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  }
+ },
+ "pytest-collect": {
+  "rtk": {
+   "command": [
+    "uv",
+    "run",
+    "rtk",
+    "pytest"
+   ],
+   "exit_code": 2
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 514,
+   "tokens_after": 514,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":514,\"tokens_after\":514,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 559,
+   "tokens_after": 559,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:ratio_too_high"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 559,
+   "tokens_after": 559,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 559,
+   "tokens_after": 559,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 564,
+   "input_tokens_optimized": 564,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 564,
+   "input_tokens_optimized": 564,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 564,
+   "input_tokens_optimized": 564,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 564,
+   "input_tokens_optimized": 564,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "pytest-import": {
+  "rtk": {
+   "command": [
+    "uv",
+    "run",
+    "rtk",
+    "pytest",
+    "-q"
+   ],
+   "exit_code": 2
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 345,
+   "tokens_after": 345,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":345,\"tokens_after\":345,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 392,
+   "tokens_after": 392,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 392,
+   "tokens_after": 392,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 392,
+   "tokens_after": 392,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 396,
+   "input_tokens_optimized": 396,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 396,
+   "input_tokens_optimized": 396,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 395,
+   "input_tokens_optimized": 395,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 395,
+   "input_tokens_optimized": 395,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "pytest-few": {
+  "rtk": {
+   "command": [
+    "uv",
+    "run",
+    "rtk",
+    "pytest",
+    "-q"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 4484,
+   "tokens_after": 3527,
+   "token_count_basis": "o200k_base",
+   "ratio": 0.21342551293487957,
+   "basis": "inferred",
+   "recovery_handle": "ccr_202c0ec63a5159987806775dbb527ade",
+   "method": "terminal",
+   "lossless_to_model": false,
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":4484,\"tokens_after\":3527,\"token_count_basis\":\"o200k_base\",\"ratio\":0.21342551293487957,\"basis\":\"inferred\",\"recovery_handle\":\"ccr_202c0ec63a5159987806775dbb527ade\",\"method\":\"terminal\",\"lossless_to_model\":false}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 4531,
+   "tokens_after": 4531,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:ratio_too_high"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 4531,
+   "tokens_after": 4531,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 4531,
+   "tokens_after": 4531,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 4536,
+   "input_tokens_optimized": 4066,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 4536,
+   "input_tokens_optimized": 4066,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 3078,
+   "input_tokens_optimized": 2634,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 3078,
+   "input_tokens_optimized": 2634,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  }
+ },
+ "traceback-deep": {
+  "rtk": {
+   "command": null,
+   "note": "rtk rewrite leaves this command alone"
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 265,
+   "tokens_after": 265,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":265,\"tokens_after\":265,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 311,
+   "tokens_after": 311,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 311,
+   "tokens_after": 311,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 311,
+   "tokens_after": 311,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 316,
+   "input_tokens_optimized": 316,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 316,
+   "input_tokens_optimized": 316,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 316,
+   "input_tokens_optimized": 316,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 316,
+   "input_tokens_optimized": 316,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "traceback-chained": {
+  "rtk": {
+   "command": null,
+   "note": "rtk rewrite leaves this command alone"
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 399,
+   "tokens_after": 399,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":399,\"tokens_after\":399,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 446,
+   "tokens_after": 446,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 446,
+   "tokens_after": 446,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 446,
+   "tokens_after": 446,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 451,
+   "input_tokens_optimized": 451,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 451,
+   "input_tokens_optimized": 451,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 450,
+   "input_tokens_optimized": 450,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 450,
+   "input_tokens_optimized": 450,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "gotest-one": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "go",
+    "test",
+    "./..."
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 114,
+   "tokens_after": 114,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":114,\"tokens_after\":114,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": true
+  },
+  "headroom-default": {
+   "tokens_before": 160,
+   "tokens_after": 160,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 160,
+   "tokens_after": 160,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 160,
+   "tokens_after": 160,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 164,
+   "input_tokens_optimized": 164,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 164,
+   "input_tokens_optimized": 164,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 163,
+   "input_tokens_optimized": 163,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 163,
+   "input_tokens_optimized": 163,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "gotest-panic": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "go",
+    "test",
+    "./..."
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 360,
+   "tokens_after": 360,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":360,\"tokens_after\":360,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": true
+  },
+  "headroom-default": {
+   "tokens_before": 406,
+   "tokens_after": 406,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 406,
+   "tokens_after": 406,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 406,
+   "tokens_after": 406,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 410,
+   "input_tokens_optimized": 410,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 410,
+   "input_tokens_optimized": 410,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 409,
+   "input_tokens_optimized": 409,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 409,
+   "input_tokens_optimized": 409,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "vitest-one": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "vitest"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 579,
+   "tokens_after": 579,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":579,\"tokens_after\":579,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 626,
+   "tokens_after": 626,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 626,
+   "tokens_after": 626,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 626,
+   "tokens_after": 626,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ],
+   "decision": "protected:error_output"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 630,
+   "input_tokens_optimized": 630,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 630,
+   "input_tokens_optimized": 630,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 629,
+   "input_tokens_optimized": 629,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 629,
+   "input_tokens_optimized": 629,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "tsc-one": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "tsc",
+    "--noEmit"
+   ],
+   "exit_code": 2
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 28,
+   "tokens_after": 28,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":28,\"tokens_after\":28,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 77,
+   "tokens_after": 77,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 77,
+   "tokens_after": 77,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 77,
+   "tokens_after": 77,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 82,
+   "input_tokens_optimized": 82,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 82,
+   "input_tokens_optimized": 82,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 82,
+   "input_tokens_optimized": 82,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 82,
+   "input_tokens_optimized": 82,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "pytest-renamed": {
+  "rtk": {
+   "command": [
+    "uv",
+    "run",
+    "rtk",
+    "pytest",
+    "-q"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 19954,
+   "tokens_after": 10677,
+   "token_count_basis": "o200k_base",
+   "ratio": 0.4649193144231733,
+   "basis": "inferred",
+   "recovery_handle": "ccr_89bcb1ecf434b052c12f164d5dff43c6",
+   "method": "terminal",
+   "lossless_to_model": false,
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":19954,\"tokens_after\":10677,\"token_count_basis\":\"o200k_base\",\"ratio\":0.4649193144231733,\"basis\":\"inferred\",\"recovery_handle\":\"ccr_89bcb1ecf434b052c12f164d5dff43c6\",\"method\":\"terminal\",\"lossless_to_model\":false}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 20001,
+   "tokens_after": 20001,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:recent_code"
+   ],
+   "decision": "protected:recent_code"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 20001,
+   "tokens_after": 20001,
+   "transforms": [
+    "router:protected:user_message",
+    "router:protected:analysis_context"
+   ],
+   "decision": "protected:analysis_context"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 20001,
+   "tokens_after": 19947,
+   "transforms": [
+    "router:protected:user_message",
+    "router:mixed:1.00"
+   ],
+   "decision": "compressed:mixed:1.00"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 20006,
+   "input_tokens_optimized": 19405,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 20006,
+   "input_tokens_optimized": 19405,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2697,
+   "input_tokens_optimized": 2440,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2697,
+   "input_tokens_optimized": 2440,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  }
+ },
+ "vitest-many": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "vitest"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 6384,
+   "tokens_after": 3929,
+   "token_count_basis": "o200k_base",
+   "ratio": 0.38455513784461154,
+   "basis": "inferred",
+   "recovery_handle": "ccr_74771f9f158a5b128d7a074695d90478",
+   "method": "terminal",
+   "lossless_to_model": false,
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":6384,\"tokens_after\":3929,\"token_count_basis\":\"o200k_base\",\"ratio\":0.38455513784461154,\"basis\":\"inferred\",\"recovery_handle\":\"ccr_74771f9f158a5b128d7a074695d90478\",\"method\":\"terminal\",\"lossless_to_model\":false}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 6431,
+   "tokens_after": 6431,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:ratio_too_high"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 6431,
+   "tokens_after": 6431,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 6431,
+   "tokens_after": 6431,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 6435,
+   "input_tokens_optimized": 3822,
+   "transforms_applied": [
+    "router:tool_result:text",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 6435,
+   "input_tokens_optimized": 3822,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:text"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 3489,
+   "input_tokens_optimized": 2423,
+   "transforms_applied": [
+    "router:tool_result:text",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 3489,
+   "input_tokens_optimized": 2423,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:text"
+   ]
+  }
+ },
+ "tsc-many": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "tsc",
+    "--noEmit"
+   ],
+   "exit_code": 2
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 4201,
+   "tokens_after": 4201,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":4201,\"tokens_after\":4201,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 4250,
+   "tokens_after": 4250,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:ratio_too_high"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 4250,
+   "tokens_after": 4250,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 4250,
+   "tokens_after": 4250,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 4255,
+   "input_tokens_optimized": 3199,
+   "transforms_applied": [
+    "router:tool_result:log",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 4255,
+   "input_tokens_optimized": 3199,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:log"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 3130,
+   "input_tokens_optimized": 2380,
+   "transforms_applied": [
+    "router:tool_result:log",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 3130,
+   "input_tokens_optimized": 2380,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:log"
+   ]
+  }
+ },
+ "eslint-few": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "lint",
+    "--max-warnings=0",
+    "src"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 131,
+   "tokens_after": 131,
+   "token_count_basis": "o200k_base",
+   "ratio": 0,
+   "basis": "inferred",
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":131,\"tokens_after\":131,\"token_count_basis\":\"o200k_base\",\"ratio\":0,\"basis\":\"inferred\"}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 183,
+   "tokens_after": 183,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 183,
+   "tokens_after": 183,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 183,
+   "tokens_after": 183,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:small"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 187,
+   "input_tokens_optimized": 187,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 187,
+   "input_tokens_optimized": 187,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 187,
+   "input_tokens_optimized": 187,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 187,
+   "input_tokens_optimized": 187,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "eslint-many": {
+  "rtk": {
+   "command": [
+    "rtk",
+    "lint",
+    "--max-warnings=0",
+    "src"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 425,
+   "tokens_after": 424,
+   "token_count_basis": "o200k_base",
+   "ratio": 0.002352941176470588,
+   "basis": "inferred",
+   "recovery_handle": "ccr_037cd9407fb28e8a7cccd17cc9cd53d7",
+   "method": "terminal",
+   "lossless_to_model": false,
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":425,\"tokens_after\":424,\"token_count_basis\":\"o200k_base\",\"ratio\":0.002352941176470588,\"basis\":\"inferred\",\"recovery_handle\":\"ccr_037cd9407fb28e8a7cccd17cc9cd53d7\",\"method\":\"terminal\",\"lossless_to_model\":false}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 477,
+   "tokens_after": 477,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:ratio_too_high"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 477,
+   "tokens_after": 477,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 477,
+   "tokens_after": 477,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 481,
+   "input_tokens_optimized": 481,
+   "transforms_applied": []
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 481,
+   "input_tokens_optimized": 481,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 481,
+   "input_tokens_optimized": 481,
+   "transforms_applied": []
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 481,
+   "input_tokens_optimized": 481,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:protected:error_output"
+   ]
+  }
+ },
+ "pytest-setup-errors": {
+  "rtk": {
+   "command": [
+    "uv",
+    "run",
+    "rtk",
+    "pytest",
+    "-q"
+   ],
+   "exit_code": 1
+  },
+  "caveman-engine": {
+   "content_type": "terminal",
+   "tokens_before": 2345,
+   "tokens_after": 2192,
+   "token_count_basis": "o200k_base",
+   "ratio": 0.06524520255863539,
+   "basis": "inferred",
+   "recovery_handle": "ccr_f12aadaa85c6f403eefde1c514e76482",
+   "method": "terminal",
+   "lossless_to_model": false,
+   "stderr": "{\"content_type\":\"terminal\",\"tokens_before\":2345,\"tokens_after\":2192,\"token_count_basis\":\"o200k_base\",\"ratio\":0.06524520255863539,\"basis\":\"inferred\",\"recovery_handle\":\"ccr_f12aadaa85c6f403eefde1c514e76482\",\"method\":\"terminal\",\"lossless_to_model\":false}\n"
+  },
+  "caveman-hook": {
+   "wraps": false
+  },
+  "headroom-default": {
+   "tokens_before": 2392,
+   "tokens_after": 2392,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:ratio_too_high"
+  },
+  "headroom-aggressive": {
+   "tokens_before": 2392,
+   "tokens_after": 2392,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-unprotected": {
+   "tokens_before": 2392,
+   "tokens_after": 2392,
+   "transforms": [
+    "router:protected:user_message"
+   ],
+   "decision": "passthrough:cache_skip"
+  },
+  "headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2397,
+   "input_tokens_optimized": 2292,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2397,
+   "input_tokens_optimized": 2292,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  },
+  "cc-headroom-proxy": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2396,
+   "input_tokens_optimized": 2295,
+   "transforms_applied": [
+    "router:tool_result:mixed",
+    "cache_mode:cold_start_full"
+   ]
+  },
+  "cc-headroom-proxy-token": {
+   "exit_code_line_kept": true,
+   "is_error_kept": true,
+   "tools_added": [
+    "headroom_retrieve"
+   ],
+   "input_tokens_original": 2396,
+   "input_tokens_optimized": 2295,
+   "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+   ]
+  }
+ },
+ "_proxy": {
+  "headroom-proxy": {
+   "command": [
+    "headroom",
+    "proxy"
+   ],
+   "kompress": {
+    "kompress": {
+     "status": "loaded",
+     "info": {
+      "source_status": "runtime",
+      "backend": "onnx"
+     }
+    }
+   }
+  },
+  "headroom-proxy-token": {
+   "command": [
+    "headroom",
+    "proxy",
+    "--mode",
+    "token"
+   ],
+   "kompress": {
+    "kompress": {
+     "status": "loaded",
+     "info": {
+      "source_status": "runtime",
+      "backend": "onnx"
+     }
+    }
+   }
+  },
+  "cc-headroom-proxy": {
+   "command": [
+    "headroom",
+    "proxy"
+   ],
+   "kompress": {
+    "kompress": {
+     "status": "loaded",
+     "info": {
+      "source_status": "runtime",
+      "backend": "onnx"
+     }
+    }
+   }
+  },
+  "cc-headroom-proxy-token": {
+   "command": [
+    "headroom",
+    "proxy",
+    "--mode",
+    "token"
+   ],
+   "kompress": {
+    "kompress": {
+     "status": "loaded",
+     "info": {
+      "source_status": "runtime",
+      "backend": "onnx"
+     }
+    }
+   }
+  }
+ }
+}

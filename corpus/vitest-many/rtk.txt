@@ -1,0 +1,65 @@
+PASS (111) FAIL (7)
+
+1. parseMoneyToIDR parses '800jt' as 800 million
+   AssertionError: expected { amount: 80000000, …(1) } to deeply equal { amount: 800000000, …(1) }
+       at /home/dev/Documents/Projects/wa-lead-extractor/test/deterministic.test.ts:14:52
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:146:14
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:533:11
+       at runWithTimeout (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:39:7)
+       at runTest (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1056:17)
+       at processTicksAndRejections (node:internal/process/task_queues:104:5)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runFiles (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1262:5)
+       at startTests (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1271:3)
+2. parseMoneyToIDR parses 'Rp 900 juta' as 900 million
+   AssertionError: expected { amount: 90000000, …(1) } to deeply equal { amount: 900000000, …(1) }
+       at /home/dev/Documents/Projects/wa-lead-extractor/test/deterministic.test.ts:35:58
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:146:14
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:533:11
+       at runWithTimeout (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:39:7)
+       at runTest (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1056:17)
+       at processTicksAndRejections (node:internal/process/task_queues:104:5)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runFiles (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1262:5)
+       at startTests (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1271:3)
+3. runPipeline deterministic wins over a conflicting LLM value for budget/intent/urgency
+   AssertionError: expected 90000000 to be 900000000 // Object.is equality
+       at /home/dev/Documents/Projects/wa-lead-extractor/test/pipeline.test.ts:42:31
+       at processTicksAndRejections (node:internal/process/task_queues:104:5)
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:533:5
+       at runTest (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1056:11)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runFiles (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1262:5)
+       at startTests (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1271:3)
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:126:11
+       at withEnv (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:90:5)
+4. recording 2026-10-14-eval.json re-scores to the published results
+   AssertionError: expected { model: 'cx/gpt-6-luna', …(6) } to deeply equal { model: 'cx/gpt-6-luna', …(6) }
+       at /home/dev/Documents/Projects/wa-lead-extractor/test/recordings.test.ts:41:25
+       at processTicksAndRejections (node:internal/process/task_queues:104:5)
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:533:5
+       at runTest (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1056:11)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runFiles (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1262:5)
+       at startTests (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1271:3)
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:126:11
+       at withEnv (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:90:5)
+5. the hand review of the eval covers every fact the scorer marks wrong, says which were left empty, and which my fixes made right
+   AssertionError: cx/gpt-6-luna c02_jaksel_rent_medium budgetIDR is not reviewed: expected undefined to be defined
+       at /home/dev/Documents/Projects/wa-lead-extractor/test/recordings.test.ts:130:69
+       at processTicksAndRejections (node:internal/process/task_queues:104:5)
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:533:5
+       at runTest (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1056:11)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runSuite (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1205:15)
+       at runFiles (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1262:5)
+       at startTests (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/@vitest/runner/dist/index.js:1271:3)
+       at file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:126:11
+       at withEnv (file:///home/dev/Documents/Projects/wa-lead-extractor/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:90:5)
+
+... +2 more failures
+[full output: rtk recall d92e8eb1666e]

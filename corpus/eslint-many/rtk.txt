@@ -1,0 +1,19 @@
+ESLint: 12 errors, 0 warnings in 4 files
+Top rules:
+  @typescript-eslint/no-unused-vars (8x)
+  prefer-const (4x)
+
+Top files:
+  src/classify.ts (3 issues)
+    @typescript-eslint/no-unused-vars (2)
+    prefer-const (1)
+  src/guardrail.ts (3 issues)
+    @typescript-eslint/no-unused-vars (2)
+    prefer-const (1)
+  src/merge.ts (3 issues)
+    @typescript-eslint/no-unused-vars (2)
+    prefer-const (1)
+  src/writer.ts (3 issues)
+    @typescript-eslint/no-unused-vars (2)
+    prefer-const (1)
+[full output: rtk recall d493cc2466bf]

@@ -1,0 +1,126 @@
+........................................................................ [ 26%]
+........................................................................ [ 52%]
+........................................................................ [ 79%]
+.......................................EEEEEEEEEEEEEEEEEE                [100%]
+==================================== ERRORS ====================================
+__________ ERROR at setup of test_the_chat_number_finds_the_customer ___________
+… 1 lines elided (caveman) …
+    @pytest.fixture
+    def shop() -> TokoTools:
+>       return TokoTools(build(), currency="IDR")
+… 1 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_______________ ERROR at setup of test_search_matches_every_word _______________
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_________ ERROR at setup of test_ongkir_charges_every_started_kilogram _________
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_ ERROR at setup of test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock _
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_ ERROR at setup of test_resellers_pay_the_reseller_price_and_cannot_add_a_promo _
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_______ ERROR at setup of test_promos_need_a_valid_code_and_the_minimum ________
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_ ERROR at setup of test_cod_only_where_the_courier_offers_it_and_up_to_the_limit _
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+______ ERROR at setup of test_out_of_stock_and_unknown_items_are_refused _______
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+___ ERROR at setup of test_payment_needs_the_exact_total_with_the_kode_unik ____
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+___________ ERROR at setup of test_a_paid_transfer_cannot_pay_twice ____________
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+__ ERROR at setup of test_items_change_only_before_payment_and_stock_follows ___
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_ ERROR at setup of test_address_changes_before_shipping_and_never_change_a_paid_ongkir _
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_ ERROR at setup of test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money _
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+__ ERROR at setup of test_returns_need_the_window_the_video_and_a_real_reason __
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+___________ ERROR at setup of test_tracking_only_for_shipped_orders ____________
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+____________ ERROR at setup of test_calculate_takes_arithmetic_only ____________
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+__________ ERROR at setup of test_the_seeded_orders_follow_the_rules ___________
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+_ ERROR at setup of test_a_hand_off_is_recorded_with_its_order_and_reason_only _
+… 5 lines elided (caveman) …
+E       TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+… 1 lines elided (caveman) …
+tests/test_tools.py:14: TypeError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/tau2/voice/utils/audio_preprocessing.py:4
+  /home/dev/Documents/Projects/toko-wa-bench/.venv/lib/python3.12/site-packages/tau2/voice/utils/audio_preprocessing.py:4: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+    import audioop
+… 1 lines elided (caveman) …
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR tests/test_tools.py::test_the_chat_number_finds_the_customer - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_search_matches_every_word - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_ongkir_charges_every_started_kilogram - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_a_transfer_order_adds_ongkir_and_a_kode_unik_and_takes_stock - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_resellers_pay_the_reseller_price_and_cannot_add_a_promo - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_promos_need_a_valid_code_and_the_minimum - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_cod_only_where_the_courier_offers_it_and_up_to_the_limit - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_out_of_stock_and_unknown_items_are_refused - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_payment_needs_the_exact_total_with_the_kode_unik - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_a_paid_transfer_cannot_pay_twice - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_items_change_only_before_payment_and_stock_follows - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_address_changes_before_shipping_and_never_change_a_paid_ongkir - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_cancelling_gives_stock_back_and_owes_a_paid_order_its_money - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_returns_need_the_window_the_video_and_a_real_reason - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_tracking_only_for_shipped_orders - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_calculate_takes_arithmetic_only - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_the_seeded_orders_follow_the_rules - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+ERROR tests/test_tools.py::test_a_hand_off_is_recorded_with_its_order_and_reason_only - TypeError: TokoTools.__init__() got an unexpected keyword argument 'currency'
+255 passed, 1 warning, 18 errors in 17.37s
+‹caveman: shrank · 2345→2192 estimated tokens · counter o200k_base · inferred · recover: caveman retrieve ccr_f12aadaa85c6f403eefde1c514e76482›
