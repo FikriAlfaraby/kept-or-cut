@@ -353,3 +353,4 @@ def test_the_window_matches_the_cut():
         "tail": entry["window"]["read"] - 5000,
     }
     assert len(entry["at"]) == 44 and all(0 < at < 75017 for at in entry["at"].values())
+    assert entry["planted"] == ["trace.py"]

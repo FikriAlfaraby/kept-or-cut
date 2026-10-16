@@ -45,6 +45,7 @@ def case_entry(case, runs: dict, exploratory: bool) -> dict:
         # where each failing item's name first appears in the output, and what Claude Code keeps of it: the page
         # draws the cut from these
         "at": {f.text: raw.find(f.text) for f in facts if f.field == "name"},
+        "planted": sorted({e.path.replace("\\", "/").rsplit("/", 1)[-1] for e in case.edits}),
         "window": window(json.loads((case_dir / "raw.json").read_text(encoding="utf-8"))["exit_code"], raw),
         "views": {
             view: {
